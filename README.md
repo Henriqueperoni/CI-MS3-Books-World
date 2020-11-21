@@ -1,45 +1,53 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Books' World
 
-Welcome USER_NAME,
+# ADD Project Mock-up
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+The aim of this project is to provide a place where the user can write down a personal review of a book and the main insights they got from the book.
+Also, the user will be able to create a wish list with books they want to read in the future, or a list that is already ready. The user will
+be able to sure these lists if they want.
 
-## Gitpod Reminders
+#ADD Live demo on Heroku pages
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Table of Contents:
 
-`python3 -m http.server`
+- [UX](#ux)
+  - [User Stories](#user-stories)
+  - [Strategy](#1-strategy)
+  - [Scope](#2-scope)
+  - [Structure](#3-structure)
+  - [Skeleton](#4-skeleton)
+  - [Surface](#5-surface)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+  - [Features to consider implementing in the future](#features-to-consider-implementing-in-the-future)
+- [Technologies Used](#technologies-used)
+  - [Languages](#1-languages)
+  - [Integrations](#2-integrations)
+  - [Workspace, Version Control, and Repository Storage](#3-workspace-version-control-and-repository-storage)
+- [Resources](#resources)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
+  - [Media](#media)
+  - [Code](#code)
+- [Acknowledgments](#acknowledgments)
 
-A blue button should appear to click: *Make Public*,
+## UX
 
-Another blue button should appear to click: *Open Browser*.
+### User Stories
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+#### First Time Visitor Goals
 
-A blue button should appear to click: *Make Public*,
+- As a First Time user, I want to easily understand the main purpose of the site and learn more about the organisation.
+- As a First Time user, I want to easily to sign up to the website.
 
-Another blue button should appear to click: *Open Browser*.
+#### Returning Visitor Goals
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- As a Returning user, I want to easily Log in on my account.
+- As a Returning user, I want to write personal reviews and main insights about the books I'm readying or alredy ready.
+- As a Returning user, I want to create a wish list.
 
-## Updates Since The Instructional Video
+#### Frequent Visitor Goals
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+- As a Frequent user, I want to find wish lists from other people, so I can choose new books to ready.
+- As a Returning user, I want to uptade or delete old book reviews and wish lists.
