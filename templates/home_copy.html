@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<h1>Home Page</h1>
+	{% for book in books %}
+        <mg src="{{ book.img_url }}" alt=""><br>
+        {{ book.book_name }}<br>
+        {{ book.book_author }}<br>
+        {{ book.book_review }}<br>
+    {% endfor %}
+    <img class="intro-img" src="static/images/read1.png" alt="">
+{% endblock %}

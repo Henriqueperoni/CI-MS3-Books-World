@@ -9,6 +9,7 @@
 body {
   background: url("/static/images/bg.png");
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: "Poppins", sans-serif;
 }
 
@@ -52,4 +53,25 @@ nav ul a:hover {
   background: linear-gradient(to right, #ff4000, #ff9500);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.intro-img {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    height: 500px;
+    width: 500px;
+    object-fit: contain;
+}
+
+.intro-text {
+    position:absolute;
+    left: 8%;
+    top: 20%;
+    color: white;
+    width: 30%;
+}
+
+.intro-text h2 {
+    font-size: 2rem;
 }
