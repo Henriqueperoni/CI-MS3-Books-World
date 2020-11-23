@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block content %}
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Books' World</title>
-</head>
-
-<body>
 	<h1>Home Page</h1>
 	{% for book in books %}
-	    {{ book.book_name }}<br>
-        {{ book.author_name }}<br>
-        {{ book.img_url }}<br>
+        <img src="{{ book.img_url }}" alt=""><br>
+        {{ book.book_name }}<br>
+        {{ book.book_author }}<br>
         {{ book.book_review }}<br>
     {% endfor %}
-</body>
 
-</html>
+{% endblock %}
