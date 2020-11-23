@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'css/style.css')}}"
+      type="text/css"
+    />
+    {% block styles %} {% endblock %}
+    <title>Books' World</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}" type="text/css">
-    {% block styles %}
-    {% endblock %}
-	<title>Books' World</title>
-</head>
+  <body>
+    <!-- top navbar -->
+    <nav>
+      <div class="nav-wrapper">
+        <a id="logo" href="#!" class="brand-logo">Books'<span>world</span></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="fas fa-bars"></i
+        ></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Discover</a></li>
+          <li><a href="#">Log In</a></li>
+          <li><a href="#">Log Out</a></li>
+          <li><a class="sign-up" href="#">Sign Up</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- mobile sidenav -->
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Discover</a></li>
+      <li><a href="#">Log In</a></li>
+      <li><a href="#">Log Out</a></li>
+      <li><a class="sign-up" href="#">Sign Up</a></li>
+    </ul>
 
-<body>
-	<h1>Base template</h1>
-    {% block content %}
-    {% endblock %}
+    <h1>Base template</h1>
+    {% block content %} {% endblock %}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js')}}"></script>
-    {% block scripts %}
-    {% endblock %}
-</body>
-
+    {% block scripts %} {% endblock %}
+  </body>
 </html>

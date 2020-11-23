@@ -1,5 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("/static/images/bg.png");
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  background: transparent;
+  box-shadow: none;
+}
+
+#logo {
+  font-family: "Nunito", sans-serif !important;
+  padding-left: 60px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+#logo span {
+  color: black;
+}
+
+nav ul a {
+  font-weight: 500;
+}
+
+nav ul a:hover {
+  background: none;
+}
+
+.sign-up {
+  display: inline;
+  border: 3px solid #e44646;
+  border-radius: 30px;
+  padding: 8px 10px;
+  margin-right: 10px;
+  font-weight: 800;
+  background: linear-gradient(to right, #ff4000, #ff9500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sign-up:hover {
+  background: linear-gradient(to right, #ff4000, #ff9500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
