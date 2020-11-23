@@ -25,6 +25,11 @@ def home():
     return render_template("home.html", books=books)
 
 
+@app.route("/sign_up", methods=["GET", "POST"])
+def sign_up():
+    return render_template("sign_up.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

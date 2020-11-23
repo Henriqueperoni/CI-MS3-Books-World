@@ -75,3 +75,36 @@ nav ul a:hover {
 .intro-text h2 {
     font-size: 2rem;
 }
+
+.intro-text a {
+    display: flex;
+    margin: 10px auto;
+    justify-content: center;
+    width: 100px;
+}
+
+/* Sign Up */
+
+.general-container {
+    height: 80%;
+    width: 80%;
+    background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(209,209,209,0.95) 100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.container-sign {
+    height: 100%;
+    width: 50%;
+    background: red;
+}
+
+.container-ilustration {
+    height: 100%;
+    width: 50%;
+    background: blue
+
+}
