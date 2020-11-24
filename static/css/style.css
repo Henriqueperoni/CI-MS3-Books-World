@@ -92,10 +92,6 @@ footer {
     transform: translate(-50%, 0);
 }
 
-social-links ul {
-  display: flex;
-}
-
 .social-links li {
   list-style-type: none;
   display: inline;
@@ -141,19 +137,11 @@ social-links ul {
     box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.55);
 }
 
-.container-sign {
-    height: 100%;
-    width: 50%;
-    align-items: center;
-}
-
 .push-down {
-    margin-top: 25%;
+    margin-top: 30%;
 }
 
 .container-ilustration {
-    height: 100%;
-    width: 50%;
     position: relative;
 }
 
@@ -196,3 +184,22 @@ social-links ul {
 
 
 
+/* Desktop - 2 */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: linear-gradient(180deg, #683DE3 0%, #FFFFFF 100%);
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 1633px;
+height: 1109.5px;
+left: -193.5px;
+top: 51px;
+
+background: #FFFFFF;
+border: 1px solid #FFFFFF;
