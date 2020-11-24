@@ -138,11 +138,16 @@ nav ul a:hover {
     border: none;
     margin: 0 auto;
     transition: transform 0.5s;
+    cursor: pointer;
 }
 
 .btn-form:hover {
     transform: scale(1.1);
     box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.30);
+}
+
+.flashes {
+    line-height: 2
 }
 
 
