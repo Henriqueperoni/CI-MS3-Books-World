@@ -111,10 +111,38 @@ nav ul a:hover {
 .container-ilustration {
     height: 100%;
     width: 50%;
+    position: relative;
+}
+
+.container-ilustration img {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .container-sign h2 {
     color: white;
+}
+
+.btn-form {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    width: 150px;
+    height: 42px;
+    border-radius: 20px;
+    border: none;
+    margin: 0 auto;
+    transition: transform 0.5s;
+}
+
+.btn-form:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.30);
 }
 
 

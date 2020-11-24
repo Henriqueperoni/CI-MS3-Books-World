@@ -5,7 +5,7 @@
 
 			<h3 class="deep-purple-text" id="logo">books'<span>world</span></h3>
 			<div class="row push-down">
-				<form class="col s12 m8 offset-m2" method="POST">
+				<form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('sign_up') }}" >
 					<div>
 						<!-- username -->
 						<div class="row">
@@ -25,8 +25,8 @@
 						</div>
 						<!-- register -->
 						<div class="row">
-							<button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
-	                        Register <i class="fas fa-sign-in-alt"></i>
+							<button type="submit" class="btn-form white-text deep-purple">
+	                        Register <i class="fas fa-sign-in-alt white-text"></i>
 	                    </button>
 						</div>
 					</div>
