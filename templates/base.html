@@ -37,7 +37,7 @@
           <li><a href="{{ url_for('home') }}">Home</a></li>
           <li><a href="#">Profile</a></li>
           <li><a href="#">Discover</a></li>
-          <li><a href="#">Log In</a></li>
+          <li><a href="{{ url_for('login') }}">Log In</a></li>
           <li><a href="#">Log Out</a></li>
           <li><a class="sign-up" href="{{ url_for('sign_up') }}">Sign Up</a></li>
         </ul>
@@ -48,7 +48,7 @@
       <li><a href="{{ url_for('home') }}">Home</a></li>
       <li><a href="#">Profile</a></li>
       <li><a href="#">Discover</a></li>
-      <li><a href="#">Log In</a></li>
+      <li><a href="{{ url_for('login') }}">Log In</a></li>
       <li><a href="#">Log Out</a></li>
       <li><a class="sign-up" href="{{ url_for('sign_up') }}">Sign Up</a></li>
     </ul>
@@ -70,6 +70,7 @@
         {% block content %}
         {% endblock %}
     </main>
+    
     
     <footer class="container">
 		<div>

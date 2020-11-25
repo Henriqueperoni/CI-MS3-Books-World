@@ -121,7 +121,6 @@ footer {
   color: #f00;
 }
 
-
 /* Sign Up */
 
 .general-container {
@@ -177,29 +176,25 @@ footer {
     box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.30);
 }
 
+.account {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.account a {
+    color: #e44646;
+}
+
+.account a:hover {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    cursor: pointer;
+}
 .flashes {
     line-height: 2
 }
 
 
 
-
-/* Desktop - 2 */
-
-position: relative;
-width: 1440px;
-height: 1024px;
-
-background: linear-gradient(180deg, #683DE3 0%, #FFFFFF 100%);
-
-
-/* Vector 1 */
-
-position: absolute;
-width: 1633px;
-height: 1109.5px;
-left: -193.5px;
-top: 51px;
-
-background: #FFFFFF;
-border: 1px solid #FFFFFF;

@@ -5,12 +5,12 @@
 		<div class="col s12 m6">
 			<h3 class="deep-purple-text" id="logo">books'<span>world</span></h3>
 			<div class="row push-down">
-				<form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('sign_up') }}" >
+				<form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
 					<div>
 						<!-- username -->
 						<div class="row">
 							<div class="input-field col s12">
-								<i class="fas fa-user-plus prefix deep-purple-text"></i>
+								<i class="fas fa-user prefix deep-purple-text"></i>
 								<input id="username" name="username" type="text" class="validate" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
 								<label for="username">Username</label>
@@ -25,10 +25,10 @@
 								<label for="password">Password</label>
 							</div>
 						</div>
-						<!-- register -->
+						<!-- login -->
 						<div class="row">
 							<button type="submit" class="btn-form white-text deep-purple">
-	                        Register <i class="fas fa-sign-in-alt white-text"></i>
+	                        Log In <i class="fas fa-sign-in-alt white-text"></i>
 	                    </button>
 						</div>
 					</div>
@@ -40,7 +40,7 @@
             <img src="static/images/sign_in.png" alt="">
 		</div>
         <div class="account">
-            <p>Already have an account? <a href="{{ url_for('login') }}">Log In</a></p>
+            <p>New here? <a href="{{ url_for('sign_up') }}">Sign Up</a></p>
         </div>
 	</div>
 {% endblock %}
