@@ -193,8 +193,16 @@ footer {
     cursor: pointer;
 }
 .flashes {
-    line-height: 2;
-    index: 5;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    background: #7952bf;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.55);
+    z-index: 1;
 }
 
 
