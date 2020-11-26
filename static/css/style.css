@@ -203,14 +203,12 @@ footer {
     top: 0;
     left: 0;
     z-index: 10;
-    display: flex;
-    justify-content: center;
+    display: none;
     align-items: center;
 }
 
 .modal-books {
     background: #fff;
-    width: 600px;
     height: auto;
     border: 10px solid #7952bf;
     box-shadow: 0 0 0 10px #fff;
@@ -219,9 +217,6 @@ footer {
     align-items: center;
 }
 
-.modal-books form {
-    width: 90%;
-}
 
 .books a {
     position: absolute;
