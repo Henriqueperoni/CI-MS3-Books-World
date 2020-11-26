@@ -44,7 +44,8 @@ def sign_up():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+        flash("Hi, {}. Welcome to books'world".format(
+                        request.form.get("username").capitalize()))
         return redirect(url_for(
             "profile", username=session["user"]))
     return render_template("sign_up.html")
@@ -62,8 +63,6 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username").capitalize()))
                     return redirect(url_for(
                         "profile", username=session["user"]))
             else:
@@ -84,9 +83,11 @@ def profile(username):
     # get the session user's username from database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    # get the session user's books from database
+    books = mongo.db.books.find()
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, books=books)
 
     return redirect(url_for("login"))
 

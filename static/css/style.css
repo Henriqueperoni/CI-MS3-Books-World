@@ -192,6 +192,35 @@ footer {
     border-bottom-style: solid;
     cursor: pointer;
 }
+
+/* Profile */
+.modal-books {
+    background: #fff;
+    width: 600px;
+    height: 350px;
+    border: 10px solid #7952bf;
+    box-shadow: 0 0 0 10px #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.books a {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 3.5rem;
+}
+
+.book img{
+    height: 180px;
+    width: 130px;
+}
+
+
 .flashes {
     position: absolute;
     top: 10%;

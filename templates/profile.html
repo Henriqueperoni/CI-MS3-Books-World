@@ -17,6 +17,63 @@
 		<div>
             {{ username.capitalize() }}'s Profile
         </div>
-		
+
+        <div class="books">
+            <a href=""><i class="fas fa-plus-circle deep-purple-text"></i></a>
+            <div class="book">
+                {% for book in books %}
+                    <img src="{{ book.img_url }}" alt=""><br>
+                    <p>{{ book.book_name }}<br></p> 
+                    <p>{{ book.book_author }}<br></p> 
+                    <!-- {{ book.book_review }}<br> -->
+                {% endfor %}
+            </div>
+
+            <div class="modal-books">
+                <div class="row">
+				<form class="col s12">
+					<div>
+						<!-- username -->
+						<div class="row">
+							<div class="input-field col s12">
+								
+								<input id="username" name="username" type="text" class="validate" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+								<label for="username">Username</label>
+							</div>
+						</div>
+						<!-- passowrd -->
+						<div class="row">
+							<div class="input-field col s12">
+								
+								<input id="password" name="password" type="password" class="validate" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+								<label for="password">Password</label>
+							</div>
+						</div>
+                        <div class="row">
+							<div class="input-field col s12">
+								
+								<input id="password" name="password" type="password" class="validate" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+								<label for="password">Password</label>
+							</div>
+						</div>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Textarea</label>
+                        </div>
+						<!-- login -->
+						<div class="row">
+							<button type="submit" class="btn-form white-text deep-purple">
+	                        Log In <i class="fas fa-sign-in-alt white-text"></i>
+	                    </button>
+						</div>
+					</div>
+				</form>
+			</div>
+            </div>
+        </div>
 	</div>
 {% endblock %}
