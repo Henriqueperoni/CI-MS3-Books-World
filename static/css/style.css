@@ -194,19 +194,34 @@ footer {
 }
 
 /* Profile */
-.modal-books {
-    background: #fff;
-    width: 600px;
-    height: 350px;
-    border: 10px solid #7952bf;
-    box-shadow: 0 0 0 10px #fff;
-    position: relative;
+
+.container-modal {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.modal-books {
+    background: #fff;
+    width: 600px;
+    height: auto;
+    border: 10px solid #7952bf;
+    box-shadow: 0 0 0 10px #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.modal-books form {
+    width: 90%;
+}
 
 .books a {
     position: absolute;
