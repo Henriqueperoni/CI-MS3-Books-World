@@ -84,12 +84,24 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     # get the session user's books from database
-    books = mongo.db.books.find()
+    books = list(mongo.db.books.find())
 
     if session["user"]:
         return render_template("profile.html", username=username, books=books)
 
     return redirect(url_for("login"))
+
+@app.route("/add_book", methods=["GET", "POST"])
+def add_book():
+    if request.method == "POST":
+        book = {
+            "book_name": request.form.get("book_name"),
+            "book_author": request.form.get("book_author"),
+            "img_url": request.form.get("img_url"),
+            "book_review": request.form.get("book_review")
+        }
+        mongo.db.books.insert_one(book)
+        return redirect("/profile/<username>")
 
 
 @app.route("/logout")

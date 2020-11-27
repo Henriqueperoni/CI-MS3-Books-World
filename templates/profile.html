@@ -2,30 +2,30 @@
 {% block content %}
     <div id="modal-review" class="container-modal row">
             <div class="modal-books col s12 m6 offset-m3">
-                <form class="row">
+                <form class="row" method="POST" action="{{ url_for('add_book') }}">
         
                     <!-- Book Name-->
                     <div class="row input-field col s12">
                         <label for="book_name">Book:</label>
-                        <input id="book_name" name="book_name" type="text" class="validate" minlength="5" maxlength="50" required>
+                        <input id="book_name" name="book_name" type="text" class="validate" minlength="3" maxlength="50" required>
                     </div>
         
                     <!-- Book Author -->
                     <div class="row input-field col s12">
                         <label for="book_author">Author:</label>
-                        <input id="book_author" name="book_author" type="text" class="validate" minlength="5" maxlength="50"  required>
+                        <input id="book_author" name="book_author" type="text" class="validate" minlength="3" maxlength="50"  required>
                     </div>
     
                         <!-- Image URL -->
                     <div class="row input-field col s12">
-                        <label for="password">Insert image URL</label>
+                        <label for="img_url">Insert image URL</label>
                         <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100"  required>
                     </div>
     
                     <!-- Review -->
                     <div class="row col s12">
-                        <label for="textarea1">Your Review</label>
-                        <textarea id="textarea1" class="materialize-textarea" minlength="5" maxlength="300" rows="5" required></textarea>
+                        <label for="book_review">Your Review</label>
+                        <textarea id="book_review" name="book_review" type="text" class="materialize-textarea" minlength="5" maxlength="500" rows="5" required></textarea>
                     </div>
 
                     <!-- submit button -->
@@ -37,6 +37,7 @@
                 <button class="close-modal">x</button>
             </div>
         </div>
+
 	<div class="general-container row">
         <section>
             <!-- flash messages -->

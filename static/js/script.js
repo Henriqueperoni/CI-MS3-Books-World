@@ -17,7 +17,6 @@ const addBook = document.getElementById("add-book")
 addBook.addEventListener("click", () => {
     startModal()
 })
-console.log(addBook)
 
 
 
