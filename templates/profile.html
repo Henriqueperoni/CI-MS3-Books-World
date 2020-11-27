@@ -52,20 +52,20 @@
             {% endwith %}
         </section>
 
-		<div>
+		<div id="profile-user" class="deep-purple-text">
             {{ username.capitalize() }}'s Profile
         </div>
 
         <div class="books">
             <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
-            <div class="book">
-                {% for book in books %}
+            {% for book in books %}
+                <div class="book">
                     <img src="{{ book.img_url }}" alt=""><br>
-                    <p>{{ book.book_name }}<br></p> 
-                    <p>{{ book.book_author }}<br></p> 
-                    <!-- {{ book.book_review }}<br> -->
-                {% endfor %}
-        </div>
+                    <p>{{ book.book_name }}</p> 
+                    <p>{{ book.book_author }}</p> 
+                    <!-- {{ book.book_review }} -->
+                </div>
+            {% endfor %}
 
         
         

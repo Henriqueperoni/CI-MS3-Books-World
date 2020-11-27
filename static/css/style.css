@@ -131,7 +131,6 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
     border-radius: 20px;
     box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.55);
 }
@@ -142,15 +141,13 @@ footer {
 
 .container-ilustration {
     position: relative;
+    top: 50%;
+    transform: translatey(-50%);
 }
 
 .container-ilustration img {
     width: 80%;
     height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .container-sign h2 {
@@ -195,6 +192,7 @@ footer {
 
 /* Profile */
 
+/* Modal */
 .container-modal {
     width: 100vw;
     height: 100vh;
@@ -267,10 +265,60 @@ footer {
     cursor: pointer;
 }
 
-.book img{
+/* PROFILE CONTAINER */
+#profile-user {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.books {
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.book {
+    margin: 10px;
+}
+
+.book img {
     height: 180px;
     width: 130px;
+    margin-bottom: -5px;
+    cursor: pointer;
 }
+
+.book p {
+    max-width: 130px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .flashes {
