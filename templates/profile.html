@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="container-modal row">
+    <div id="modal-review" class="container-modal row">
             <div class="modal-books col s12 m6 offset-m3">
                 <form class="row">
         
@@ -33,6 +33,8 @@
                         <button type="submit" class="btn-form white-text deep-purple">Save  <i class="fas fa-save white-text"></i></button>
                     </div>
                 </form>
+                <!-- close modal -->
+                <button class="close-modal">x</button>
             </div>
         </div>
 	<div class="general-container row">
@@ -54,7 +56,7 @@
         </div>
 
         <div class="books">
-            <a href=""><i class="fas fa-plus-circle deep-purple-text"></i></a>
+            <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
             <div class="book">
                 {% for book in books %}
                     <img src="{{ book.img_url }}" alt=""><br>
