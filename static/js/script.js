@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
 });
 
-function startModal() {
+function startModalBooks() {
     const modal = document.querySelector(".container-modal")
     modal.classList.add("show-modal");
 
@@ -15,8 +15,27 @@ function startModal() {
 
 const addBook = document.getElementById("add-book")
 addBook.addEventListener("click", () => {
-    startModal()
+    startModalBooks()
 })
+
+
+
+// function starModalReview() {
+//     const book1 = document.querySelectorAll(".book")
+//     const modal1 = document.getElementById("modal-bokk")
+
+//     book1.addEventListener("click", () => {
+//         modal1.style.display = "none"
+//     })
+// }
+// starModalReview()
+
+// for (i = 0; i < navClose.length; i++) {
+//     navClose[i].addEventListener("click", () => {
+//       nav.classList.toggle("nav-active");
+//     });
+//   }
+
 
 
 
