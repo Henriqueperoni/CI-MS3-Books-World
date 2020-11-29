@@ -44,8 +44,9 @@ def sign_up():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Hi, {}. Welcome to books'world".format(
+        flash("Hi, {}. Welcome to books'world.".format(
                         request.form.get("username").capitalize()))
+        flash("Click on the add button and create your fisrt book summary")
         return redirect(url_for(
             "profile", username=session["user"]))
     return render_template("sign_up.html")

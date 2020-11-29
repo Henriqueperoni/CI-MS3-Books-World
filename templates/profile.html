@@ -39,24 +39,13 @@
     </div>
         
 	<div class="general-container row">
-        <section>
-            <!-- flash messages -->
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="row flashes">
-                            <h5 class="">{{ message }}</h5>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-        </section>
+        <h3 class="deep-purple-text logo">books'<span>world</span></h3>
 
 		<div id="profile-user" class="deep-purple-text">
             {{ username.capitalize() }}'s Profile
         </div>
 
-        <div class="books">
+        <div class="books row">
             <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
             {% for book in books %}
                 {% if session.user|lower == book.created_by|lower %}
@@ -68,9 +57,5 @@
                     </div>
                 {% endif%}
             {% endfor %}
-            
-
-        
-        
 	</div>
 {% endblock %}

@@ -1,22 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 	<div class="general-container row">
-        <section>
-            <!-- flash messages -->
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="row flashes">
-                            <h5 class="">{{ message }}</h5>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-        </section>
-
-		<div class="col s12 m6">
-			<h3 class="deep-purple-text" id="logo">books'<span>world</span></h3>
-			<div class="row push-down">
+        <h3 class="deep-purple-text logo">books'<span>world</span></h3>
+		<div class="container-login col s12 m6">
+			<div class="row">
 				<form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
 					<div>
                     
@@ -25,7 +12,7 @@
 							<div class="input-field col s12">
 								<i class="fas fa-user prefix deep-purple-text"></i>
 								<input id="username" name="username" type="text" class="validate" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                            maxlength="13" pattern="^[a-zA-Z0-9]{5,13}$" required>
 								<label for="username">Username</label>
 							</div>
 						</div>

@@ -20,41 +20,43 @@ nav {
   box-shadow: none;
 }
 
-#logo {
-  font-family: "Nunito", sans-serif !important;
-  padding-left: 60px;
-  font-weight: 800;
-  letter-spacing: -2px;
+.logo {
+    position: absolute;
+    font-family: "Nunito", sans-serif !important;
+    padding-left: 60px;
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: -2px;
 }
 
-#logo span {
-  color: black;
+.logo span {
+    color: black;
 }
 
 nav ul a {
-  font-weight: 500;
+    font-weight: 500;
 }
 
 nav ul a:hover {
-  background: none;
+    background: none;
 }
 
 .sign-up {
-  display: inline;
-  border: 3px solid #e44646;
-  border-radius: 30px;
-  padding: 8px 10px;
-  margin-right: 10px;
-  font-weight: 800;
-  background: linear-gradient(to right, #ff4000, #ff9500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    display: inline;
+    border: 3px solid #e44646;
+    border-radius: 30px;
+    padding: 8px 10px;
+    margin-right: 10px;
+    font-weight: 800;
+    background: linear-gradient(to right, #ff4000, #ff9500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .sign-up:hover {
-  background: linear-gradient(to right, #ff4000, #ff9500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, #ff4000, #ff9500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .intro-img {
@@ -98,27 +100,27 @@ footer {
 }
 
 .social-links i {
-  font-size: 1.8rem;
-  transition: transform 0.5s;
-  margin: 10px 5px;
-  color: #673ab7;
+    font-size: 1.8rem;
+    transition: transform 0.5s;
+    margin: 10px 5px;
+    color: #673ab7;
 }
 
 .social-links .fa-facebook:hover {
-  transform: scale(1.2);
-  color: #036ae3;
+    transform: scale(1.2);
+    color: #036ae3;
 }
 
 .social-links .fa-instagram:hover {
-  transform: scale(1.2);
-  color: #f56a40;
+    transform: scale(1.2);
+    color: #f56a40;
 }
 
 .social-links .fa-youtube:hover {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
-  color: #f00;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    color: #f00;
 }
 
 /* Sign Up */
@@ -146,11 +148,8 @@ footer {
     border-radius: 6px;
 }
 
-.push-down {
-    margin-top: 30%;
-}
-
-.container-ilustration {
+.container-ilustration,
+.container-login {
     position: relative;
     top: 50%;
     transform: translatey(-50%);
@@ -189,6 +188,7 @@ footer {
     bottom: 10%;
     left: 50%;
     transform: translate(-50%);
+    text-align: center;
 }
 
 .account a {
@@ -332,16 +332,19 @@ footer {
 
 
 .flashes {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%);
-    background: #7952bf;
-    color: white;
-    padding: 20px;
+    position: relative;
+    transform: translatey(100px);
+    text-align: center;
+    padding: 0 10px;
+    max-width: 500px;
     border-radius: 20px;
     box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.55);
     z-index: 1;
+}
+
+.flashes p {
+    line-height: 35px;
+    font-size: 1.4rem;
 }
 
 

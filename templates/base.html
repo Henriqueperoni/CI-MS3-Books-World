@@ -29,7 +29,7 @@
     <!-- top navbar -->
 	<nav>
 		<div class="nav-wrapper">
-			<a id="logo" href="#!" class="brand-logo">books'<span>world</span></a>
+			<a href="#!" class="logo">books'<span>world</span></a>
 			<a href="{{ url_for('home') }}" data-target="mobile-demo"
 				class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 			<ul class="right hide-on-med-and-down">
@@ -58,9 +58,22 @@
 		{% endif %}
 	</ul>
 
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row white-text deep-purple flashes">
+                        <p class="">{{ message }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
     
 
-    <main class="container">
+    <main>
         {% block content %}
         {% endblock %}
     </main>

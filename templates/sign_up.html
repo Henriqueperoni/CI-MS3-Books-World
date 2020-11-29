@@ -1,22 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 	<div class="general-container row">
-        <section>
-            <!-- flash messages -->
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="row flashes">
-                            <h5 class="">{{ message }}</h5>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-        </section>
-
-		<div class="col s12 m6">
-			<h3 class="deep-purple-text" id="logo">books'<span>world</span></h3>
-			<div class="row push-down">
+        <h3 class="deep-purple-text logo">books'<span>world</span></h3>
+		<div class="container-login col s12 m6">
+			<div class="row">
 				<form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('sign_up') }}" >
 					<div>
 
@@ -48,9 +35,9 @@
 					</div>
 				</form>
 			</div>
-	
 		</div>
-		<div class="container-ilustration col m6 hide-on-small-only">
+
+		<div class="container-ilustration col m6 hide-on-med-and-down">
             <img src="static/images/sign_up.png" alt="">
 		</div>
         <div class="account">
