@@ -50,7 +50,7 @@
             {% for book in books %}
                 {% if session.user|lower == book.created_by|lower %}
                     <div class="book col s6 m4 l3 xl2">
-                        <img src="{{ book.img_url }}" alt="">
+                        <a href="{{ url_for('view_book', book_name=book._id) }}"><img src="{{ book.img_url }}" alt=""></a>
                         <p>{{ book.book_name }}</p> 
                         <p>{{ book.book_author }}</p> 
                         <!-- {{ book.book_review }} -->
