@@ -287,13 +287,13 @@ footer {
 
 .books {
     margin: 40px;
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
 }
 
 .book {
-    margin: 10px;
+    height: 250px;
 }
 
 .book img {
@@ -301,12 +301,15 @@ footer {
     width: 130px;
     margin-bottom: -5px;
     cursor: pointer;
+    margin: 0 auto;
+    display: flex;
 }
 
 .book p {
     max-width: 130px;
     font-size: 0.7rem;
     font-weight: 600;
+    margin: 0 auto
 }
 
 
@@ -325,7 +328,23 @@ footer {
 
 
 
+@media screen and (max-width: 576px) {
+    .books {
+    margin: 40px 5px;
+    }
 
+    .book img {
+        height: 150px;
+        width: 110px;
+    }
+
+    .book p {
+        max-width: 110px;
+    }
+
+
+
+}
 
 
 
