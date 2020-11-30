@@ -41,6 +41,15 @@ nav ul a:hover {
     background: none;
 }
 
+#mobile-demo {
+    background: rgb(185,175,202);
+    background: radial-gradient(circle, rgba(185,175,202,1) 0%, rgba(121,82,191,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .sign-up {
     display: inline;
     border: 3px solid #e44646;
@@ -72,7 +81,6 @@ nav ul a:hover {
     position:absolute;
     left: 8%;
     top: 20%;
-    color: white;
     width: 30%;
 }
 
@@ -103,7 +111,6 @@ footer {
     font-size: 1.8rem;
     transition: transform 0.5s;
     margin: 10px 5px;
-    color: #673ab7;
 }
 
 .social-links .fa-facebook:hover {
@@ -222,7 +229,6 @@ footer {
 
 .modal-books {
     position: relative;
-    background: #fff;
     height: auto;
     border: 10px solid #7952bf;
     box-shadow: 0 0 0 10px #fff;
@@ -341,8 +347,6 @@ footer {
     .book p {
         max-width: 110px;
     }
-
-
 
 }
 
