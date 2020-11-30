@@ -105,10 +105,12 @@ footer {
 .social-links li {
   list-style-type: none;
   display: inline;
+
 }
 
 .social-links i {
     font-size: 1.8rem;
+    color: #7952bf;
     transition: transform 0.5s;
     margin: 10px 5px;
 }
@@ -196,6 +198,7 @@ footer {
     left: 50%;
     transform: translate(-50%);
     text-align: center;
+    min-width: 130px;
 }
 
 .account a {
