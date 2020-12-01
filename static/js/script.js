@@ -30,7 +30,7 @@ function deleteModal() {
     modal.classList.add("show-modal-delete");
 
     modal.addEventListener("click", (e) => {
-        if(e.target.id == "modal-delete" || e.target.className == "close-modal-delete") {
+        if(e.target.id == "modal-delete" || e.target.className == "close-modal-delete" || e.target.id == "cancel-delete") {
             modal.classList.remove("show-modal-delete")
         }
     })

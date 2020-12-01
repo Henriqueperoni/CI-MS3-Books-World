@@ -128,6 +128,12 @@ def edit_book(book_id):
     return render_template("view_book.html", book=book)
 
 
+@app.route("/delete_book/<book_id>")
+def delete_book(book_id):
+    mongo.db.books.remove({"_id": ObjectId(book_id)})
+    return redirect("/profile/<username>")
+
+
 @app.route("/logout")
 def logout():
     session.pop("user")
