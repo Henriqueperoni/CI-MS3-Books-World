@@ -22,11 +22,12 @@ nav {
 
 .logo {
     position: absolute;
+    top: 0;
     font-family: "Nunito", sans-serif !important;
-    padding-left: 60px;
     font-size: 2.1rem;
     font-weight: 800;
     letter-spacing: -2px;
+    padding-left: 60px;
 }
 
 .logo span {
@@ -161,7 +162,7 @@ footer {
 .container-login {
     position: relative;
     top: 50%;
-    transform: translatey(-50%);
+    transform: translateY(-50%)
 }
 
 .container-ilustration img {
@@ -287,18 +288,18 @@ footer {
 
 /* PROFILE CONTAINER */
 #profile-user {
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     margin-top: 5px;
     font-size: 1.5rem;
     font-weight: 600;
 }
 
-.books {
-    margin: 40px;
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly; */
+.books,
+.book-heading {
+    margin: 80px 40px 0 40px;
 }
 
 .book {
@@ -323,31 +324,45 @@ footer {
 
 /* View Book */
 
-.book-heading {
-    margin: 70px 40px 10px 40px;
-}
-
 .book-heading img {
-    width: 75%;
+    width: auto;
+    max-height: 380px;
     margin: 0 auto;
     display: flex;
 }
 
 .book-heading h1 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
 }
 
 .book-heading h3 {
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: -1px;
-    margin: 0;
+    margin: 0 0 10px 0;
+}
+
+.book-heading p {
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+.book-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
 }
 
 .edit-buttons {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
+}
+
+.edit-buttons ul {
+    display: flex;
 }
 
 .edit-buttons li {
@@ -381,7 +396,15 @@ footer {
 
 
 
-
+@media screen and (min-width: 1400px) {
+    .book-heading img {
+        max-height: 500px;
+    }
+    
+    .book-summary {
+        height: 500px;
+    }
+}
 
 @media screen and (max-width: 576px) {
     .books {
