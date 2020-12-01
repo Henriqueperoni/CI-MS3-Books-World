@@ -4,15 +4,24 @@
 	<div class="general-container row">
         <h3 class="deep-purple-text logo">books'<span>world</span></h3>
 
-		
+		<!-- <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button> -->
 
-        <div class="books row">
-            <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
-            <div class="book col s6 m4 l3 xl2">
-                        <img src="{{ book.img_url }}" alt="">
-                        <p>{{ book.book_name }}</p> 
-                        <p>{{ book.book_author }}</p> 
-                        <p>{{ book.book_review }}</p>
-                    </div>
+        <div class="book-heading row">
+            <div class="col s6 l4">
+                <img src="{{ book.img_url }}" alt="">
+            </div>
+            <div class="col s6 l4">
+                <h1>{{ book.book_name }}</h1> 
+                <h3>{{ book.book_author }}</h3>
+            </div>
+            <div class="edit-buttons col s4">
+                <ul>
+                    <li class="green darken-3"><a href="{{ url_for('profile', username=session['user']) }}">Done</a></li>
+                    <li class="blue darken-3"><a href="">Uptade</a></li>
+                    <li class="red darken-2"><a href="">Delete</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>{{ book.book_review }}</p>
 	</div>
 {% endblock %}
