@@ -139,10 +139,11 @@ def best_books(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     # get the session user's books from database
-    books = list(mongo.db.books.find())
+    book_lists = list(mongo.db.book_lists.find())
 
     if session["user"]:
-        return render_template("best_books.html", username=username, books=books)
+        return render_template(
+            "best_books.html", username=username, book_lists=book_lists)
 
     return redirect(url_for("login"))
 

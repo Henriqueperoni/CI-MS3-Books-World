@@ -41,5 +41,21 @@
 	<div class="general-container row">
         <h3 class="deep-purple-text logo">books'<span>world</span></h3>
         <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
+
+        {% for book in book_lists %}
+            <img style="width:15%" src="{{ book.img_url_1 }}" alt="">
+            <img style="width:15%" src="{{ book.img_url_2 }}" alt="">
+            <img style="width:15%" src="{{ book.img_url_3 }}" alt="">
+            <img style="width:15%" src="{{ book.img_url_4 }}" alt="">
+            <img style="width:15%" src="{{ book.img_url_5 }}" alt="">
+            <img style="width:15%" src="{{ book.img_url_6 }}" alt="">
+            <img style="width:15%" src="{{ book.img_url_7 }}" alt="">
+        {% endfor %}
+		<ul class="collapsible">
+			<li>
+				<div class="collapsible-header"><i class="fas fa-caret-down"></i>First</div>
+				<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+			</li>
+		</ul>
 	</div>
 {% endblock %}
