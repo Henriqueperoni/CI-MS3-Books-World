@@ -172,6 +172,16 @@ def add_list():
         return redirect("/best_books/<username>")
 
 
+@app.route("/discover")
+def discover():
+    book_lists = list(mongo.db.book_lists.find())
+    return render_template(
+            "discover.html", book_lists=book_lists)
+
+
+
+
+
 @app.route("/logout")
 def logout():
     session.pop("user")
