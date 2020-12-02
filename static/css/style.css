@@ -466,6 +466,26 @@ footer {
     margin: 5px;
 }
 
+/* Discover */
+.shared-lists h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+.shared-lists h3 {
+    font-size: 0.8rem;
+    margin: 0;
+    font-style: italic;
+}
+
+.shared-lists i {
+    display: flex;
+    align-self: center;
+}
+
 
 
 
