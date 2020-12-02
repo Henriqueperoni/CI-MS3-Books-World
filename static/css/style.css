@@ -181,6 +181,7 @@ footer {
     font-size: 1.1rem;
     width: 150px;
     height: 42px;
+    margin-bottom: 5px;
     border-radius: 20px;
     border: none;
     margin: 0 auto;
@@ -235,11 +236,13 @@ footer {
 .modal-books {
     position: relative;
     height: auto;
+    max-height: 600px;
     border: 10px solid #7952bf;
     box-shadow: 0 0 0 10px #fff;
     display: flex;
     justify-content: center;
-    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 @keyframes modal {
@@ -441,7 +444,27 @@ footer {
     margin-left: 5px;
 }
 
+/* Best Books */
+.container-book-lists {
+    margin-top: 80px;
 
+}
+
+.container-book-lists ul{
+    padding: 0 !important;
+}
+
+.container-book-lists p {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: 0.5px;
+}
+
+.book-list-covers img {
+    max-height: 150px;
+    margin: 5px;
+}
 
 
 
