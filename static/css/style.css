@@ -445,6 +445,16 @@ footer {
 }
 
 /* Best Books */
+.collapsible-header {
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+}
+
+.collapsible-body {
+    padding: 10px 10px 6px 10px;
+}
+
 .container-book-lists {
     margin-top: 80px;
 
@@ -457,7 +467,6 @@ footer {
 .container-book-lists p {
     font-size: 1rem;
     font-weight: 600;
-    line-height: 25px;
     letter-spacing: 0.5px;
 }
 
@@ -480,12 +489,6 @@ footer {
     margin: 0;
     font-style: italic;
 }
-
-.shared-lists i {
-    display: flex;
-    align-self: center;
-}
-
 
 
 

@@ -132,7 +132,7 @@ def edit_book(book_id):
 def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
     return redirect("/profile/<username>")
-    
+   
 
 @app.route("/best_books/<username>", methods=["GET", "POST"])
 def best_books(username):
@@ -172,14 +172,42 @@ def add_list():
         return redirect("/best_books/<username>")
 
 
+@app.route("/view_list/<list_name>")
+def view_list(list_name):
+    list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
+    return render_template("view_list.html", list=list)
+
+
+@app.route("/edit_list/<list_id>", methods=["GET", "POST"])
+def edit_list(list_id):
+    if request.method == "POST":
+        share_list = "on" if request.form.get("share_list") else "off"
+        edited_list = {
+            "list_name": request.form.get("list_name"),
+            "img_url_1": request.form.get("img_url_1"),
+            "img_url_2": request.form.get("img_url_2"),
+            "img_url_3": request.form.get("img_url_3"),
+            "img_url_4": request.form.get("img_url_4"),
+            "img_url_5": request.form.get("img_url_5"),
+            "img_url_6": request.form.get("img_url_6"),
+            "img_url_7": request.form.get("img_url_7"),
+            "img_url_8": request.form.get("img_url_8"),
+            "img_url_9": request.form.get("img_url_9"),
+            "img_url_10": request.form.get("img_url_10"),
+            "share_list": share_list,
+            "created_by": session["user"]
+        }
+        mongo.db.book_lists.update({"_id": ObjectId(list_id)}, edited_list)
+
+    list = mongo.db.book_lists.find_one({"_id": ObjectId(list_id)})
+    return render_template("view_list.html", list=list)
+
+
 @app.route("/discover")
 def discover():
     book_lists = list(mongo.db.book_lists.find())
     return render_template(
             "discover.html", book_lists=book_lists)
-
-
-
 
 
 @app.route("/logout")
