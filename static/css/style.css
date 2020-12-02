@@ -334,13 +334,12 @@ footer {
     color: #7952bf;
     background: none;
     border: none;
-    font-size: 25px;
+    font-size: 1.8rem;
     font-weight: 600;
     cursor: pointer;
-    margin: 5px;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 8px;
 }
 
 .close-modal-delete:focus {
