@@ -132,6 +132,7 @@ def edit_book(book_id):
 def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
     return redirect("/profile/<username>")
+    
 
 @app.route("/best_books/<username>", methods=["GET", "POST"])
 def best_books(username):
@@ -146,6 +147,30 @@ def best_books(username):
             "best_books.html", username=username, book_lists=book_lists)
 
     return redirect(url_for("login"))
+
+
+@app.route("/add_list", methods=["GET", "POST"])
+def add_list():
+    if request.method == "POST":
+        share_list = "on" if request.form.get("share_list") else "off"
+        list = {
+            "list_name": request.form.get("list_name"),
+            "img_url_1": request.form.get("img_url_1"),
+            "img_url_2": request.form.get("img_url_2"),
+            "img_url_3": request.form.get("img_url_3"),
+            "img_url_4": request.form.get("img_url_4"),
+            "img_url_5": request.form.get("img_url_5"),
+            "img_url_6": request.form.get("img_url_6"),
+            "img_url_7": request.form.get("img_url_7"),
+            "img_url_8": request.form.get("img_url_8"),
+            "img_url_9": request.form.get("img_url_9"),
+            "img_url_10": request.form.get("img_url_10"),
+            "share_list": share_list,
+            "created_by": session["user"]
+        }
+        mongo.db.book_lists.insert_one(list)
+        return redirect("/best_books/<username>")
+
 
 @app.route("/logout")
 def logout():
