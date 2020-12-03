@@ -2,61 +2,65 @@
 {% block content %}
     <div id="modal-review" class="container-modal row">
         <div class="modal-books white col s10 offset-s1 m6 offset-m3 xl4 offset-xl4">
-            <form class="row" method="POST" action="{{ url_for('add_list') }}">
+            <form class="row" method="POST" action="{{ url_for('edit_list', list_id=list._id) }}">
     
                 <!-- List Name-->
                 <div class="input-field col s12">
                     <label for="list_name">List Name:</label>
-                    <input id="list_name" name="list_name" type="text" class="validate" minlength="3" maxlength="50" required>
+                    <input id="list_name" name="list_name" type="text" class="validate" minlength="3" maxlength="50" value="{{ list.list_name }}" required>
                 </div>
 
                 <!-- Image URL's-->
                 <div class="input-field col s12">
                     <label for="img_url_1">Insert image URL</label>
-                    <input id="img_url_1" name="img_url_1" type="text" class="validate" minlength="5" maxlength="100"  required>
+                    <input id="img_url_1" name="img_url" type="text" class="validate" minlength="5" maxlength="100" value="{{ list.img_url[0] }}"  required>
                 </div>
                 <div class="input-field col s12">
                     <label for="img_url_2">Insert image URL</label>
-                    <input id="img_url_2" name="img_url_2" type="text" class="validate" minlength="5" maxlength="100"  required>
+                    <input id="img_url_2" name="img_url" type="text" class="validate" minlength="5" maxlength="100" value="{{ list.img_url[1] }}" required>
                 </div>
                 <div class="input-field col s12">
                     <label for="img_url_3">Insert image URL</label>
-                    <input id="img_url_3" name="img_url_3" type="text" class="validate" minlength="5" maxlength="100">
+                    <input id="img_url_3" name="img_url" type="text" class="validate" minlength="5" value="{{ list.img_url[2] }}" maxlength="100">
                 </div>
                 <div class="input-field col s12">
                     <label for="img_url4_">Insert image URL</label>
-                    <input id="img_url_4" name="img_url_4" type="text" class="validate" minlength="5" maxlength="100">
+                    <input id="img_url_4" name="img_url" type="text" class="validate" minlength="5" value="{{ list.img_url[3] }}" maxlength="100">
                 </div>
                 <div class="input-field col s12">
                     <label for="img_url_5">Insert image URL</label>
-                    <input id="img_url_5" name="img_url_5" type="text" class="validate" minlength="5" maxlength="100">
+                    <input id="img_url_5" name="img_url" type="text" class="validate" minlength="5" value="{{ list.img_url[4] }}" maxlength="100">
                 </div>
                 <div class="input-field col s12">
                     <label for="img_url_6">Insert image URL</label>
-                    <input id="img_url_6" name="img_url_6" type="text" class="validate" minlength="5" maxlength="100">
+                    <input id="img_url_6" name="img_url" type="text" class="validate" minlength="5" value="{{ list.img_url[5] }}" maxlength="100">
                 </div>
                 <div class="input-field col s12">
                     <label for="img_url_7">Insert image URL</label>
-                    <input id="img_url_7" name="img_url_7" type="text" class="validate" minlength="5" maxlength="100">
+                    <input id="img_url_7" name="img_url" type="text" class="validate" minlength="5" value="{{ list.img_url[6] }}" maxlength="100">
                 </div>
                 <div class="input-field col s12">
                     <label for="img_url_8">Insert image URL</label>
-                    <input id="img_url_8" name="img_url_8" type="text" class="validate" minlength="5" maxlength="100">
+                    <input id="img_url_8" name="img_url" type="text" class="validate" minlength="5" value="{{ list.img_url[7] }}" maxlength="100">
                 </div>
                 <div class="input-field col s12">
                     <label for="img_url_9">Insert image URL</label>
-                    <input id="img_url_9" name="img_url_9" type="text" class="validate" minlength="5" maxlength="100">
+                    <input id="img_url_9" name="img_url" type="text" class="validate" minlength="5" value="{{ list.img_url[8] }}" maxlength="100">
                 </div>
                 <div class="input-field col s12">
                     <label for="img_url_10">Insert image URL</label>
-                    <input id="img_url_10" name="img_url_10" type="text" class="validate" minlength="5" maxlength="100">
+                    <input id="img_url_10" name="img_url" type="text" class="validate" minlength="5" value="{{ list.img_url[9] }}" maxlength="100">
                 </div>
                 <div class="row">
                     <div class="switch col s12">
                         <label for="share_list">
-                        <input type="checkbox" id="share_list" name="share_list">
-                        <span class="lever"></span>
-                        Share
+                            {% if list.share_list == "on" %}
+                            <input type="checkbox" id="share_list" name="share_list" checked>
+                            {% else %}
+                            <input type="checkbox" id="share_list" name="share_list">
+                            {% endif %}
+                            <span class="lever"></span>
+                            Share
                         </label>
                     </div>
                 </div>
@@ -68,6 +72,20 @@
             </form>
             <!-- Close Modal -->
             <button class="close-modal">x</button>
+        </div>
+    </div>
+
+    <!-- Modal - Delete Book -->
+    <div id="modal-delete" class="container-modal-delete row">
+        <div class="modal-delete white ">
+            <h3>Delete Book</h3>
+            <p>Are you sure you want to delete the book?</p>
+            <div class="delete-buttons">
+                <a id="cancel-delete" class="grey darken-1 white-text">Cancel</a>
+                <a class="red darken-2 white-text" href="">Delete <i class="fas fa-trash-alt white-text"></i></a>
+            </div>
+            <!-- close modal -->
+            <button class="close-modal-delete">x</button>
         </div>
     </div>
         
@@ -87,7 +105,7 @@
             </div>
             <div class="row">
             <div class="edit-buttons col s12">
-                <a class="green darken-3 white-text" href="">
+                <a class="green darken-3 white-text" href="{{ url_for('best_books', username=session['user']) }}">
                     Done <i class="fas fa-check white-text"></i>
                 </a>
                 <a id="edit-book" class="blue darken-3 white-text">Edit <i class="fas fa-edit white-text"></i></a>
