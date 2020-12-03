@@ -73,30 +73,18 @@
         
 	<div class="general-container row">
         <h3 class="deep-purple-text logo">books'<span>world</span></h3>
-        <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
-
-        
             
         <div class="container-book-lists row">
-                    
-                        
-                            <div class="">
-                                <p>{{ list.list_name }}</p>
-                            </div>
-                            <div class="book-list-covers">
-                                <img src="{{ list.img_url_1 }}" alt="">
-                                <img src="{{ list.img_url_2 }}" alt="">
-                                <img src="{{ list.img_url_3 }}" alt="">
-                                <img src="{{ list.img_url_4 }}" alt="">
-                                <img src="{{ list.img_url_5 }}" alt="">
-                                <img src="{{ list.img_url_6 }}" alt="">
-                                <img src="{{ list.img_url_7 }}" alt="">
-                                <img src="{{ list.img_url_8 }}" alt="">
-                                <img src="{{ list.img_url_9 }}" alt="">
-                                <img src="{{ list.img_url_10 }}" alt="">
-                            </div>
-                        
-                
+            <div class="s12 center-align">
+                <h1>{{ list.list_name }}</h1>
+            </div>
+            <div class="row books-list center-align">
+                {% for book in list.img_url %}
+                    <div class="col s12 m6 l4 xl3">
+                        <img src="{{ book }}" alt="Book cover">
+                    </div>
+                {% endfor %}
+            </div>
             
         </div>
 	</div>
