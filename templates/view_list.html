@@ -13,21 +13,18 @@
                 <!-- Image URL's-->
                 <div class="input-field col s12 input_fields_wrap">
                         <label for="img_url">Insert image URL</label>
-                        <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100"  required>
+                        <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100" value="{{ list.img_url }}" required>
                     </div>
                 <!--add Ingredients bitton-->
                 <a class="btn add_field_button">Add More Fields</a>
-
-
                 
-
                 <div class="row">
                     <div class="switch col s12">
                         <label for="share_list">
                             {% if list.share_list == "on" %}
-                            <input type="checkbox" id="share_list" name="share_list" checked>
+                                <input type="checkbox" id="share_list" name="share_list" checked>
                             {% else %}
-                            <input type="checkbox" id="share_list" name="share_list">
+                                <input type="checkbox" id="share_list" name="share_list">
                             {% endif %}
                             <span class="lever"></span>
                             Share
