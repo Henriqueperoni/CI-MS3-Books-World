@@ -185,6 +185,13 @@ def edit_list(list_id):
     return render_template("view_list.html", list=list)
 
 
+@app.route("/delete_list/<list_id>")
+def delete_list(list_id):
+    mongo.db.book_lists.remove({"_id": ObjectId(list_id)})
+    return redirect("/best_books/<username>")
+
+
+
 @app.route("/discover")
 def discover():
     book_lists = list(mongo.db.book_lists.find())
