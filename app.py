@@ -182,14 +182,15 @@ def edit_list(list_id):
         mongo.db.book_lists.update({"_id": ObjectId(list_id)}, edited_list)
 
     list = mongo.db.book_lists.find_one({"_id": ObjectId(list_id)})
-    return render_template("view_list.html", list=list)
+    all_ingredients = range(0, len(list['img_url']))
+    return render_template(
+        "view_list.html", list=list, all_ingredients=all_ingredients)
 
 
 @app.route("/delete_list/<list_id>")
 def delete_list(list_id):
     mongo.db.book_lists.remove({"_id": ObjectId(list_id)})
     return redirect("/best_books/<username>")
-
 
 
 @app.route("/discover")
