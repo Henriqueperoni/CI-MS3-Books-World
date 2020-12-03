@@ -155,16 +155,7 @@ def add_list():
         share_list = "on" if request.form.get("share_list") else "off"
         list = {
             "list_name": request.form.get("list_name"),
-            "img_url_1": request.form.get("img_url_1"),
-            "img_url_2": request.form.get("img_url_2"),
-            "img_url_3": request.form.get("img_url_3"),
-            "img_url_4": request.form.get("img_url_4"),
-            "img_url_5": request.form.get("img_url_5"),
-            "img_url_6": request.form.get("img_url_6"),
-            "img_url_7": request.form.get("img_url_7"),
-            "img_url_8": request.form.get("img_url_8"),
-            "img_url_9": request.form.get("img_url_9"),
-            "img_url_10": request.form.get("img_url_10"),
+            "img_url": request.form.getlist("img_url"),
             "share_list": share_list,
             "created_by": session["user"]
         }
@@ -184,16 +175,7 @@ def edit_list(list_id):
         share_list = "on" if request.form.get("share_list") else "off"
         edited_list = {
             "list_name": request.form.get("list_name"),
-            "img_url_1": request.form.get("img_url_1"),
-            "img_url_2": request.form.get("img_url_2"),
-            "img_url_3": request.form.get("img_url_3"),
-            "img_url_4": request.form.get("img_url_4"),
-            "img_url_5": request.form.get("img_url_5"),
-            "img_url_6": request.form.get("img_url_6"),
-            "img_url_7": request.form.get("img_url_7"),
-            "img_url_8": request.form.get("img_url_8"),
-            "img_url_9": request.form.get("img_url_9"),
-            "img_url_10": request.form.get("img_url_10"),
+            "img_url": request.form.getlist("img_url"),
             "share_list": share_list,
             "created_by": session["user"]
         }

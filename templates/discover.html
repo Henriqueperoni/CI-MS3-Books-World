@@ -16,16 +16,9 @@
                                 </div>
                             </div>
                             <div class="book-list-covers collapsible-body deep-purple lighten-5">
-                                <img src="{{ list.img_url_1 }}" alt="">
-                                <img src="{{ list.img_url_2 }}" alt="">
-                                <img src="{{ list.img_url_3 }}" alt="">
-                                <img src="{{ list.img_url_4 }}" alt="">
-                                <img src="{{ list.img_url_5 }}" alt="">
-                                <img src="{{ list.img_url_6 }}" alt="">
-                                <img src="{{ list.img_url_7 }}" alt="">
-                                <img src="{{ list.img_url_8 }}" alt="">
-                                <img src="{{ list.img_url_9 }}" alt="">
-                                <img src="{{ list.img_url_10 }}" alt="">
+                                {% for book in list.img_url %}
+                                    <a href=""><img src="{{ book }}" alt=""></a>
+                                {% endfor %}
                             </div>
                         </li>
                     {% endif %}
