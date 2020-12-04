@@ -15,8 +15,8 @@
                         <label for="img_url">Insert image URL</label>
                         <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100" required>
                     </div>
-                <!--add Ingredients bitton-->
-                <a class="btn add_field_button">Add More Fields</a>
+                <!-- Add field button-->
+                <a class="btn green darken-3 white-text add-field-button">Add Book</a>
                 
                 <div class="row">
                     <div class="switch col s12">
@@ -42,8 +42,6 @@
         <h3 class="deep-purple-text logo">books'<span>world</span></h3>
         <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
 
-        
-            
         <div class="container-book-lists row">
             <ul class="collapsible col s12 m8 offset-m2">
                 {% for list in book_lists %}

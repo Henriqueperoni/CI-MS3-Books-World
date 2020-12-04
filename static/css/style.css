@@ -290,6 +290,9 @@ footer {
     cursor: pointer;
 }
 
+.add-field-button {
+    margin-left: 10px;
+}
 /* Delete Modal */
 .container-modal-delete {
     width: 100vw;
