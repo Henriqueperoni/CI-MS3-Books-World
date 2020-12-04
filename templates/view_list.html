@@ -11,10 +11,13 @@
                 </div>
 
                 <!-- Image URL's-->
+                {% for index in range(list|length-1) %}
                 <div class="input-field col s12 input_fields_wrap">
-                        <label for="img_url">Insert image URL</label>
-                        <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100" required>
-                    </div>
+                    <label for="img_url">Insert image URL</label>
+                    <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100" value="{{ list.img_url[index] }}" required>
+                    <a href="#" class="remove_field btn-small red darken-2">Remove</a>
+                </div>
+                {% endfor %}
                 <!-- Add field button-->
                 <a class="btn green darken-3 white-text add-field-button">Add Book</a>
                 
