@@ -17,7 +17,7 @@
                             </div>
                             <div class="book-list-covers collapsible-body deep-purple lighten-5">
                                 {% for book in list.img_url %}
-                                    <a href=""><img src="{{ book }}" alt=""></a>
+                                    <a href="{{ url_for('view_list', list_name=list._id) }}"><img src="{{ book }}" alt=""></a>
                                 {% endfor %}
                             </div>
                         </li>
