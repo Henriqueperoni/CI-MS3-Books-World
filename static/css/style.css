@@ -20,6 +20,12 @@ nav {
   box-shadow: none;
 }
 
+nav img{
+    width: 40px;
+    margin-top: 12px;
+    margin-left: 60px;
+}
+
 .logo {
     position: absolute;
     top: 0;
@@ -27,7 +33,7 @@ nav {
     font-size: 2.1rem;
     font-weight: 800;
     letter-spacing: -2px;
-    padding-left: 60px;
+    margin-left: 5px;
 }
 
 .logo span {
@@ -414,13 +420,6 @@ footer {
     text-align: justify;
 }
 
-.book-summary {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 400px;
-}
-
 .edit-buttons,
 .delete-buttons {
     display: flex;
@@ -536,9 +535,6 @@ footer {
         max-height: 500px;
     }
     
-    .book-summary {
-        height: 500px;
-    }
 }
 
 @media screen and (max-width: 576px) {
