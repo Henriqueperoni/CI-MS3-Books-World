@@ -478,13 +478,13 @@ footer {
     margin: 5px;
 }
 
-/* Vies List */
+/* View List */
 .container-book-lists h1 {
     font-size: 3rem;
     font-family: 'Nunito';
     font-weight: 600;
     letter-spacing: -1px;
-    color: #673ab7;
+    margin: 0
 }
 
 .books-list img {
@@ -494,7 +494,18 @@ footer {
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15)
 }
 
+.push-down {
+    margin-bottom: 20px;
+}
+
 /* Discover */
+
+.container-book-lists h3 {
+    font-size: 0.8rem;
+    margin: 0;
+    font-style: italic;
+}
+
 .shared-lists h2 {
     font-size: 1.1rem;
     font-weight: 500;

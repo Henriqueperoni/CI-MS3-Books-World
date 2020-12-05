@@ -11,7 +11,7 @@
                 </div>
 
                 <!-- Image URL's-->
-                {% for index in range(list|length-1) %}
+                {% for index in range(list.img_url|length) %}
                 <div class="input-field col s12 input_fields_wrap">
                     <label for="img_url">Insert image URL</label>
                     <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100" value="{{ list.img_url[index] }}" required>
@@ -63,8 +63,11 @@
         <h3 class="deep-purple-text logo">books'<span>world</span></h3>
             
         <div class="container-book-lists row">
-            <div class="s12 center-align">
+            <div class="push-down col s12 center-align deep-purple-text">
                 <h1>{{ list.list_name }}</h1>
+                {% if session.user|lower != list.created_by|lower %}
+                    <h3>by: {{ list.created_by.capitalize() }}</h3>
+                {% endif %}
             </div>
             <div class="row books-list center-align">
                 {% for book in list.img_url %}
@@ -73,14 +76,17 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="row">
-            <div class="edit-buttons col s12">
-                <a class="green darken-3 white-text" href="{{ url_for('best_books', username=session['user']) }}">
-                    Done <i class="fas fa-check white-text"></i>
-                </a>
-                <a id="edit-book" class="blue darken-3 white-text">Edit <i class="fas fa-edit white-text"></i></a>
-                <a id="delete-book" class="red darken-2 white-text">Delete <i class="fas fa-trash-alt white-text"></i></a>
-            </div>
+                <div class="row">
+                    <div class="edit-buttons col s12">
+                        <a class="green darken-3 white-text" href="{{ url_for('best_books', username=session['user']) }}">
+                            Done <i class="fas fa-check white-text"></i>
+                        </a>
+                        {% if session.user|lower == list.created_by|lower %}
+                            <a id="edit-book" class="blue darken-3 white-text">Edit <i class="fas fa-edit white-text"></i></a>
+                            <a id="delete-book" class="red darken-2 white-text">Delete <i class="fas fa-trash-alt white-text"></i></a>
+                        {% endif %} 
+                    </div>
+                </div>
         </div>
 	</div>
 {% endblock %}
