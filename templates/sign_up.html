@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 	<div class="general-container row">
-        <h3 class="deep-purple-text logo">books'<span>world</span></h3>
-		<div class="container-login col s12 m6">
+        <div class="container-logos">
+            <h3 class="deep-purple-text logo">books'<span>world</span></h3>
+        </div>
+
+		<div class="container-login col s12 m8 offset-m2 l6">
 			<div class="row">
-				<form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('sign_up') }}" >
+				<form class="col s12 l8 offset-l2" method="POST" action="{{ url_for('sign_up') }}" >
 					<div>
 
 						<!-- username -->
@@ -31,7 +34,6 @@
                         <button type="submit" class="btn-form white-text deep-purple">
 	                        Register <i class="fas fa-sign-in-alt white-text"></i>
 	                    </button>
-						
 					</div>
 				</form>
 			</div>
