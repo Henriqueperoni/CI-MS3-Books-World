@@ -39,10 +39,13 @@
     </div>
         
 	<div class="general-container row">
-        <h3 class="deep-purple-text logo">books'<span>world</span></h3>
+        <div class="container-logos">
+            <img class="logo-img hide-on-med-and-up" src="static/images/logo1.png" alt="Logo">
+            <h3 class="deep-purple-text logo hide-on-small-only">books'<span class="black-text">world</span></h3>
+        </div>
 
 		<div id="profile-user" class="deep-purple-text">
-            {{ username.capitalize() }}'s Profile
+            Hello, {{ username.capitalize() }}
         </div>
 
         <div class="books row">
@@ -52,8 +55,7 @@
                     <div class="book col s6 m4 l3 xl2">
                         <a href="{{ url_for('view_book', book_name=book._id) }}"><img src="{{ book.img_url }}" alt=""></a>
                         <p>{{ book.book_name }}</p> 
-                        <p>{{ book.book_author }}</p> 
-                        <!-- {{ book.book_review }} -->
+                        <p>{{ book.book_author }}</p>
                     </div>
                 {% endif%}
             {% endfor %}
