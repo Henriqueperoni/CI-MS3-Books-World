@@ -6,7 +6,20 @@
             <a href="{{ url_for('home') }}"><h3 class="deep-purple-text logo">books'<span class="black-text">world</span></h3></a>
         </div>
 
+        <div class="container-search col s12 m10 offset-m1 l6 offset-l6">
+            <form action="{{ url_for('search') }}" method="post" >
+                <input id="search" name="query" type="text" placeholder="Search:" required>
+                <button type="submit">
+                    <i class="fas fa-search deep-purple white-text"></i>
+                </button>
+                <a href="{{ url_for('discover') }}">
+                    <i class="fas fa-redo-alt deep-purple white-text"></i>
+                </a>
+            </form>
+        </div> 
+
         <div class="container-book-lists row">
+            {% if book_lists|length > 0 %}
             <ul class="collapsible col s12 m8 offset-m2">
                 {% for list in book_lists %}
                     {% if list.share_list == "on" %}
@@ -26,6 +39,9 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            {% else %}
+            <h2 class="center-align red-text">No result found</h2>
+            {% endif %}
         </div>
 	</div>
 {% endblock %}

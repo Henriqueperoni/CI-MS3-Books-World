@@ -538,6 +538,52 @@ footer {
     font-style: italic;
 }
 
+.container-search {
+    margin: 80px 0 20px 0;
+}
+
+.container-search form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 15px;
+    box-shadow: 2px 5px 15px 0px rgba(0,0,0,0.30);
+}
+
+.container-search i {
+    height: 35px;
+    width: 50px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+    transition: .3s
+}
+
+.container-search button {
+    margin: 5px;
+    border: none;
+    background: transparent;
+}
+
+.container-search a {
+    margin-right: 15px;
+}
+
+.container-search i:hover {
+    transform: scale(1.1);
+}
+
+#search {
+    border-bottom: none;
+    margin: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 
 
 

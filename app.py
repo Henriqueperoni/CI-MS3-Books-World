@@ -195,8 +195,14 @@ def delete_list(list_id):
 @app.route("/discover")
 def discover():
     book_lists = list(mongo.db.book_lists.find())
-    return render_template(
-            "discover.html", book_lists=book_lists)
+    return render_template("discover.html", book_lists=book_lists)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    book_lists = list(mongo.db.book_lists.find({"$text": {"$search": query}}))
+    return render_template("discover.html", book_lists=book_lists)
 
 
 @app.route("/logout")
