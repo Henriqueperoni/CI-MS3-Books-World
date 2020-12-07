@@ -2,7 +2,7 @@
 {% block content %}
 	<div class="general-container row">
         <div class="container-logos">
-            <h3 class="deep-purple-text logo">books'<span class="black-text">world</span></h3>
+            <a href="{{ url_for('home') }}"><h3 class="deep-purple-text logo">books'<span class="black-text">world</span></h3></a>
         </div>
 
 		<div class="container-login col s12 m8 offset-m2 l6">
@@ -40,7 +40,7 @@
 		</div>
 
 		<div class="container-ilustration col m6 hide-on-med-and-down">
-            <img src="static/images/sign_up.png" alt="">
+            <img src="static/images/sign_up.png" alt="Illustration showing a laptop screen with a locker and an input field with hashes characters">
 		</div>
         <div class="account">
             <p>Already have an account? <a href="{{ url_for('login') }}">Log In</a></p>

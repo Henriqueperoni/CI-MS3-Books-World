@@ -40,8 +40,7 @@
         
 	<div class="general-container row">
         <div class="container-logos">
-            <img class="logo-img hide-on-med-and-up" src="static/images/logo1.png" alt="Logo">
-            <h3 class="deep-purple-text logo hide-on-small-only">books'<span class="black-text">world</span></h3>
+            <a href="{{ url_for('home') }}"><h3 class="deep-purple-text logo">books'<span class="black-text">world</span></h3></a>
         </div>
         <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
 
@@ -55,7 +54,7 @@
                             </div>
                             <div class="book-list-covers collapsible-body deep-purple lighten-5">
                                 {% for book in list.img_url %}
-                                    <a href="{{ url_for('view_list', list_name=list._id) }}"><img src="{{ book }}" alt=""></a>
+                                    <a href="{{ url_for('view_list', list_name=list._id) }}"><img src="{{ book }}" alt="Book cover"></a>
                                 {% endfor %}
                             </div>
                         </li>

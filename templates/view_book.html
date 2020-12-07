@@ -3,13 +3,12 @@
     
 	<div class="general-container row">
         <div class="container-logos">
-            <img class="logo-img hide-on-med-and-up" src="static/images/logo1.png" alt="Logo">
-            <h3 class="deep-purple-text logo hide-on-small-only">books'<span class="black-text">world</span></h3>
+            <a href="{{ url_for('home') }}"><h3 class="deep-purple-text logo">books'<span class="black-text">world</span></h3></a>
         </div>
 
         <div class="book-heading row">
             <div class="col s12 l5">
-                <img src="{{ book.img_url }}" alt="">
+                <img src="{{ book.img_url }}" alt="{{ book.book_name }}'s cover">
             </div>
             <div class="book-summary col s12 l7">
                 <div>
