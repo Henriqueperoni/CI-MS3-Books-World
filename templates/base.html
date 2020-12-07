@@ -61,20 +61,18 @@
 		{% endif %}
 	</ul>
 
-    <section>
+    <section class="row">
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <div class="row white-text deep-purple flashes">
-                        <p class="">{{ message }}</p>
+                    <div class="col s10 offset-s1 m8 offset-m2 l4 offset-l4 white-text deep-purple flashes">
+                        <p>{{ message }}</p>
                     </div>
                 {% endfor %}
             {% endif %}
         {% endwith %}
     </section>
-
-    
 
     <main>
         {% block content %}

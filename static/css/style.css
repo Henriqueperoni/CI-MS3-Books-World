@@ -343,6 +343,12 @@ footer {
     margin: 20px 5px;
 }
 
+
+.delete-buttons a {
+    width: 95px;
+    height: 40px;
+}
+
 @keyframes modal-delete {
     from {
         opacity: 0;
@@ -402,6 +408,12 @@ footer {
     cursor: pointer;
     margin: 0 auto;
     display: flex;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    transition: 0.2s;
+}
+
+.book img:active {
+    transform: scale(1.05);
 }
 
 .book p {
@@ -418,6 +430,7 @@ footer {
     max-height: 375px;
     margin: 0 auto;
     display: flex;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
 }
 
 .book-heading h1 {
@@ -447,21 +460,35 @@ footer {
 
 .edit-buttons a,
 .delete-buttons a {
-    width: 110px;
-    height: 50px;
-    justify-content: center;
     display: flex;
+    justify-content: center;
     align-items: center;
     margin: 10px;
     font-size: 1.1rem;
     font-weight: 500;
     border-radius: 2px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit-buttons a {
+    width: 110px;
+    height: 50px;
 }
 
 .edit-buttons i,
 .delete-buttons i {
     margin-left: 5px;
+}
+
+.edit-buttons a:hover,
+.delete-buttons a:hover {
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.30);
+}
+
+.edit-buttons a:active,
+.delete-buttons a:active {
+    transform: scale(0.9);
 }
 
 /* Best Books */
@@ -509,7 +536,7 @@ footer {
     height: 305px;
     width: 220px;
     margin-bottom: 15px;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15)
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
 }
 
 .push-down {
@@ -549,7 +576,7 @@ footer {
     padding-right: 5px;
     padding-left: 5px;
     border-radius: 15px;
-    box-shadow: 2px 5px 15px 0px rgba(0,0,0,0.30);
+    box-shadow: 2px 5px 20px -5px rgba(0,0,0,0.25);
 }
 
 .container-search i {
@@ -593,13 +620,44 @@ footer {
 
 
 
+.flashes {
+    position: relative;
+    text-align: center;
+    transform: translateY(80px);
+    margin-bottom: 20px;
+    padding: 0 10px;
+    max-wdth: 500px;
+    border-radius: 2px;
+    box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.35);
+    z-index: 1;
+    animation: flashes .8s;
+}
+
+@keyframes flashes {
+    from {
+        opacity: 0;
+        transform: translateY(0)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(80px);
+    }
+}
+
+.flashes p {
+    line-height: 35px;
+    font-size: 1.4rem;
+}
 
 
 @media screen and (min-width: 1400px) {
     .book-heading img {
         max-height: 500px;
     }
-    
+
+    /* .flashes {
+        transform: translatey(100px);
+    } */
 }
 
 @media screen and (max-width: 576px) {
@@ -644,28 +702,12 @@ footer {
         height: 390px;
         width: 280px;
     }
-
 }
 
 
 
 
 
-.flashes {
-    position: relative;
-    transform: translatey(100px);
-    text-align: center;
-    padding: 0 10px;
-    max-width: 500px;
-    border-radius: 20px;
-    box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.55);
-    z-index: 1;
-}
-
-.flashes p {
-    line-height: 35px;
-    font-size: 1.4rem;
-}
 
 
 
