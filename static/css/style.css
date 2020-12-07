@@ -37,7 +37,7 @@ nav img{
     font-size: 2.1rem;
     font-weight: 800;
     letter-spacing: -2px;
-    margin-left: 5px;
+    margin-left: 60px;
 }
 
 nav ul a {
@@ -491,7 +491,8 @@ footer {
 }
 
 .book-list-covers img {
-    max-height: 150px;
+    height: 165px;
+    width: 120px;
     margin: 5px;
 }
 
@@ -566,6 +567,10 @@ footer {
     .books,
     .book-heading {
     margin: 80px 5px 0 5px;
+    }
+
+    .book {
+        height: 220px;
     }
 
     .book img {
