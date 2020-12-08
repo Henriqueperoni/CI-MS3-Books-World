@@ -43,7 +43,7 @@
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
 				{% else %}
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a class="sign-up" href="{{ url_for('sign_up') }}">Sign Up</a></li>
+                    <li><a class="sign-up deep-purple-text" href="{{ url_for('sign_up') }}">Sign Up</a></li>
 				{% endif %}
 			</ul>
 		</div>
@@ -58,6 +58,7 @@
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
 		{% else %}
             <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
 		{% endif %}
 	</ul>
 

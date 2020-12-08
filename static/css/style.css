@@ -7,7 +7,7 @@
 }
 
 body {
-  background: url("/static/images/bg.png");
+  background: url("/static/images/bg-l.png");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Poppins", sans-serif;
@@ -59,36 +59,35 @@ nav ul a:hover {
 
 .sign-up {
     display: inline;
-    border: 3px solid #e44646;
-    border-radius: 30px;
+    border: 1px solid #000000;
+    background: #ececec;
+    border-radius: 5px;
     padding: 8px 10px;
     margin-right: 10px;
-    font-weight: 800;
-    background: linear-gradient(to right, #ff4000, #ff9500);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    transition: .3s;
 }
 
 .sign-up:hover {
-    background: linear-gradient(to right, #ff4000, #ff9500);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    box-shadow: 0px 0px 15px 0px rgba(256, 256, 256, .60);
+    background: #fff;
 }
 
 .intro-img {
     position: absolute;
     right: 5%;
-    bottom: 5%;
-    height: 500px;
-    width: 500px;
+    bottom: 10%;
+    height: 400px;
+    width: 400px;
     object-fit: contain;
 }
 
 .intro-text {
     position:absolute;
     left: 8%;
-    top: 20%;
+    top: 18%;
     width: 30%;
+    max-width: 390px;
 }
 
 .intro-text h2 {
@@ -100,6 +99,12 @@ nav ul a:hover {
     margin: 10px auto;
     justify-content: center;
     width: 100px;
+}
+
+.intro-text > p > span {
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: -1px;
 }
 
 footer {
@@ -488,7 +493,8 @@ footer {
 }
 
 .edit-buttons a:active,
-.delete-buttons a:active {
+.delete-buttons a:active,
+.sign-up:active {
     transform: scale(0.9);
 }
 
@@ -522,6 +528,11 @@ footer {
     height: 165px;
     width: 120px;
     margin: 5px;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
 }
 
 .switch i {
@@ -672,18 +683,65 @@ footer {
 
 
 @media screen and (min-width: 1400px) {
+    body {
+        background: url("/static/images/bg-xl.png");
+        background-size: cover;
+    }
+
+    .intro-img {
+        height: 500px;
+        width: 500px;
+    }
     .book-heading img {
         max-height: 500px;
     }
+}
 
-    /* .flashes {
-        transform: translatey(100px);
-    } */
+@media screen and (max-width: 1100px) {
+    body {
+        background:  url("/static/images/bg-m.png");
+    }
+
+    .intro-text {
+        width: 50%;
+        max-width: 420px;
+    }
+
+    .intro-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .intro-text p {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 972px) {
+    body {
+        background:  url("/static/images/bg-m1.png");
+    }
 }
 
 @media screen and (max-width: 576px) {
     .logo-name {
         margin-left: 40px;
+    }
+    
+    body {
+        background: linear-gradient(180deg, #683DE3 0%, #DAD1F5 100%);
+        height: 100vh;
+    }
+
+    .intro-text {
+        width: 90%;
+    }
+
+    .intro-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .intro-text p {
+        font-size: 1.2rem;
     }
     .general-container {
         width: 95%;
@@ -705,10 +763,6 @@ footer {
 
     .book p {
         max-width: 110px;
-    }
-
-    .book-heading h1 {
-        font-size: 2rem;
     }
 
     .book-summary {
