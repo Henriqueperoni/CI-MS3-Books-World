@@ -140,7 +140,7 @@ def best_books(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     # get the session user's books from database
-    book_lists = list(mongo.db.book_lists.find())
+    book_lists = list(mongo.db.book_lists.find({'created_by': username}))
 
     if session["user"]:
         return render_template(

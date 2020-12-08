@@ -45,22 +45,35 @@
         <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
 
         <div class="container-book-lists row">
+            {% if book_lists|length > 0 %}
             <ul class="collapsible col s12 l8 offset-l2">
                 {% for list in book_lists %}
-                    {% if session.user|lower == list.created_by|lower %}
-                        <li>
-                            <div class="collapsible-header white-text deep-purple lighten-1"><i class="fas fa-caret-down white-text"></i>
-                                <p>{{ list.list_name }}</p>
-                            </div>
-                            <div class="book-list-covers collapsible-body deep-purple lighten-5">
-                                {% for book in list.img_url %}
-                                    <a href="{{ url_for('view_list', list_name=list._id) }}"><img src="{{ book }}" alt=""></a>
-                                {% endfor %}
-                            </div>
-                        </li>
-                        {% endif %}
+                    <li>
+                        <div class="collapsible-header white-text deep-purple lighten-1"><i class="fas fa-caret-down white-text"></i>
+                            <p>{{ list.list_name }}</p>
+                        </div>
+                        <div class="book-list-covers collapsible-body deep-purple lighten-5">
+                            {% for book in list.img_url %}
+                                <a href="{{ url_for('view_list', list_name=list._id) }}"><img src="{{ book }}" alt=""></a>
+                            {% endfor %}
+                        </div>
+                    </li>
                 {% endfor %}
             </ul>
+            {% else %}
+                <div class="welcome-user">
+                    <h2>Hello, {{ username.capitalize() }}</h2>
+                    <p>Here you can create any list of books you want:</p>
+                    <ul>
+                        <li>Best books you ever read</li>
+                        <li>Books you want to buy</li>
+                        <li>Books you want to read in the next year</li>
+                        <li>Books you think more people should read</li>
+                    </ul>
+                    <p>In short, any list you want to create. And if you also want to share it with other users you can do it.</p>
+                    <p>Click in the add button on the right top corner and create your first list</p>
+                </div>
+            {% endif %}
         </div>
 	</div>
 {% endblock %}

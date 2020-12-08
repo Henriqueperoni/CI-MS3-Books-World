@@ -314,6 +314,7 @@ footer {
 
 .add-field-button {
     margin-left: 10px;
+    margin-bottom: 5px;
 }
 /* Delete Modal */
 .container-modal-delete {
@@ -523,6 +524,17 @@ footer {
     margin: 5px;
 }
 
+.welcome-user {
+    text-align: center;
+    padding: 5px;
+}
+
+.welcome-user ul {
+    display: inline-block;
+    text-align: left;
+    margin: 20px 0;
+}
+
 /* View List */
 .container-book-lists h1 {
     font-size: 3rem;
@@ -701,6 +713,11 @@ footer {
     .books-list img {
         height: 390px;
         width: 280px;
+    }
+
+    .welcome-user h2 {
+        font-size: 2.5rem;
+        margin-top: 0;
     }
 }
 
