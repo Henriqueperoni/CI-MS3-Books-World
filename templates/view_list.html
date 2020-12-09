@@ -65,7 +65,7 @@
         </div>
             
         <div class="container-book-lists row">
-            <div class="push-down col s12 center-align deep-purple-text">
+            <div class="col s12 center-align deep-purple-text">
                 <h1>{{ list.list_name }}</h1>
                 {% if session.user|lower != list.created_by|lower %}
                     <h3>by: {{ list.created_by.capitalize() }}</h3>

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
+/*----------------- GENERAL -------------------*/
 * {
   padding: 0;
   margin: 0;
@@ -13,8 +14,19 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* Base template */
+/* Scroll Bar */
+::-webkit-scrollbar
+{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(transparent, #7952bf);
+    border-radius: 6px;
+}
 
+/*----------------- BASE TEMPLATE -------------------*/
+/* Navbar */
 nav {
   background: transparent;
   box-shadow: none;
@@ -57,8 +69,11 @@ nav ul a:hover {
     justify-content: space-evenly;
 }
 
+/* Main */
 .sign-up {
     display: inline;
+    width: 100px;
+    justify-content: center;
     border: 1px solid #000000;
     background: #ececec;
     border-radius: 5px;
@@ -94,19 +109,18 @@ nav ul a:hover {
     font-size: 2rem;
 }
 
-.intro-text a {
-    display: flex;
-    margin: 10px auto;
-    justify-content: center;
-    width: 100px;
-}
-
 .intro-text > p > span {
     font-weight: 600;
     font-size: 1.05rem;
     letter-spacing: -1px;
 }
 
+.intro-text a {
+    display: flex;
+    margin: 10px auto;
+}
+
+/* Footer */
 footer {
     position: absolute;
     bottom: 0;
@@ -144,8 +158,7 @@ footer {
     color: #f00;
 }
 
-/* Sign Up */
-
+/*--------------- GENERAL CONTAINER -----------------*/
 .general-container {
     height: 80%;
     width: 80%;
@@ -157,16 +170,6 @@ footer {
     border-radius: 20px;
     box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.55);
     overflow-y: scroll;
-}
-
-::-webkit-scrollbar
-{
-    width: 10px;
-}
-::-webkit-scrollbar-thumb
-{
-    background: linear-gradient(transparent, #7952bf);
-    border-radius: 6px;
 }
 
 .container-logos {
@@ -184,7 +187,7 @@ footer {
     letter-spacing: -2px;
     margin: 0 0 0 5px;
 }
-
+/*--------------- SIGN UP / LOGIN -----------------*/
 .container-ilustration,
 .container-login {
     position: relative;
@@ -240,10 +243,261 @@ footer {
     cursor: pointer;
 }
 
-/* Profile */
+/*----------------- PROFILE -------------------*/
+#profile-user {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
 
-/* Modals */
-/* Book review and edit modal */
+.books,
+.book-heading {
+    margin: 80px 40px 0 40px;
+}
+
+.book {
+    height: 250px;
+}
+
+.book img {
+    height: 180px;
+    width: 130px;
+    display: flex;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.book img:active {
+    transform: scale(1.05);
+}
+
+.book p {
+    max-width: 130px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin: 0 auto
+}
+
+/*----------------- VIEW BOOK -------------------*/
+.book-heading img {
+    max-height: 375px;
+    width: auto;
+    display: flex;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+}
+
+.book-heading h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+}
+
+.book-heading h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin: 0 0 10px 0;
+}
+
+.book-heading p {
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+.edit-buttons,
+.delete-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.edit-buttons a,
+.delete-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit-buttons a {
+    width: 110px;
+    height: 50px;
+}
+
+.edit-buttons i,
+.delete-buttons i {
+    margin-left: 5px;
+}
+
+.edit-buttons a:hover,
+.delete-buttons a:hover {
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.30);
+}
+
+.edit-buttons a:active,
+.delete-buttons a:active,
+.sign-up:active {
+    transform: scale(0.9);
+}
+
+/*----------------- BEST BOOKS -------------------*/
+.collapsible-header {
+    align-items: center;
+    min-height: 70px;
+}
+
+.collapsible-body {
+    padding: 10px 10px 5px 10px;
+}
+
+.container-book-lists {
+    margin-top: 80px;
+}
+
+.container-book-lists ul {
+    padding: 0 !important;
+}
+
+.container-book-lists h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.book-list-covers img {
+    height: 165px;
+    width: 120px;
+    margin: 5px;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+}
+
+.switch i {
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
+.welcome-user {
+    text-align: center;
+    padding: 5px;
+}
+
+.welcome-user ul {
+    display: inline-block;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.welcome-user li {
+    list-style-type: circle !important;
+}
+
+/*----------------- VIEW LIST -------------------*/
+.container-book-lists > div {
+    margin-bottom: 20px
+}
+
+.container-book-lists h1 {
+    font-size: 3rem;
+    font-family: 'Nunito';
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.books-list img {
+    height: 305px;
+    width: 220px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+}
+
+/*----------------- DISCOVER -------------------*/
+.container-book-lists h3 {
+    font-size: 0.8rem;
+    margin: 0;
+    font-style: italic;
+}
+
+.shared-lists h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+.shared-lists h3 {
+    font-size: 0.8rem;
+    margin: 0;
+    font-style: italic;
+}
+
+.container-search {
+    margin: 80px 0 20px 0;
+}
+
+.container-search form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 15px;
+    box-shadow: 2px 5px 20px -5px rgba(0,0,0,0.25);
+}
+
+.container-search i {
+    height: 35px;
+    width: 50px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+    transition: .3s
+}
+
+.container-search button {
+    margin: 5px;
+    border: none;
+    background: transparent;
+}
+
+.container-search a {
+    margin-right: 15px;
+}
+
+.container-search i:hover {
+    transform: scale(1.1);
+}
+
+#search {
+    border-bottom: none;
+    margin: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/*----------------- MODALS -------------------*/
+/* Create and edit modal */
 .container-modal {
     width: 100vw;
     height: 100vh;
@@ -321,6 +575,7 @@ footer {
     margin-left: 10px;
     margin-bottom: 5px;
 }
+
 /* Delete Modal */
 .container-modal-delete {
     width: 100vw;
@@ -386,271 +641,7 @@ footer {
     background: #fff;
 }
 
-/* PROFILE CONTAINER */
-#profile-user {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 5px;
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-.books,
-.book-heading {
-    margin: 80px 40px 0 40px;
-}
-
-.book {
-    height: 250px;
-}
-
-.book img {
-    height: 180px;
-    width: 130px;
-    margin-bottom: -5px;
-    cursor: pointer;
-    margin: 0 auto;
-    display: flex;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
-    transition: 0.2s;
-}
-
-.book img:active {
-    transform: scale(1.05);
-}
-
-.book p {
-    max-width: 130px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    margin: 0 auto
-}
-
-/* View Book */
-
-.book-heading img {
-    width: auto;
-    max-height: 375px;
-    margin: 0 auto;
-    display: flex;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
-}
-
-.book-heading h1 {
-    font-size: 2.5rem;
-    margin: 0 0 10px 0;
-}
-
-.book-heading h3 {
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: -1px;
-    margin: 0 0 10px 0;
-}
-
-.book-heading p {
-    font-size: 0.95rem;
-    text-align: justify;
-}
-
-.edit-buttons,
-.delete-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.edit-buttons a,
-.delete-buttons a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.edit-buttons a {
-    width: 110px;
-    height: 50px;
-}
-
-.edit-buttons i,
-.delete-buttons i {
-    margin-left: 5px;
-}
-
-.edit-buttons a:hover,
-.delete-buttons a:hover {
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.30);
-}
-
-.edit-buttons a:active,
-.delete-buttons a:active,
-.sign-up:active {
-    transform: scale(0.9);
-}
-
-/* Best Books */
-.collapsible-header {
-    display: flex;
-    align-items: center;
-    min-height: 70px;
-}
-
-.collapsible-body {
-    padding: 10px 10px 6px 10px;
-}
-
-.container-book-lists {
-    margin-top: 80px;
-}
-
-.container-book-lists ul {
-    padding: 0 !important;
-}
-
-.container-book-lists p {
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.book-list-covers img {
-    height: 165px;
-    width: 120px;
-    margin: 5px;
-}
-
-.switch {
-    display: flex;
-    align-items: center;
-}
-
-.switch i {
-    font-size: 1.5rem;
-    margin: 5px;
-}
-
-.welcome-user {
-    text-align: center;
-    padding: 5px;
-}
-
-.welcome-user ul {
-    display: inline-block;
-    text-align: left;
-    margin: 20px 0;
-}
-
-.welcome-user li {
-    list-style-type: circle !important;
-}
-
-/* View List */
-.container-book-lists h1 {
-    font-size: 3rem;
-    font-family: 'Nunito';
-    font-weight: 600;
-    letter-spacing: -1px;
-    margin: 0
-}
-
-.books-list img {
-    height: 305px;
-    width: 220px;
-    margin-bottom: 15px;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
-}
-
-.push-down {
-    margin-bottom: 20px;
-}
-
-/* Discover */
-
-.container-book-lists h3 {
-    font-size: 0.8rem;
-    margin: 0;
-    font-style: italic;
-}
-
-.shared-lists h2 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    margin: 0;
-    margin-bottom: 2px;
-}
-
-.shared-lists h3 {
-    font-size: 0.8rem;
-    margin: 0;
-    font-style: italic;
-}
-
-.container-search {
-    margin: 80px 0 20px 0;
-}
-
-.container-search form {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    padding-right: 5px;
-    padding-left: 5px;
-    border-radius: 15px;
-    box-shadow: 2px 5px 20px -5px rgba(0,0,0,0.25);
-}
-
-.container-search i {
-    height: 35px;
-    width: 50px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    outline: none;
-    cursor: pointer;
-    transition: .3s
-}
-
-.container-search button {
-    margin: 5px;
-    border: none;
-    background: transparent;
-}
-
-.container-search a {
-    margin-right: 15px;
-}
-
-.container-search i:hover {
-    transform: scale(1.1);
-}
-
-#search {
-    border-bottom: none;
-    margin: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-
-
-
-
-
-
-
-
+/*----------------- FLASHES -------------------*/
 .flashes {
     position: relative;
     text-align: center;
@@ -749,7 +740,7 @@ footer {
 
     .books,
     .book-heading {
-    margin: 80px 5px 0 5px;
+        margin: 80px 5px 0 5px;
     }
 
     .book {
@@ -778,22 +769,8 @@ footer {
         width: 280px;
     }
 
-    .container-book-lists {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
-
     .welcome-user h2 {
         font-size: 2.5rem;
         margin-top: 0;
     }
 }
-
-
-
-
-
-
-
-
