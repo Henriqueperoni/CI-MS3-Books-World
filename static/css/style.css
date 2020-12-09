@@ -212,7 +212,7 @@ footer {
     font-size: 1.1rem;
     width: 150px;
     height: 42px;
-    margin-bottom: 5px;
+    margin-bottom: 5px !important;
     border-radius: 20px;
     border: none;
     margin: 0 auto;
