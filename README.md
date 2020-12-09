@@ -72,24 +72,25 @@ Instead of create a lot a functionality and decide to create a few functionaliti
 
 - [Wireframes]ADD
 - Navigation bar - Menu with links pointing to each page
-  - Home -  A short descrition letting the user knows what the website is about.
-  - Sign Up / Log In - Very similar design to keep consistency and be user friendly.
-  - Profile - After users sign up, they are direct to their profile with a flash message welcoming they and advise them to create they first book summary.
-  - Best Books - A very similar design of the profile page. Until users create their first list a message will be display encouring then to do it.
-  - View Books / View Lists - To similar pages where the user can see books and lists with more details. Also, they can edit and delete it.
-  - Discover - Alows the user see shared list from other users. The same design from Best Books page were use to keep familiaritie.
+  - **Home** -  A short descrition letting the user knows what the website is about.
+  - **Sign Up / Log In** - Very similar design to keep consistency and be user friendly.
+  - **Profile** - After users sign up, they are direct to their profile with a flash message welcoming they and advise them to create they first book summary.
+  - **Best Books** - A very similar design of the profile page. Until users create their first list a message will be display encouring then to do it.
+  - **View Books / View Lists** - To similar pages where the user can see books and lists with more details. Also, they can edit and delete it.
+  - **Discover** - Alows the user see shared list from other users. The same design from Best Books page were use to keep familiaritie.
 
 ### 5. Surface
-The overall UX is
-### Colors:
+The overall UX is clean and similar in all pages to keep consistency.
 
+### Colors:
+The base color **deep-purple(#673AB7)** was chosed from [Materalize](https://materializecss.com/). Some different purple tones were also chosen to make the website more elegant.
+![Palette of colors](static/images/colors.png)
 ### Typography :
 
--
-
--
+"Poppins" font (with fall-back font of Sans-Serif) is used in all website. Unless, the logo that uses "Nunito" font (with fall-back font of Sans-Serif).
 
 ### Images:
+Only a few images were used in the website and all of them have #673AB7 color, as base color and them different tones.
 
 ## Features
 
@@ -97,9 +98,9 @@ The overall UX is
 
 - Designed with HTML5, CSS3, JavaScript, Python3, Flask, MongoDB and Materalize.
 - Responsive navigation bar.
-- Button to create review that pops up a modal to fill in with the book's information.
-- Button to create a wish list.
-- Button to add books to the wish list.
+- Button to create summaries that pops up a modal to fill in with the book's information.
+- Button to create a list with books.
+- Section where user can edit and delete summaries and lists.
 - Footer with social media links.
 
 ### Features to consider implementing in the future
@@ -120,7 +121,7 @@ The overall UX is
 
 - [Google Fonts](https://fonts.google.com/) - Typography.
 - [FontAwesome](https://fontawesome.com/) - Used for icons.
-- [GSAP](https://greensock.com/gsap/) - Animations Library.
+- [Materalize](https://materializecss.com/) - CSS framework.
 - [jQuery](https://jquery.com/) - JavaScript library.
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Micro web framework written in Python.
 - [MongoDB](https://www.mongodb.com/) - NoSQL database program, using JSON-like documents.
@@ -145,7 +146,6 @@ The overall UX is
 - [Balsamiq](https://balsamiq.com/wireframes/) - Wireframing design tool.
 - [Autoprefixer](https://autoprefixer.github.io/) - Parses CSS and adds vendor prefixes.
 - [Google Mobile-Friendly](https://search.google.com/test/mobile-friendly) - Test Mobile-friendly check on site.
-- [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) - Google Chrome Extesion Overflow Revealer.
 - Code Institute SLACK Community - General Resource
 
 ## Code Validation
