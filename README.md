@@ -1,10 +1,9 @@
 # Books' World
 
-# ADD Project Mock-up
+![Project Mock-up](static/images/intro-readme.png)
 
-The aim of this project is to provide a place where the user can write down a personal review of a book and the main insights they got from the book.
-Also, the user will be able to create a wish list with books they want to read in the future, or a list that is already ready. The user will
-be able to sure these lists if they want.
+The aim of this project is to provide a place where the user can write down a personal summary of a book and the main insights they got from the book.
+Also, the user will be able to create a list of books they want and share with other users if desired.
 
 #ADD Live demo on Heroku pages
 
@@ -38,16 +37,16 @@ be able to sure these lists if they want.
 
 - As a user, I want to easily understand the main purpose of the site and learn more about the organisation.
 - As a user, I want to easily to sign up to the website.
-- As a user, I want to easily Log in on my account.
-- As a user, I want to write personal reviews and main insights about the books I'm readying or alredy ready.
-- As a user, I want to create a wish list.
-- As a user, I want to find wish lists from other people, so I can choose new books to ready.
-- As a user, I want to uptade or delete old book reviews and wish lists.
+- As a user, I want to easily log in on my account.
+- As a user, I want to write personal summaries and main insights about the books I'm readying or alredy read.
+- As a user, I want to create a list of books.
+- As a user, I want to find list of books from other people, and get inspired to read other books.
+- As a user, I want to uptade or delete old book summaries and lists of books.
 
 ### 1. Strategy
 
-- Provide a platform where the user can create personal reviews about books they ready.
-- Provide a platform where user can create a wish list and share it with others user if they want.
+- Provide a platform where the user can create personal summaries about books they read.
+- Provide a platform where user can create a list of books and share it with others user if they want.
 - Create an enjoyable, and easy to use platform that makes the user uses it frequently.
 
 ### 2. Scope
@@ -61,24 +60,27 @@ be able to sure these lists if they want.
 
 ### 3. Structure
 
-As the website has two main ideas, create reviews and wish lists, and I kept the website as simple as possible and easy to use.
-Instead of create a lot a functionality and created a few functionality that make a lot o things.
+As the website has two main ideas, create persoal book summaries and lists of books, I kept the website as simple as possible and easy to use.
+Instead of create a lot a functionality and decide to create a few functionalities that the user can do a lot o things.
 
 - A part of the home page, everypage has the same structure to keep consistency and to make the navigation easy to assimilate.
 
-# ADD MORE
+- The modals in different pages are very similar to each other to keep consistency.
+
 
 ### 4. Skeleton
 
 - [Wireframes]ADD
 - Navigation bar - Menu with links pointing to each page
-  - Home
-  - Sign Up / Log In
-  - Profile (Reviews / Wish List)
-  - Discover
+  - Home -  A short descrition letting the user knows what the website is about.
+  - Sign Up / Log In - Very similar design to keep consistency and be user friendly.
+  - Profile - After users sign up, they are direct to their profile with a flash message welcoming they and advise them to create they first book summary.
+  - Best Books - A very similar design of the profile page. Until users create their first list a message will be display encouring then to do it.
+  - View Books / View Lists - To similar pages where the user can see books and lists with more details. Also, they can edit and delete it.
+  - Discover - Alows the user see shared list from other users. The same design from Best Books page were use to keep familiaritie.
 
 ### 5. Surface
-
+The overall UX is
 ### Colors:
 
 ### Typography :
