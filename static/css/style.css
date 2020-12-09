@@ -511,7 +511,6 @@ footer {
 
 .container-book-lists {
     margin-top: 80px;
-
 }
 
 .container-book-lists ul {
@@ -743,6 +742,7 @@ footer {
     .intro-text p {
         font-size: 1.2rem;
     }
+
     .general-container {
         width: 95%;
     }
@@ -776,6 +776,12 @@ footer {
     .books-list img {
         height: 390px;
         width: 280px;
+    }
+
+    .container-book-lists {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
     }
 
     .welcome-user h2 {
