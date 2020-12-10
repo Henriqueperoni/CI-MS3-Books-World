@@ -21,8 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    books = mongo.db.books.find()
-    return render_template("home.html", books=books)
+    return render_template("home.html")
 
 
 @app.route("/sign_up", methods=["GET", "POST"])
@@ -55,12 +54,12 @@ def sign_up():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        #check if username already exists
+        # check if username already exists
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        
+
         if existing_user:
-            #ensure hashed password matches user input
+            # ensure hashed password matches user input
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
@@ -91,6 +90,7 @@ def profile(username):
         return render_template("profile.html", username=username, books=books)
 
     return redirect(url_for("login"))
+
 
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
@@ -132,7 +132,7 @@ def edit_book(book_id):
 def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
     return redirect("/profile/<username>")
-   
+
 
 @app.route("/best_books/<username>", methods=["GET", "POST"])
 def best_books(username):
