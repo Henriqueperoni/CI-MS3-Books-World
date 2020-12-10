@@ -371,7 +371,7 @@ footer {
     padding: 0 !important;
 }
 
-.container-book-lists h2 {
+.collapsible-header > h2 {
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.5px;
