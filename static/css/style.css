@@ -17,7 +17,7 @@ body {
 /* Scroll Bar */
 ::-webkit-scrollbar
 {
-    width: 10px;
+    width: 0px;
 }
 ::-webkit-scrollbar-thumb
 {
@@ -112,7 +112,7 @@ nav ul a:hover {
 
 .intro-text > p > span {
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     letter-spacing: -1px;
 }
 
@@ -688,6 +688,13 @@ footer {
     }
 }
 
+@media screen and (min-width: 1200px) {
+    .books {
+        height: 75%;
+        overflow-y: scroll;
+    }
+}
+
 @media screen and (max-width: 1100px) {
     body {
         background:  url("/static/images/bg-m.png");
@@ -710,6 +717,8 @@ footer {
 @media screen and (max-width: 972px) {
     body {
         background:  url("/static/images/bg-m1.png");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
