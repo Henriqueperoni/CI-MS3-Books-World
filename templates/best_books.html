@@ -2,39 +2,41 @@
 {% block content %}
     <div id="modal-review" class="container-modal row">
         <div class="modal-books white col s10 offset-s1 m8 offset-m2 xl4 offset-xl4">
-            <form class="row" method="POST" action="{{ url_for('add_list') }}">
-    
-                <!-- List Name-->
-                <div class="input-field col s12">
-                    <label for="list_name">List Name:</label>
-                    <input id="list_name" name="list_name" type="text" class="validate" minlength="3" maxlength="50" required>
-                </div>
-
-                <!-- Image URL's-->
-                <div class="URL-list col s12">
+            <div class="container-form">
+                <form class="row" method="POST" action="{{ url_for('add_list') }}">
+        
+                    <!-- List Name-->
                     <div class="input-field col s12">
-                        <label for="img_url">Insert image URL</label>
-                        <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100" required>
+                        <label for="list_name">List Name:</label>
+                        <input id="list_name" name="list_name" type="text" class="validate" minlength="3" maxlength="50" required>
                     </div>
-                </div>
-                <!-- Add field button-->
-                <a class="btn green darken-3 white-text add-field-button">Add Book</a>
-                
-                <div class="row">
-                    <div class="switch col s12">
-                        <label class="valign-wrapper" for="share_list">
-                            <input type="checkbox" id="share_list" name="share_list">
-                            <span class="lever"></span>
-                            Share <i class="fas fa-question-circle tooltipped" data-position="bottom" data-tooltip="By choosing to share other users will see your list on the discover page"></i>
-                        </label>
-                    </div>
-                </div>
 
-                <!-- Submit Button -->
-                <div class="row">
-                    <button type="submit" class="btn-form white-text deep-purple">Save  <i class="fas fa-save white-text"></i></button>
-                </div>
-            </form>
+                    <!-- Image URL's-->
+                    <div class="URL-list col s12">
+                        <div class="input-field col s12">
+                            <label for="img_url">Insert image URL</label>
+                            <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100" required>
+                        </div>
+                    </div>
+                    <!-- Add field button-->
+                    <a class="btn green darken-3 white-text add-field-button">Add Book</a>
+                    
+                    <div class="row">
+                        <div class="switch col s12">
+                            <label class="valign-wrapper" for="share_list">
+                                <input type="checkbox" id="share_list" name="share_list">
+                                <span class="lever"></span>
+                                Share <i class="fas fa-question-circle tooltipped" data-position="bottom" data-tooltip="By choosing to share other users will see your list on the discover page"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="row">
+                        <button type="submit" class="btn-form white-text deep-purple">Save  <i class="fas fa-save white-text"></i></button>
+                    </div>
+                </form>
+            </div>
             <!-- Close Modal -->
             <button class="close-modal">x</button>
         </div>

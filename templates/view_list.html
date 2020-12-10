@@ -2,46 +2,48 @@
 {% block content %}
     <div id="modal-review" class="container-modal row">
         <div class="modal-books white col s10 offset-s1 m8 offset-m2 xl4 offset-xl4">
-            <form class="row" method="POST" action="{{ url_for('edit_list', list_id=list._id) }}">
-    
-                <!-- List Name-->
-                <div class="input-field col s12">
-                    <label for="list_name">List Name:</label>
-                    <input id="list_name" name="list_name" type="text" class="validate" minlength="3" maxlength="50" value="{{ list.list_name }}" required>
-                </div>
-
-                <!-- Image URL's-->
-                <div class="URL-list col s12">
-                    {% for index in range(list.img_url|length) %}
-                        <div class="input-field col s12">
-                            <label for="img_url">Insert image URL</label>
-                            <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100" value="{{ list.img_url[index] }}" required>
-                            <a href="#" class="remove_field btn-small red darken-2">Remove</a>
-                        </div>
-                    {% endfor %}
-                </div>
-                <!-- Add field button-->
-                <a class="btn green darken-3 white-text add-field-button">Add Book</a>
-                
-                <div class="row">
-                    <div class="switch col s12">
-                        <label for="share_list">
-                            {% if list.share_list == "on" %}
-                                <input type="checkbox" id="share_list" name="share_list" checked>
-                            {% else %}
-                                <input type="checkbox" id="share_list" name="share_list">
-                            {% endif %}
-                            <span class="lever"></span>
-                            Share
-                        </label>
+            <div class="container-form">
+                <form class="row" method="POST" action="{{ url_for('edit_list', list_id=list._id) }}">
+        
+                    <!-- List Name-->
+                    <div class="input-field col s12">
+                        <label for="list_name">List Name:</label>
+                        <input id="list_name" name="list_name" type="text" class="validate" minlength="3" maxlength="50" value="{{ list.list_name }}" required>
                     </div>
-                </div>
 
-                <!-- Submit Button -->
-                <div class="row">
-                    <button type="submit" class="btn-form white-text deep-purple">Save  <i class="fas fa-save white-text"></i></button>
-                </div>
-            </form>
+                    <!-- Image URL's-->
+                    <div class="URL-list col s12">
+                        {% for index in range(list.img_url|length) %}
+                            <div class="input-field col s12">
+                                <label for="img_url">Insert image URL</label>
+                                <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100" value="{{ list.img_url[index] }}" required>
+                                <a href="#" class="remove_field btn-small red darken-2">Remove</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <!-- Add field button-->
+                    <a class="btn green darken-3 white-text add-field-button">Add Book</a>
+                    
+                    <div class="row">
+                        <div class="switch col s12">
+                            <label for="share_list">
+                                {% if list.share_list == "on" %}
+                                    <input type="checkbox" id="share_list" name="share_list" checked>
+                                {% else %}
+                                    <input type="checkbox" id="share_list" name="share_list">
+                                {% endif %}
+                                <span class="lever"></span>
+                                Share
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="row">
+                        <button type="submit" class="btn-form white-text deep-purple">Save  <i class="fas fa-save white-text"></i></button>
+                    </div>
+                </form>
+            </div>
             <!-- Close Modal -->
             <button class="close-modal">x</button>
         </div>
