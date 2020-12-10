@@ -48,6 +48,7 @@
         </div>
         <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
 
+        <!-- List of books -->
         <div class="container-book-lists row">
             {% if book_lists|length > 0 %}
             <ul class="collapsible col s12 m10 offset-m1 l8 offset-l2">
@@ -65,6 +66,7 @@
                 {% endfor %}
             </ul>
             {% else %}
+                <!-- Message welcoming new users -->
                 <div class="welcome-user">
                     <h2>Hello, {{ username.capitalize() }}</h2>
                     <p>Here you can create any list of books you want:</p>
