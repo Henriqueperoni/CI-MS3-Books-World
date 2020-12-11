@@ -285,6 +285,14 @@ footer {
     margin: 0 auto
 }
 
+.quotes {
+    position: absolute; 
+    right: 5px; 
+    bottom: 10px; 
+    font-size: .9rem; 
+    font-style: italic;
+}
+
 /*----------------- VIEW BOOK -------------------*/
 .book-heading img {
     max-height: 375px;

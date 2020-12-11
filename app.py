@@ -1,4 +1,5 @@
 import os
+import random
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -85,9 +86,12 @@ def profile(username):
         {"username": session["user"]})["username"]
     # get the session user's books from database
     books = list(mongo.db.books.find())
+    quotes = mongo.db.quotes.aggregate([{"$sample": {"size": 1}}])
+    # random_quote = range(0, quotes.length).random
 
     if session["user"]:
-        return render_template("profile.html", username=username, books=books)
+        return render_template(
+            "profile.html", username=username, books=books, quotes=quotes)
 
     return redirect(url_for("login"))
 
