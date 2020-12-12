@@ -220,7 +220,8 @@ footer {
     cursor: pointer;
 }
 
-.btn-form:hover {
+.btn-form:hover,
+.btn-back:hover {
     transform: scale(1.1);
     box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.30);
 }
@@ -357,7 +358,8 @@ footer {
 
 .edit-buttons a:active,
 .delete-buttons a:active,
-.sign-up:active {
+.sign-up:active,
+.btn-back:active {
     transform: scale(0.9);
 }
 
@@ -508,6 +510,41 @@ footer {
     margin: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+
+/*----------------- ERROR -------------------*/
+#error {
+    background: #fff;
+}
+
+.container-error {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container-error img{
+    object-fit: contain;
+}
+
+.btn-back {
+    width: 280px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 3px;
+    transition: transform 0.5s;
+}
+
+.btn-back p {
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.btn-back span {
+    font-weight: 600;
 }
 
 /*----------------- MODALS -------------------*/
@@ -723,6 +760,14 @@ footer {
     .intro-text p {
         font-size: 1.2rem;
     }
+
+    .container-error {
+        align-items: center;
+    }
+
+    .container-error img{
+        max-width: 700px;
+    }
 }
 
 @media screen and (max-width: 972px) {
@@ -793,5 +838,9 @@ footer {
     .welcome-user h2 {
         font-size: 2.5rem;
         margin-top: 0;
+    }
+
+    .container-error img{
+        max-width: 300px;
     }
 }
