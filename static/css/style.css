@@ -384,7 +384,8 @@ footer {
     margin: 80px 5px 0 5px;
 }
 
-.container-book-lists ul {
+.container-book-lists ul,
+.container-discover ul {
     padding: 0 !important;
 }
 
@@ -452,10 +453,12 @@ footer {
 }
 
 /*----------------- DISCOVER -------------------*/
-.container-book-lists h3 {
-    font-size: 0.8rem;
-    margin: 0;
-    font-style: italic;
+
+.container-discover {
+    margin: 0 5px;
+    padding: 0;
+    height: calc(100% - 145px);
+    overflow: scroll;
 }
 
 .shared-lists h2 {
@@ -473,7 +476,7 @@ footer {
 }
 
 .container-search {
-    margin: 80px 0 20px 0;
+    margin-top: 80px;
 }
 
 .container-search form {
