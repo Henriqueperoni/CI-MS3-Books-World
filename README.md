@@ -160,6 +160,7 @@ Only a few images were used in the website and all of them have #673AB7 color, a
 Testing documentation can be found [here]ADD
 
 ## Project barriers and solutions
+- In the View List page when I tried to add a new input field in the edit modal, it was duplicating all the inputs the were already created, instead of only add one. I realised that was happening because of a for loop, so I wrapped the div with the input field inside another div and change the JS function to append new fields to this outer div.
 - The form inside the edit modal in the View List page was duplicating all input fields when clicking "Add Book", instead to only add one field at the time the button was clicked. It was happening because the JS function was appending to each element with a determined class. I created a div and put the input fields inside it, and change the JS function to append the new input to the div just created.
 -
 -
