@@ -17,7 +17,7 @@ body {
 /* Scroll Bar */
 ::-webkit-scrollbar
 {
-    width: 10px;
+    width: 0px;
 }
 ::-webkit-scrollbar-thumb
 {
@@ -261,6 +261,12 @@ footer {
     margin: 80px 40px 0 40px;
 }
 
+.books,
+.container-book-lists {
+    height: 80%;
+    overflow: scroll;
+}
+
 .book {
     height: 250px;
 }
@@ -375,7 +381,7 @@ footer {
 }
 
 .container-book-lists {
-    margin-top: 80px;
+    margin: 80px 5px 0 5px;
 }
 
 .container-book-lists ul {
@@ -738,11 +744,6 @@ footer {
 }
 
 @media screen and (min-width: 1200px) {
-    .books {
-        height: 75%;
-        overflow-y: scroll;
-    }
-
     .quotes {
         display: flex;
     }
@@ -812,6 +813,11 @@ footer {
     .books,
     .book-heading {
         margin: 80px 5px 0 5px;
+    }
+
+    .books,
+    .container-book-lists {
+        height: 85%;
     }
 
     .book {
