@@ -169,7 +169,9 @@ def add_list():
 @app.route("/view_list/<list_name>")
 def view_list(list_name):
     list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
-    return render_template("view_list.html", list=list)
+    book_list = mongo.db.books_in_list.find()
+
+    return render_template("view_list.html", list=list, book_list=book_list)
 
 
 @app.route("/edit_list/<list_id>", methods=["GET", "POST"])
@@ -209,9 +211,15 @@ def add_book_in_list(list_name):
         book_id = mongo.db.books_in_list.insert_one(book).inserted_id
         mongo.db.book_lists.update(
             {'_id': ObjectId(list_name)}, {'$push': {'books': book_id}})
-                    
+
         list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
     return render_template("view_list.html", list=list)
+
+
+@app.route("/book_info/<book_name>")
+def book_info(book_name):
+    book = mongo.db.books_in_list.find_one({"_id": ObjectId(book_name)})
+    return render_template("book_info.html", book=book)
 
 
 @app.route("/discover")

@@ -118,9 +118,12 @@
                 {% endif %}
             </div>
             <div class="row books-list center-align">
-                {% for book in list.img_url %}
+                {% for book in book_list %}
                     <div class="col s12 m6 l4 xl3">
-                        <img src="{{ book }}" alt="Book cover">
+                        <p>{{ book.book_name }}</p>
+                        {{ book.book_author }}
+                        <a href="{{ url_for('book_info', book_name=book._id) }}"><img src="{{ book.img_url }}" alt="{{ book.book_name }}'s cover"></a>
+                        <a class="btn-small" href="{{ book.vendor_url }}" target="_blank">Buy</a>
                     </div>
                 {% endfor %}
             </div>
