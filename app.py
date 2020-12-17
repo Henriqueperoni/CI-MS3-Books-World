@@ -159,7 +159,6 @@ def add_list():
         share_list = "on" if request.form.get("share_list") else "off"
         list = {
             "list_name": request.form.get("list_name"),
-            "img_url": request.form.getlist("img_url"),
             "share_list": share_list,
             "created_by": session["user"]
         }
@@ -194,6 +193,25 @@ def edit_list(list_id):
 def delete_list(list_id):
     mongo.db.book_lists.remove({"_id": ObjectId(list_id)})
     return redirect("/best_books/<username>")
+
+
+@app.route("/add_book_in_list/<list_name>", methods=["GET", "POST"])
+def add_book_in_list(list_name):
+    if request.method == "POST":
+        book = {
+            "book_name": request.form.get("book_name"),
+            "book_author": request.form.get("book_author"),
+            "img_url": request.form.get("img_url"),
+            "vendor_url": request.form.get("vendor_url"),
+            "created_by": session["user"]
+        }
+
+        book_id = mongo.db.books_in_list.insert_one(book).inserted_id
+        mongo.db.book_lists.update(
+            {'_id': ObjectId(list_name)}, {'$push': {'books': book_id}})
+                    
+        list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
+    return render_template("view_list.html", list=list)
 
 
 @app.route("/discover")

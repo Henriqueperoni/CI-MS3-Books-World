@@ -1,6 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
     <div id="modal-review" class="container-modal row">
+        <div class="modal-books white col s10 offset-s1 m6 offset-m3 xl4 offset-xl4">
+            <form class="row" method="POST" action="{{ url_for('add_book_in_list', list_name=list._id) }}">
+    
+                <!-- Book Name-->
+                <div class="input-field col s12">
+                    <label for="book_name">Book:</label>
+                    <input id="book_name" name="book_name" type="text" class="validate" minlength="3" maxlength="50" required>
+                </div>
+    
+                <!-- Book Author -->
+                <div class="input-field col s12">
+                    <label for="book_author">Author:</label>
+                    <input id="book_author" name="book_author" type="text" class="validate" minlength="3" maxlength="50"  required>
+                </div>
+
+                    <!-- Image URL -->
+                <div class="input-field col s12">
+                    <label for="img_url">Image URL:</label>
+                    <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100"  required>
+                </div>
+
+                <!-- Vendor URL -->
+                <div class="input-field col s12">
+                    <label for="vendor_url">Vendor URL:</label>
+                    <input id="vendor_url" name="vendor_url" type="text" class="validate" minlength="5" maxlength="100"  required>
+                </div>
+
+                <!-- submit button -->
+                <div class="row">
+                    <button type="submit" class="btn-form white-text deep-purple">Save  <i class="fas fa-save white-text"></i></button>
+                </div>
+            </form>
+            <!-- close modal -->
+            <button class="close-modal">x</button>
+        </div>
+    </div>
+
+    <div id="modal-review" class="container-modal row">
         <div class="modal-books white col s10 offset-s1 m8 offset-m2 xl4 offset-xl4">
             <div class="container-form">
                 <form class="row" method="POST" action="{{ url_for('edit_list', list_id=list._id) }}">
@@ -64,6 +102,8 @@
     </div>
         
 	<div class="general-container row">
+        <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
+        
         <div class="container-logos">
             <a href="{{ url_for('home') }}"><h3 class="deep-purple-text logo">books'<span class="black-text">world</span></h3></a>
         </div>
