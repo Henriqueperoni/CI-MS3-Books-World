@@ -1,5 +1,3 @@
-{% extends "base.html" %}
-{% block content %}
     <div id="modal-review" class="container-modal row">
         <div class="modal-books white col s10 offset-s1 m6 offset-m3 xl4 offset-xl4">
             <form class="row" method="POST" action="{{ url_for('add_book_in_list', list_name=book_list._id) }}">
@@ -120,7 +118,7 @@
             <div class="row books-list center-align">
                 
                 {% for book in book_list %}
-                    <p>{{ book.book_name }}</p>
+                    {{ book }}
                 {% endfor %}
                     
                 
@@ -143,4 +141,3 @@
                 </div>
         </div>
 	</div>
-{% endblock %}

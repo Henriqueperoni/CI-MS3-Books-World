@@ -160,7 +160,8 @@ def add_list():
         list = {
             "list_name": request.form.get("list_name"),
             "share_list": share_list,
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "books": []
         }
         mongo.db.book_lists.insert_one(list)
         return redirect("/best_books/<username>")
@@ -168,10 +169,22 @@ def add_list():
 
 @app.route("/view_list/<list_name>")
 def view_list(list_name):
-    list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
-    book_list = mongo.db.books_in_list.find()
+    book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
+    list = mongo.db.book_lists.find_one(
+        {"_id": ObjectId(list_name)})
+    print(f"BOOK LIST: {book_list}")
 
-    return render_template("view_list.html", list=list, book_list=book_list)
+    book_objects_list = []
+    for book in book_list['books']:
+        print(f"BOOK: {book}")
+        book_item = mongo.db.books_in_list.find_one({'_id': ObjectId(book)})
+        print(f"BOOK ITEM: {book_item}")
+        book_objects_list.append(book_item)
+
+    print(f"BOOK OBJECT LIST: {book_objects_list}")
+
+    return render_template(
+        "view_list.html", book_list=book_objects_list, list=book_list)
 
 
 @app.route("/edit_list/<list_id>", methods=["GET", "POST"])
@@ -212,8 +225,8 @@ def add_book_in_list(list_name):
         mongo.db.book_lists.update(
             {'_id': ObjectId(list_name)}, {'$push': {'books': book_id}})
 
-        list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
-    return render_template("view_list.html", list=list)
+        book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
+    return render_template("view_list.html", book_list=book_list)
 
 
 @app.route("/book_info/<book_name>")

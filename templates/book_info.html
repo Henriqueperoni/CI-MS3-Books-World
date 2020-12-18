@@ -13,6 +13,7 @@
                 <div>
                     <h1>{{ book.book_name }}</h1> 
                     <h3>{{ book.book_author }}</h3>
+                    <a class="btn-small" href="{{ book.vendor_url }}" target="_blank">Buy</a>
                 </div>
                 <div>
                     <p>{{ book.book_review }}</p>
@@ -22,7 +23,7 @@
 
         <div class="row">
             <div class="edit-buttons col s12">
-                <a class="green darken-3 white-text" href="{{ url_for('profile', username=session['user']) }}">
+                <a class="green darken-3 white-text" href="{{ url_for('best_books', username=session['user']) }}">
                     Done <i class="fas fa-check white-text"></i>
                 </a>
                 <a id="edit-book" class="blue darken-3 white-text">Edit <i class="fas fa-edit white-text"></i></a>
@@ -54,10 +55,10 @@
                     <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100" value="{{ book.img_url }}" required>
                 </div>
 
-                <!-- Review -->
-                <div class="row col s12">
-                    <label for="book_review">Your Review</label>
-                    <textarea id="book_review" name="book_review" type="text" class="materialize-textarea" minlength="5" maxlength="1000" rows="5" required>{{ book.book_review }}</textarea>
+                <!-- Vendor URL -->
+                <div class="input-field col s12">
+                    <label for="vendor_url">Vendor URL:</label>
+                    <input id="vendor_url" name="vendor_url" type="text" class="validate" minlength="5" maxlength="100" value="{{ book.vendor_url }}"  required>
                 </div>
 
                 <!-- submit button -->
