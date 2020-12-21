@@ -366,7 +366,8 @@ footer {
 .edit-buttons a:active,
 .delete-buttons a:active,
 .sign-up:active,
-.btn-back:active {
+.btn-back:active,
+.list-title a:active {
     transform: scale(0.9);
 }
 
@@ -392,6 +393,7 @@ footer {
     font-weight: 600;
     min-width: 105px;
     margin-right: 20px;
+    transition: 0.3s;
 }
 
 .list-names {
@@ -475,7 +477,7 @@ footer {
     margin-bottom: 15px;
 }
 
-.container-form {
+.modal-books form {
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -661,6 +663,10 @@ footer {
 .add-field-button {
     margin-left: 10px;
     margin-bottom: 5px;
+}
+
+.no-padding {
+    padding: 0 !important;
 }
 
 /* Delete Modal */

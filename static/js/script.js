@@ -52,9 +52,9 @@ deleteBook.addEventListener("click", () => {
 // Function to dynamically add input fields
 //https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery
 $(document).ready(function() {
-	let maxFields = 50; //maximum input boxes allowed
+	let maxFields = 3; //maximum input boxes allowed
     let addButton = $(".add-field-button"); //Add button ID
-    let URLInputFields = $(".URL-list") //Fields wrapper
+    let addField = $(".add-vendor") //Fields wrapper
 	
 	let x = 1; //initlal text box count
     $(addButton).click(function(e){ //on add input button click
@@ -62,12 +62,11 @@ $(document).ready(function() {
 		e.preventDefault();
 		if(x < maxFields){ //max input box allowed
 			x++; //text box increment
-            $(URLInputFields).append('<div class="input-field col s12"><label for="img_url">Insert image URL</label><input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100" required/><a href="#" class="remove_field btn-small red darken-2">Remove</a></div>'); //add input box
-            
+            $(addField).append('<div class="input-field col s12 no-padding"><label for="vendor_url">Vendor URL:</label><input id="vendor_url" name="vendor_url" type="text" class="validate" minlength="5" maxlength="100" required><a href="#" class="remove_field btn-small red darken-2">Remove</a></div>'); //add input box
         }
 	});
 	
-	$(URLInputFields).on("click",".remove_field", function(e){ //user click on remove text
+	$(addField).on("click",".remove_field", function(e){ //user click on remove text
 		e.preventDefault(); $(this).parent('div').remove(); x--;
 	})
 });
