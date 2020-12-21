@@ -443,8 +443,21 @@ footer {
 .books-list img {
     height: 305px;
     width: 220px;
-    margin-bottom: 15px;
+    display: flex;
+    margin: 0 auto;
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+}
+
+.books-list p {
+    max-width: 220px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0 auto;
+    text-align: start;
+}
+
+.book-title {
+    margin-bottom: 15px;
 }
 
 .container-form {
@@ -847,6 +860,10 @@ footer {
     .books-list img {
         height: 390px;
         width: 280px;
+    }
+
+    .books-list p {
+        max-width: 280px;
     }
 
     .welcome-user h2 {
