@@ -237,6 +237,17 @@ def book_info(list_name, book_name):
     return render_template("book_info.html", book=book, list=book_list)
 
 
+@app.route("/delete_book_in_list/<list_name>/<book_id>")
+def delete_book_in_list(list_name, book_id):
+    book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
+    book_id = mongo.db.books_in_list.remove({"_id": ObjectId(book_id)})
+    print(f"REMOVE: {book_id}")
+    mongo.db.books_in_list.remove({"_id": ObjectId(book_id)})
+    mongo.db.book_lists.update(
+            {'_id': ObjectId(list_name)}, {'$pull': {'books': book_id}})
+    return redirect(url_for("view_list", list_name=book_list["_id"]))
+
+
 @app.route("/discover")
 def discover():
     book_lists = list(mongo.db.book_lists.find())
