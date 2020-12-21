@@ -53,17 +53,15 @@
         <div class="container-book-lists row">
             
             {% if book_lists|length > 0 %}
-            <ul class="collapsible col s12 m10 offset-m1 l8 offset-l2">
+            <ul class="col s12 m10 offset-m1 l8 offset-l2">
                 {% for list in book_lists %}
                     <li>
-                        <div class="collapsible-header white-text deep-purple lighten-1"><i class="fas fa-caret-down white-text"></i>
-                            <h2>{{ list.list_name }}</h2>
-                            <a class="btn-small" href="{{ url_for('view_list', list_name=list._id) }}">See books</a>
-                        </div>
-                        <div class="book-list-covers collapsible-body deep-purple lighten-5">
-                            {% for book in list.img_url %}
-                                <a href="{{ url_for('view_list', list_name=list._id) }}"><img src="{{ book }}" alt="Book cover"></a>
-                            {% endfor %}
+                        <div class="list-title white-text deep-purple lighten-1">
+                            <div>
+                                <i class="valign-wrapper fas fa-angle-right"></i>
+                                <a class="white-text" href="{{ url_for('view_list', list_name=list._id) }}"><h2 class="list-names">{{ list.list_name }}</h2></a>
+                            </div>
+                            <a class="btn-small white deep-purple-text" href="{{ url_for('view_list', list_name=list._id) }}">See books</a>
                         </div>
                     </li>
                 {% endfor %}

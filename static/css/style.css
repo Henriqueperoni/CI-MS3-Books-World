@@ -371,13 +371,35 @@ footer {
 }
 
 /*----------------- BEST BOOKS -------------------*/
-.collapsible-header {
+.list-title {
     align-items: center;
     min-height: 70px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.collapsible-body {
-    padding: 10px 10px 5px 10px;
+.list-title > div {
+    display: flex;
+}
+
+
+.list-title i {
+    margin-left: 20px;
+}
+
+.list-title a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-width: 105px;
+    margin-right: 20px;
+}
+
+.list-names {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0 20px;
+    position: relative;
 }
 
 .container-book-lists {
@@ -387,13 +409,6 @@ footer {
 .container-book-lists ul,
 .container-discover ul {
     padding: 0 !important;
-}
-
-.collapsible-header > h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin: 0;
 }
 
 .book-list-covers img {

@@ -240,7 +240,7 @@ def book_info(list_name, book_name):
 @app.route("/delete_book_in_list/<list_name>/<book_id>")
 def delete_book_in_list(list_name, book_id):
     book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
-    book_id = mongo.db.books_in_list.remove({"_id": ObjectId(book_id)})
+    book_id = mongo.db.books_in_list.remove()
     print(f"REMOVE: {book_id}")
     mongo.db.books_in_list.remove({"_id": ObjectId(book_id)})
     mongo.db.book_lists.update(
