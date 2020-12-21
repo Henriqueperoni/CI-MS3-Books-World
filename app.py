@@ -226,7 +226,8 @@ def add_book_in_list(list_name):
             {'_id': ObjectId(list_name)}, {'$push': {'books': book_id}})
 
         book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
-    return render_template("view_list.html", book_list=book_list)
+
+    return redirect(url_for("view_list", list_name=book_list["_id"]))
 
 
 @app.route("/book_info/<book_name>")
