@@ -23,7 +23,7 @@
 
         <div class="row">
             <div class="edit-buttons col s12">
-                <a class="green darken-3 white-text" href="{{ url_for('best_books', username=session['user']) }}">
+                <a class="green darken-3 white-text" href="{{ url_for('view_list', list_name=list._id) }}">
                     Done <i class="fas fa-check white-text"></i>
                 </a>
                 <a id="edit-book" class="blue darken-3 white-text">Edit <i class="fas fa-edit white-text"></i></a>
