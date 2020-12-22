@@ -388,7 +388,8 @@ footer {
     margin-left: 20px;
 }
 
-.list-title a {
+.list-title a,
+.buy-btn {
     font-size: 0.9rem;
     font-weight: 600;
     min-width: 105px;

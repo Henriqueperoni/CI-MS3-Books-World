@@ -13,10 +13,13 @@
                 <div>
                     <h1>{{ book.book_name }}</h1> 
                     <h3>{{ book.book_author }}</h3>
-                    <a class="btn-small" href="{{ book.vendor_url }}" target="_blank">Buy</a>
-                </div>
-                <div>
-                    <p>{{ book.book_review }}</p>
+                    {% if book.vendor_url is iterable and book.vendor_url is not string %}
+                       {% for vendor in book.vendor_url %}
+                            <a class="btn-small white-text deep-purple buy-btn" href="{{ vendor }}" target="_blank">Buy</a>
+                        {% endfor %} 
+                    {% else %}
+                    <a class="btn-small white deep-purple-text buy-btn" href="{{ book.vendor_url }}" target="_blank">Buy</a>  
+                    {% endif %}
                 </div>
             </div>
         </div>

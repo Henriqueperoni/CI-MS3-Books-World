@@ -193,7 +193,7 @@ def edit_list(list_id):
         share_list = "on" if request.form.get("share_list") else "off"
         edited_list = {
             "list_name": request.form.get("list_name"),
-            "img_url": request.form.getlist("img_url"),
+            "img_url": request.form.get("img_url"),
             "share_list": share_list,
             "created_by": session["user"]
         }
@@ -217,7 +217,7 @@ def add_book_in_list(list_name):
             "book_name": request.form.get("book_name"),
             "book_author": request.form.get("book_author"),
             "img_url": request.form.get("img_url"),
-            "vendor_url": request.form.get("vendor_url"),
+            "vendor_url": request.form.getlist("vendor_url"),
             "created_by": session["user"]
         }
 
@@ -232,6 +232,7 @@ def add_book_in_list(list_name):
 
 @app.route("/book_info/<list_name>/<book_name>")
 def book_info(list_name, book_name):
+    # book_lists = list(mongo.db.book_lists.find())
     book = mongo.db.books_in_list.find_one({"_id": ObjectId(book_name)})
     book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
     return render_template("book_info.html", book=book, list=book_list)
