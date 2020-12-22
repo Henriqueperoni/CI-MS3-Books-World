@@ -367,7 +367,8 @@ footer {
 .delete-buttons a:active,
 .sign-up:active,
 .btn-back:active,
-.list-title a:active {
+.list-title a:active,
+.buy-btn:active {
     transform: scale(0.9);
 }
 
@@ -664,10 +665,6 @@ footer {
 .add-field-button {
     margin-left: 10px;
     margin-bottom: 5px;
-}
-
-.no-padding {
-    padding: 0 !important;
 }
 
 /* Delete Modal */

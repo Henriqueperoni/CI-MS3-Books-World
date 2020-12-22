@@ -55,6 +55,7 @@ $(document).ready(function() {
 	let maxFields = 3; //maximum input boxes allowed
     let addButton = $(".add-field-button"); //Add button ID
     let addField = $(".add-vendor") //Fields wrapper
+    let inputs = $(".container-inputs")
 	
 	let x = 1; //initlal text box count
     $(addButton).click(function(e){ //on add input button click
@@ -62,11 +63,11 @@ $(document).ready(function() {
 		e.preventDefault();
 		if(x < maxFields){ //max input box allowed
 			x++; //text box increment
-            $(addField).append('<div class="input-field col s12 no-padding"><label for="vendor_url">Vendor URL:</label><input id="vendor_url" name="vendor_url" type="text" class="validate" minlength="5" maxlength="100" required><a href="#" class="remove_field btn-small red darken-2">Remove</a></div>'); //add input box
+            $(inputs).append('<div class="input-field col s12 add-vendor"><label for="vendor_url">Vendor URL:</label><input id="vendor_url" name="vendor_url" type="text" class="validate" minlength="5" maxlength="100" required><a href="#" class="remove_field btn-small red darken-2">Remove</a></div>'); //add input box
         }
 	});
 	
-	$(addField).on("click",".remove_field", function(e){ //user click on remove text
+	$(inputs).on("click",".remove_field", function(e){ //user click on remove text
 		e.preventDefault(); $(this).parent('div').remove(); x--;
 	})
 });
