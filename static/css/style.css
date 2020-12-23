@@ -591,7 +591,8 @@ footer {
 
 /*----------------- MODALS -------------------*/
 /* Create and edit modal */
-.container-modal {
+.container-modal,
+.container-modal-list {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
@@ -603,11 +604,13 @@ footer {
     align-items: center;
 }
 
-.container-modal.show-modal {
+.container-modal.show-modal,
+.container-modal-list.show-modal {
     display: flex;
 }
 
-.modal-books {
+.modal-books,
+.modal-books-list {
     position: relative;
     height: auto;
     max-height: 600px;
@@ -628,7 +631,8 @@ footer {
     }
 }
 
-.show-modal .modal-books {
+.show-modal .modal-books,
+.show-modal .modal-books-list {
     animation: modal .5s;
 }
 

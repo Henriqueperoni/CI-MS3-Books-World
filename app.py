@@ -170,8 +170,9 @@ def add_list():
 @app.route("/view_list/<list_name>")
 def view_list(list_name):
     book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
-    list = mongo.db.book_lists.find_one(
-        {"_id": ObjectId(list_name)})
+    # list = mongo.db.book_lists.find_one(
+    #     {"_id": ObjectId(list_name)})
+    # CHECK IF I WILL USE IT AND DELETE THE PRINTS BELOW
     print(f"BOOK LIST: {book_list}")
 
     book_objects_list = []
@@ -191,17 +192,15 @@ def view_list(list_name):
 def edit_list(list_id):
     if request.method == "POST":
         share_list = "on" if request.form.get("share_list") else "off"
-        edited_list = {
-            "list_name": request.form.get("list_name"),
-            "img_url": request.form.get("img_url"),
-            "share_list": share_list,
-            "created_by": session["user"]
-        }
-        mongo.db.book_lists.update({"_id": ObjectId(list_id)}, edited_list)
+
+        mongo.db.book_lists.update_one(
+            {"_id": ObjectId(
+                list_id)}, {"$set": {"list_name": request.form.get(
+                    "list_name"), "share_list": request.form.get(
+                        "share_list")}})
 
     list = mongo.db.book_lists.find_one({"_id": ObjectId(list_id)})
-    return render_template(
-        "view_list.html", list=list)
+    return redirect(url_for("view_list", list=list, list_name=list["_id"]))
 
 
 @app.route("/delete_list/<list_id>")

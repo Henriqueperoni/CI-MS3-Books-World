@@ -43,9 +43,44 @@
         </div>
     </div>
 
-    
+    <div id="modal-edit-list" class="container-modal-list row">
+        <div class="modal-books-list white col s10 offset-s1 m8 offset-m2 xl4 offset-xl4">
+            <div class="container-form col s12">
+                <form class="row" method="POST" action="{{ url_for('edit_list', list_id=list._id) }}">
+        
+                    <!-- List Name-->
+                    <div class="input-field col s12">
+                        <label for="list_name">List Name:</label>
+                        <input id="list_name" name="list_name" type="text" class="validate" minlength="3" maxlength="50" value="{{ list.list_name }}" required>
+                    </div>
+                    
+                    <!-- Share -->
+                    <div class="row">
+                        <div class="switch col s12">
+                            <label for="share_list">
+                                {% if list.share_list == "on" %}
+                                    <input type="checkbox" id="share_list" name="share_list" checked>
+                                {% else %}
+                                    <input type="checkbox" id="share_list" name="share_list">
+                                {% endif %}
+                                <span class="lever"></span>
+                                Share
+                            </label>
+                        </div>
+                    </div>
 
-    <!-- Modal - Delete Book -->
+                    <!-- Submit Button -->
+                    <div class="row">
+                        <button type="submit" class="btn-form white-text deep-purple">Save  <i class="fas fa-save white-text"></i></button>
+                    </div>
+                </form>
+            </div>
+            <!-- Close Modal -->
+            <button class="close-modal">x</button>
+        </div>
+    </div>
+
+    <!-- Modal Delete Book -->
     <div id="modal-delete" class="container-modal-delete row">
         <div class="modal-delete white ">
             <h3>Delete Book</h3>
@@ -86,25 +121,25 @@
                     </div>
                 </div>
                 {% endfor %}
-                    
-                
             </div>
-                <div class="row">
-                    <div class="edit-buttons col s12">
-                        <!-- This if statement was created to allow only the user who created the list be able to edit or delete it -->
-                        {% if session.user|lower == list.created_by|lower %}
-                            <a class="green darken-3 white-text" href="{{ url_for('best_books', username=session['user']) }}">
-                                Done <i class="fas fa-check white-text"></i>
-                            </a>
-                            <a id="edit-book" class="blue darken-3 white-text">Edit <i class="fas fa-edit white-text"></i></a>
-                            <a id="delete-book" class="red darken-2 white-text">Delete <i class="fas fa-trash-alt white-text"></i></a>
-                        {% else %}
-                            <a class="green darken-3 white-text" href="{{ url_for('discover') }}">
-                                Done <i class="fas fa-check white-text"></i>
-                            </a>
-                        {% endif %} 
-                    </div>
+
+            <!-- Buttons -->
+            <div class="row">
+                <div class="edit-buttons col s12">
+                    <!-- This if statement was created to allow only the user who created the list be able to edit or delete it -->
+                    {% if session.user|lower == list.created_by|lower %}
+                        <a class="green darken-3 white-text" href="{{ url_for('best_books', username=session['user']) }}">
+                            Done <i class="fas fa-check white-text"></i>
+                        </a>
+                        <a id="edit-list" class="blue darken-3 white-text">Edit <i class="fas fa-edit white-text"></i></a>
+                        <a id="delete-book" class="red darken-2 white-text">Delete <i class="fas fa-trash-alt white-text"></i></a>
+                    {% else %}
+                        <a class="green darken-3 white-text" href="{{ url_for('discover') }}">
+                            Done <i class="fas fa-check white-text"></i>
+                        </a>
+                    {% endif %} 
                 </div>
+            </div>
         </div>
 	</div>
 {% endblock %}

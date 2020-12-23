@@ -1,6 +1,5 @@
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
-    $('.collapsible').collapsible();
     $('.tooltipped').tooltip();
 });
 
@@ -42,9 +41,27 @@ function deleteModal() {
 
 const deleteBook = document.getElementById("delete-book")
 if(deleteBook) {
-deleteBook.addEventListener("click", () => {
-    deleteModal()
+    deleteBook.addEventListener("click", () => {
+        deleteModal()
 })
+}
+
+function startModalEditList() {
+    const modal = document.querySelector(".container-modal-list")
+    modal.classList.add("show-modal");
+
+    modal.addEventListener("click", (e) => {
+        if(e.target.id == "modal-edit-list" || e.target.className == "close-modal") {
+            modal.classList.remove("show-modal")
+        }
+    })
+}
+
+const editList = document.getElementById("edit-list")
+if(editList) {
+    editList.addEventListener("click", () => {
+        startModalEditList()
+    })
 }
 
 
