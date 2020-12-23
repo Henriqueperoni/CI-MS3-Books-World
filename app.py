@@ -257,11 +257,11 @@ def edit_book_in_list(list_name, book_id):
 @app.route("/delete_book_in_list/<list_name>/<book_id>")
 def delete_book_in_list(list_name, book_id):
     book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
-    book_id = mongo.db.books_in_list.remove()
-    print(f"REMOVE: {book_id}")
+
     mongo.db.books_in_list.remove({"_id": ObjectId(book_id)})
     mongo.db.book_lists.update(
-            {'_id': ObjectId(list_name)}, {'$pull': {'books': book_id}})
+            {'_id': ObjectId(
+                list_name)}, {'$pull': {'books': ObjectId(book_id)}})
     return redirect(url_for("view_list", list_name=book_list["_id"]))
 
 
@@ -282,6 +282,7 @@ def search():
 def logout():
     session.pop("user")
     return redirect(url_for("home"))
+
 
 @app.errorhandler(404)
 def not_found_error(error):
