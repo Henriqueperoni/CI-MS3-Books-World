@@ -31,7 +31,7 @@
                 </div>
 
                 <!-- Add field button-->
-                <a class="btn green darken-3 white-text add-field-button">Add Book</a>
+                <a class="btn green darken-3 white-text add-field-button">Add Vendor</a>
 
                 <!-- Submit Button -->
                 <div class="row">
@@ -83,7 +83,7 @@
     <!-- Modal Delete Book -->
     <div id="modal-delete" class="container-modal-delete row">
         <div class="modal-delete white ">
-            <h3>Delete Book</h3>
+            <h3>Delete List</h3>
             <p>Are you sure you want the full list?</p>
             <div class="delete-buttons">
                 <a id="cancel-delete" class="grey darken-1 white-text">Cancel</a>
@@ -102,9 +102,10 @@
         </div>
             
         <div class="container-book-lists row">
+            
             <div class="col s12 center-align deep-purple-text">
                 <h1>{{ list.list_name }}</h1>
-
+                {% if book_list|length > 0 %}
                 <!-- The user who created the list does not need to see their name, because they know who created it  -->
                 {% if session.user|lower != list.created_by|lower %}
                     <h3>by: {{ list.created_by.capitalize() }}</h3>
@@ -114,7 +115,7 @@
                 
                 {% for book in book_list %}
                 <div class="col s12 m6 l4 xl3">
-                    <a href="{{ url_for('book_info',list_name=list._id, book_name=book._id) }}"><img src="{{ book.img_url }}" alt="{{ book.book_name }}'s cover"></a>
+                        <a href="{{ url_for('book_info',list_name=list._id, book_name=book._id) }}"><img src="{{ book.img_url }}" alt="{{ book.book_name }}'s cover"></a>
                     <div class="book-title">
                         <p>{{ book.book_name }}</p>
                         <p>{{ book.book_author }}</p>
@@ -122,6 +123,13 @@
                 </div>
                 {% endfor %}
             </div>
+            {% else %}
+             <!-- Message welcoming new users -->
+                <div class="welcome-user black-text">
+                    <h2>Well done, {{ username.capitalize() }}!</h2>
+                    <p>Now you have created your list, you can start to adding books into it.</p>
+                </div>
+            {% endif %}
 
             <!-- Buttons -->
             <div class="row">

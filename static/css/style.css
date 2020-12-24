@@ -371,7 +371,6 @@ footer {
 .buy-btn:active {
     transform: scale(0.9);
 }
-
 /*----------------- BEST BOOKS -------------------*/
 .list-title {
     align-items: center;

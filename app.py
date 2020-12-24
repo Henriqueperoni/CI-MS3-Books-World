@@ -170,6 +170,8 @@ def add_list():
 @app.route("/view_list/<list_name>")
 def view_list(list_name):
     book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
     # list = mongo.db.book_lists.find_one(
     #     {"_id": ObjectId(list_name)})
     # CHECK IF I WILL USE IT AND DELETE THE PRINTS BELOW
@@ -185,7 +187,8 @@ def view_list(list_name):
     print(f"BOOK OBJECT LIST: {book_objects_list}")
 
     return render_template(
-        "view_list.html", book_list=book_objects_list, list=book_list)
+        "view_list.html",
+        book_list=book_objects_list, list=book_list, username=username)
 
 
 @app.route("/edit_list/<list_id>", methods=["GET", "POST"])
