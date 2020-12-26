@@ -413,12 +413,12 @@ footer {
 .container-discover ul {
     padding: 0 !important;
 }
-
-.book-list-covers img {
+/* CHECK IF WILL USE */
+/* .book-list-covers img {
     height: 165px;
     width: 120px;
     margin: 5px;
-}
+} */
 
 .switch {
     display: flex;
@@ -492,19 +492,11 @@ footer {
     overflow: scroll;
 }
 
-.shared-lists h2 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    margin: 0;
-    margin-bottom: 2px;
-}
-
-.shared-lists h3 {
+.list-title h3 {
     font-size: 0.8rem;
-    margin: 0;
+    margin: 0 20px;
     font-style: italic;
-}
+} 
 
 .container-search {
     margin-top: 80px;
