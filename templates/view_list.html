@@ -95,7 +95,9 @@
     </div>
         
 	<div class="general-container row">
-        <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
+        {% if session.user|lower == list.created_by|lower %}
+            <button id="add-book"><i class="fas fa-plus-circle deep-purple-text"></i></button>
+        {% endif %}
         
         <div class="container-logos">
             <a href="{{ url_for('home') }}"><h3 class="deep-purple-text logo">books'<span class="black-text">world</span></h3></a>
@@ -105,30 +107,36 @@
             
             <div class="col s12 center-align deep-purple-text">
                 <h1>{{ list.list_name }}</h1>
-                {% if book_list|length > 0 %}
                 <!-- The user who created the list does not need to see their name, because they know who created it  -->
                 {% if session.user|lower != list.created_by|lower %}
                     <h3>by: {{ list.created_by.capitalize() }}</h3>
                 {% endif %}
             </div>
-            <div class="row books-list center-align">
-                
-                {% for book in book_list %}
-                <div class="col s12 m6 l4 xl3">
-                    <a href="{{ url_for('book_info',list_name=list._id, book_name=book._id) }}"><img src="{{ book.img_url }}" alt="{{ book.book_name }}'s cover"></a>
-                    <div class="book-title">
-                        <p>{{ book.book_name }}</p>
-                        <p>{{ book.book_author }}</p>
+            {% if book_list|length > 0 %}
+                <div class="row books-list center-align">
+                    
+                    {% for book in book_list %}
+                    <div class="col s12 m6 l4 xl3">
+                        <a href="{{ url_for('book_info',list_name=list._id, book_name=book._id) }}"><img src="{{ book.img_url }}" alt="{{ book.book_name }}'s cover"></a>
+                        <div class="book-title">
+                            <p>{{ book.book_name }}</p>
+                            <p>{{ book.book_author }}</p>
+                        </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-            </div>
             {% else %}
-             <!-- Message welcoming new users -->
+                {% if session.user|lower == list.created_by|lower %}
+                <!-- Message welcoming new users -->
                 <div class="welcome-user black-text">
                     <h2>Well done, {{ username.capitalize() }}!</h2>
                     <p>Now you have created your list, you can start to adding books into it.</p>
                 </div>
+                {% else %}
+                <div class="welcome-user red-text">
+                    <h4>Unfortunately, {{ list.created_by.capitalize() }} hasn't added any book to the list yet.</h4>
+                </div>
+                {% endif %}
             {% endif %}
 
             <!-- Buttons -->
