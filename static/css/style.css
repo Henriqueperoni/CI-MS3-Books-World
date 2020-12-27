@@ -61,6 +61,12 @@ nav ul a:hover {
     background: none;
 }
 
+.active {
+    transform: scale(1.05);
+    font-weight: 700;
+    color: #fafafa;
+}
+
 #mobile-demo {
     background: rgb(185,175,202);
     background: radial-gradient(circle, rgba(185,175,202,1) 0%, rgba(121,82,191,1) 100%);

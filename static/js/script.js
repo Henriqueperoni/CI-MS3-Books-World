@@ -64,8 +64,6 @@ if(editList) {
     })
 }
 
-
-
 // Function to dynamically add input fields
 //https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery
 $(document).ready(function() {
@@ -87,4 +85,10 @@ $(document).ready(function() {
 	$(inputs).on("click",".remove_field", function(e){ //user click on remove text
 		e.preventDefault(); $(this).parent('div').remove(); x--;
 	})
+});
+
+// Add Active Navigation Class Based on URL
+// https://css-tricks.com/snippets/jquery/add-active-navigation-class-based-on-url/
+$(function() {
+  $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
 });
