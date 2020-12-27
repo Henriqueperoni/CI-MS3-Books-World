@@ -23,14 +23,17 @@
                 </div>
             </div>
         </div>
-
+        
+        <!-- Buttons -->
         <div class="row">
             <div class="edit-buttons col s12">
                 <a class="green darken-3 white-text" href="{{ url_for('view_list', list_name=list._id) }}">
                     Done <i class="fas fa-check white-text"></i>
                 </a>
-                <a id="edit-book" class="blue darken-3 white-text">Edit <i class="fas fa-edit white-text"></i></a>
-                <a id="delete-book" class="red darken-2 white-text">Delete <i class="fas fa-trash-alt white-text"></i></a>
+                {% if session.user|lower == list.created_by|lower %}
+                    <a id="edit-book" class="blue darken-3 white-text">Edit <i class="fas fa-edit white-text"></i></a>
+                    <a id="delete-book" class="red darken-2 white-text">Delete <i class="fas fa-trash-alt white-text"></i></a>
+                {% endif %}
             </div>
         </div>
 	</div>
@@ -84,7 +87,7 @@
                     <button type="submit" class="btn-form white-text deep-purple">Save  <i class="fas fa-save white-text"></i></button>
                 </div>
             </form>
-            <!-- close modal -->
+            <!-- Close Modal -->
             <button class="close-modal">x</button>
         </div>
     </div>
@@ -98,7 +101,7 @@
                 <a id="cancel-delete" class="grey darken-1 white-text">Cancel</a>
                 <a class="red darken-2 white-text" href="{{ url_for('delete_book_in_list', list_name=list._id, book_id=book._id) }}">Delete <i class="fas fa-trash-alt white-text"></i></a>
             </div>
-            <!-- close modal -->
+            <!-- Close Modal -->
             <button class="close-modal-delete">x</button>
         </div>
     </div>
