@@ -391,7 +391,7 @@ footer {
 
 
 .list-title i {
-    margin-left: 20px;
+    margin: 0 20px;
 }
 
 .list-title a,
@@ -407,7 +407,7 @@ footer {
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    margin: 0 20px;
+    margin: 0;
     position: relative;
 }
 
@@ -495,6 +495,17 @@ footer {
     overflow-x: hidden;
 }
 
+/*----------------- BOOK INFO -------------------*/
+.buy-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.buy-btn {
+    margin-right: 20px;
+}
+
 /*----------------- DISCOVER -------------------*/
 
 .container-discover {
@@ -506,7 +517,7 @@ footer {
 
 .list-title h3 {
     font-size: 0.8rem;
-    margin: 0 20px;
+    margin: 0 20px 0 0;
     font-style: italic;
 } 
 
@@ -890,6 +901,18 @@ footer {
 
     .books-list p {
         max-width: 280px;
+    }
+
+    .list-title a {
+        margin-right: 10px;
+    }
+
+    .buy-container {
+    justify-content: center;
+    }
+
+    .buy-btn {
+        margin: 8px;
     }
 
     .welcome-user h2 {
