@@ -28,7 +28,7 @@ def home():
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     if request.method == 'POST':
-        # check if the username already exists in db
+        # check if the username already exists in database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -63,9 +63,9 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # invalid passwword match
                 flash("Incorrect Username and/or Password")
@@ -86,8 +86,10 @@ def profile(username):
         {"username": session["user"]})["username"]
     # get the session user's books from database
     books = list(mongo.db.books.find())
+
+    # get random quote from database
     quotes = mongo.db.quotes.aggregate([{"$sample": {"size": 1}}])
-    # random_quote = range(0, quotes.length).random
+    # random_quote = range(0, quotes.length).random CHECK IF IT WILL BE USED
 
     if session["user"]:
         return render_template(
@@ -169,22 +171,16 @@ def add_list():
 
 @app.route("/view_list/<list_name>")
 def view_list(list_name):
+    # get book lists from datase
     book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    # list = mongo.db.book_lists.find_one(
-    #     {"_id": ObjectId(list_name)})
-    # CHECK IF I WILL USE IT AND DELETE THE PRINTS BELOW
-    print(f"BOOK LIST: {book_list}")
 
+    # Append new book into a book list
     book_objects_list = []
     for book in book_list['books']:
-        print(f"BOOK: {book}")
         book_item = mongo.db.books_in_list.find_one({'_id': ObjectId(book)})
-        print(f"BOOK ITEM: {book_item}")
         book_objects_list.append(book_item)
-
-    print(f"BOOK OBJECT LIST: {book_objects_list}")
 
     return render_template(
         "view_list.html",
@@ -196,6 +192,7 @@ def edit_list(list_id):
     if request.method == "POST":
         share_list = "on" if request.form.get("share_list") else "off"
 
+        # Only uptade list_name and share_list fields in the book lists
         mongo.db.book_lists.update_one(
             {"_id": ObjectId(
                 list_id)}, {"$set": {"list_name": request.form.get(
@@ -223,6 +220,7 @@ def add_book_in_list(list_name):
             "created_by": session["user"]
         }
 
+        # Insert ObjectID from a book into a determined book list
         book_id = mongo.db.books_in_list.insert_one(book).inserted_id
         mongo.db.book_lists.update(
             {'_id': ObjectId(list_name)}, {'$push': {'books': book_id}})
@@ -234,7 +232,7 @@ def add_book_in_list(list_name):
 
 @app.route("/book_info/<list_name>/<book_name>")
 def book_info(list_name, book_name):
-    # book_lists = list(mongo.db.book_lists.find())
+    # book_lists = list(mongo.db.book_lists.find()) CHECK IF WILL BE USED
     book = mongo.db.books_in_list.find_one({"_id": ObjectId(book_name)})
     book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
     return render_template("book_info.html", book=book, list=book_list)
@@ -261,6 +259,7 @@ def edit_book_in_list(list_name, book_id):
 def delete_book_in_list(list_name, book_id):
     book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
 
+    # delete ObjectID from a book in the 'books' field from a specific list of books
     mongo.db.books_in_list.remove({"_id": ObjectId(book_id)})
     mongo.db.book_lists.update(
             {'_id': ObjectId(
@@ -289,10 +288,10 @@ def logout():
 
 @app.errorhandler(404)
 def not_found_error(error):
-    return render_template('404.html', error=error), 404
+    return render_template('404.html', error=error), 40
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
