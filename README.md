@@ -154,10 +154,11 @@ Only a few images were used in the website and all of them have #673AB7 color, a
 - [Closing Tag Checker for HTML5](https://www.aliciaramirez.com/closing-tags-checker/) - Validates all tags are opening and closing correctly.
 - [W3C](https://jigsaw.w3.org/css-validator/) - CSS Validation.
 - [JSHINT](https://jshint.com/) - JavaScript code warning & error check.
+- [PEP8 online](http://pep8online.com/) - PEP8 validator.
 
 ## Testing
 
-Testing documentation can be found [here]ADD
+Testing documentation can be found [HERE](static/testing/TESTING.md)
 
 ## Project barriers and solutions
 - In the View List page when I tried to add a new input field in the edit modal, it was duplicating all the inputs the were already created, instead of only add one. I realised that was happening because of a for loop, so I wrapped the div with the input field inside another div and change the JS function to append new fields to this outer div.
