@@ -32,17 +32,6 @@ nav {
   box-shadow: none;
 }
 
-nav img{
-    margin-top: 12px;
-    margin-left: 60px;
-}
-
-.logo-img {
-    width: 50px;
-    height: 50px;
-    margin-top: -5px;
-}
-
 .logo-name {
     position: absolute;
     top: 0;
@@ -53,17 +42,13 @@ nav img{
     margin-left: 60px;
 }
 
-nav ul a {
-    font-weight: 500;
-}
-
 nav ul a:hover {
     background: none;
 }
 
 .active {
     transform: scale(1.05);
-    font-weight: 700;
+    font-weight: 600;
     color: #fafafa;
 }
 
@@ -76,7 +61,45 @@ nav ul a:hover {
     justify-content: space-evenly;
 }
 
-/* Main */
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.social-links li {
+  list-style-type: none;
+  display: inline;
+
+}
+
+.social-links i {
+    font-size: 1.8rem;
+    color: #7952bf;
+    transition: transform 0.5s;
+    margin: 10px 5px;
+}
+
+.social-links .fa-facebook:hover {
+    transform: scale(1.2);
+    color: #036ae3;
+}
+
+.social-links .fa-instagram:hover {
+    transform: scale(1.2);
+    color: #f56a40;
+}
+
+.social-links .fa-youtube:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    color: #f00;
+}
+
+/* HOME */
 .sign-up {
     display: inline;
     width: 100px;
@@ -125,44 +148,6 @@ nav ul a:hover {
 .intro-text a {
     display: flex;
     margin: 10px auto;
-}
-
-/* Footer */
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.social-links li {
-  list-style-type: none;
-  display: inline;
-
-}
-
-.social-links i {
-    font-size: 1.8rem;
-    color: #7952bf;
-    transition: transform 0.5s;
-    margin: 10px 5px;
-}
-
-.social-links .fa-facebook:hover {
-    transform: scale(1.2);
-    color: #036ae3;
-}
-
-.social-links .fa-instagram:hover {
-    transform: scale(1.2);
-    color: #f56a40;
-}
-
-.social-links .fa-youtube:hover {
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-    color: #f00;
 }
 
 /*--------------- GENERAL CONTAINER -----------------*/

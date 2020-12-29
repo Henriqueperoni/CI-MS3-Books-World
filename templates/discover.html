@@ -5,6 +5,8 @@
         <div class="container-logos">
             <a href="{{ url_for('home') }}"><h3 class="deep-purple-text logo">books'<span class="black-text">world</span></h3></a>
         </div>
+
+        <!-- Search Bar -->
         <div class="row">
             <div class="container-search col s12 m10 offset-m1 l6 offset-l6 xl5 offset-xl7">
                 <form action="{{ url_for('search') }}" method="post" >
@@ -18,6 +20,8 @@
                 </form>
             </div> 
         </div>
+
+        <!-- List of books -->
         <div class="container-discover row">
             {% if book_lists|length > 0 %}
             <ul class="col s12 m10 offset-m1 l8 offset-l2">

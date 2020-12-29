@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+
+    <!-- Modal - Add List -->
     <div id="modal-review" class="container-modal row">
         <div class="modal-books white col s10 offset-s1 m8 offset-m2 xl4 offset-xl4">
             <div class="container-form col s12">
@@ -10,17 +12,8 @@
                         <label for="list_name">List Name:</label>
                         <input id="list_name" name="list_name" type="text" class="validate" minlength="3" maxlength="50" required>
                     </div>
-
-                    <!-- Image URL's
-                    <div class="URL-list col s12">
-                        <div class="input-field col s12">
-                            <label for="img_url">Insert image URL</label>
-                            <input id="img_url" name="img_url" type="text" class="validate" minlength="5" maxlength="100" required>
-                        </div>
-                    </div>
-                    Add field button
-                    <a class="btn green darken-3 white-text add-field-button">Add Book</a> -->
                     
+                    <!-- Share List or Not -->
                     <div class="row">
                         <div class="switch col s12">
                             <label class="valign-wrapper" for="share_list">
