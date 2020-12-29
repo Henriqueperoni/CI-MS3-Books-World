@@ -282,11 +282,16 @@ footer {
     transform: scale(1.05);
 }
 
-.book p {
+.title p {
     max-width: 130px;
     font-size: 0.7rem;
     font-weight: 600;
     margin: 0 auto
+}
+
+.title p:first-child {
+    font-size: 0.8rem;
+    margin-top: 3px;
 }
 
 .quotes {
@@ -459,12 +464,17 @@ footer {
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
 }
 
-.books-list p {
+.book-title p {
     max-width: 220px;
     font-size: 0.8rem;
     font-weight: 600;
     margin: 0 auto;
     text-align: start;
+}
+
+.book-title p:first-child {
+    margin-top: 5px;
+    font-size: 0.9rem;
 }
 
 .book-title {
@@ -478,17 +488,6 @@ footer {
 .modal-books form {
     overflow-y: scroll;
     overflow-x: hidden;
-}
-
-/*----------------- BOOK INFO -------------------*/
-.buy-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-}
-
-.buy-btn {
-    margin-right: 20px;
 }
 
 /*----------------- DISCOVER -------------------*/
@@ -859,7 +858,7 @@ footer {
     }
 
     .book p {
-        max-width: 110px;
+        max-width: 120px;
     }
 
     .book-summary {
