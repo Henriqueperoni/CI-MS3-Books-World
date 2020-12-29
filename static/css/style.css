@@ -750,6 +750,9 @@ footer {
     background: #fff;
 }
 
+.book-cover {
+    min-height: 375px !important;
+}
 /*----------------- FLASHES -------------------*/
 .flashes {
     position: relative;
