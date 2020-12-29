@@ -196,7 +196,7 @@ footer {
     color: white;
 }
 
-.btn-form {
+.btn-sign-up {
     display: block;
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
@@ -211,7 +211,7 @@ footer {
     cursor: pointer;
 }
 
-.btn-form:hover,
+.btn-sign-up:hover,
 .btn-back:hover {
     transform: scale(1.1);
     box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.30);
@@ -245,6 +245,12 @@ footer {
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    margin-top: -5px;
 }
 
 .books,
@@ -404,12 +410,6 @@ footer {
 .container-discover ul {
     padding: 0 !important;
 }
-/* CHECK IF WILL USE */
-/* .book-list-covers img {
-    height: 165px;
-    width: 120px;
-    margin: 5px;
-} */
 
 .switch {
     display: flex;
@@ -437,16 +437,12 @@ footer {
 }
 
 /*----------------- VIEW LIST -------------------*/
-.container-book-lists > div {
-    margin-bottom: 20px
-}
-
 .container-book-lists h1 {
     font-size: 3rem;
     font-family: 'Nunito';
     font-weight: 600;
     letter-spacing: -1px;
-    margin: 0;
+    margin: 0 0 20px 0;
 }
 
 .container-book-lists h3 {
@@ -475,6 +471,10 @@ footer {
     margin-bottom: 15px;
 }
 
+.book-cover {
+    min-height: 375px !important;
+}
+
 .modal-books form {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -492,7 +492,6 @@ footer {
 }
 
 /*----------------- DISCOVER -------------------*/
-
 .container-discover {
     margin: 0 5px;
     padding: 0;
@@ -591,7 +590,8 @@ footer {
 /*----------------- MODALS -------------------*/
 /* Create and edit modal */
 .container-modal,
-.container-modal-list {
+.container-modal-list,
+.container-modal-delete {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
@@ -604,7 +604,8 @@ footer {
 }
 
 .container-modal.show-modal,
-.container-modal-list.show-modal {
+.container-modal-list.show-modal,
+.container-modal-delete.show-modal-delete {
     display: flex;
 }
 
@@ -672,20 +673,8 @@ footer {
 
 /* Delete Modal */
 .container-modal-delete {
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    display: none;
     align-items: start;
     justify-content: center;
-}
-
-.container-modal-delete.show-modal-delete {
-    display: flex;
 }
 
 .modal-delete {
@@ -697,7 +686,6 @@ footer {
     flex-direction: column;
     margin: 20px 5px;
 }
-
 
 .delete-buttons a {
     width: 95px;
@@ -734,10 +722,10 @@ footer {
 .close-modal-delete:focus {
     background: #fff;
 }
-
 .book-cover {
     min-height: 375px !important;
 }
+
 /*----------------- FLASHES -------------------*/
 .flashes {
     position: relative;
@@ -768,7 +756,7 @@ footer {
     font-size: 1.4rem;
 }
 
-
+/*----------------- MEDIA SCREENS -------------------*/
 @media screen and (min-width: 1400px) {
     body {
         background: url("/static/images/bg-xl.png");
@@ -826,13 +814,13 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
-    .logo-name {
-        margin-left: 40px;
-    }
-    
     body {
         background: linear-gradient(180deg, #683DE3 0%, #DAD1F5 100%);
         height: 100vh;
+    }
+    
+    .logo-name {
+        margin-left: 40px;
     }
 
     .intro-text {
