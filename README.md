@@ -39,8 +39,9 @@ Also, the user will be able to create a list of books they want and share with o
 - As a user, I want to easily to sign up to the website.
 - As a user, I want to easily log in on my account.
 - As a user, I want to write personal summaries and main insights about the books I'm readying or alredy read.
-- As a user, I want to create a list of books.
+- As a user, I want to create a list of books and share it with other users.
 - As a user, I want to find list of books from other people, and get inspired to read other books.
+- As a user, I want to easily find a way to buy the books in the lists.
 - As a user, I want to uptade or delete old book summaries and lists of books.
 
 ### 1. Strategy
