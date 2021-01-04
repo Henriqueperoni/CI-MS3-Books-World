@@ -64,10 +64,11 @@
 ### Home
 - Verified if the Sign Up button only appears if the user is not already logged in.
 ### Sign Up/Log In
-- Checked if an user attemot to sign up or log in with a spiecial characters and ensure an error message displays for each fieldalerting the user of valid form input. 
+- Checked if an user attemot to sign up or log in with a special characters and ensure an error message displays for each fieldalerting the user of valid form input. 
 - Checked if a flash message displays if the user enter an user that already exist or the incorrect username and/or password.
 ### Profile
 - Checked if a flash massage encouranging the user add the first book summary after sign up displays.
+![Message been display when a new user log in into their account for the first time](../images/testing/new_user.png)
 - Checked if the Add Book modal works and add the book sumarry into the database.
 - Checked in the random quotes displays randomly on large screens.
 ### View Book
@@ -75,9 +76,24 @@
 - Checked if the edit book functionality works.
 ### Best Books
 - Checked if a message, encouraging the user to create their first list, displays when the user hasn't created the first list yet.
-![Message been display when user haven't create a list yet](../images/new_user_list.png)
-
-
+![Message been display when user haven't create a list yet](../images/testing/new_user_list.png)
+- Checked if the "share" option is on the list will appear in the Discover Page.
+### View List
+- Checked if the modal add book into the list works.
+- Checked if the delete list functionality works.
+- Checked if the edit list functionality works.
+### Discover
+- Search functionality:
+    - Checked if when click to submit with no entries in the search field a message display to the user fill in the field.
+    - Checked if entering a valid keyword the page returns the relevant content containing that keyword.
+    - Checked if entering a non valid the keyword the page returns "No results found".
+    - Checked if Reset button resets the page when clicked as desired.
+- Check if "Unfortunately, user hasn't added any book to the list yet." message is been displayed when a list is been shared but has no book in it yet.
+- Checked if when the user is redirect to the View List page the Add Book, Edit and Delete buttons are not been displayed as only the creator of the list can use these buttons.
+- Made the same test as the above in the Book Info page.
+### 404
+- Verified 404 page is displayed if nagivate to an invalid link.
+- Check if the Bring Me Back button redirect to the home page.
 
 ## Responsive Test
 - Test responsiveness of website on all screen sizes using diffent browsers(Google Chome, Opera, Firefox and Microsoft Edge)
