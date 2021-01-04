@@ -22,7 +22,13 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    if "user" in session:
+        user = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        return render_template(
+            "home.html", user=user)
+    else:
+        return render_template("home.html")
 
 
 @app.route("/sign_up", methods=["GET", "POST"])
