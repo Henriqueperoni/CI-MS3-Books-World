@@ -79,6 +79,8 @@ Instead of create a lot a functionality and decide to create a few functionaliti
   - **Best Books** - A very similar design of the profile page. Until users create their first list a message will be display encouring then to do it.
   - **View Books / View Lists** - To similar pages where the user can see books and lists with more details. Also, they can edit and delete it.
   - **Discover** - Alows the user see shared list from other users. The same design from Best Books page were use to keep familiaritie.
+- Database Diagram
+![Project Mock-up](static/images/db_diagram.png)
 
 ### 5. Surface
 The overall UX is clean and similar in all pages to keep consistency.
