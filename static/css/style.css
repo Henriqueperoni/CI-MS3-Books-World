@@ -557,13 +557,15 @@ footer {
 }
 
 .container-error {
-    height: 80vh;
+    max-height: 75vh;
     display: flex;
     justify-content: center;
 }
 
 .container-error img{
     object-fit: contain;
+    max-width: 100vw;
+    max-height: 70vh;
 }
 
 .btn-back {
@@ -586,6 +588,9 @@ footer {
     font-weight: 600;
 }
 
+.error-text {
+    text-align: center;
+}
 /*----------------- MODALS -------------------*/
 /* Create and edit modal */
 .container-modal,
@@ -897,5 +902,9 @@ footer {
 
     .container-error img{
         max-width: 300px;
+    }
+
+    .error-text {
+        font-size: 2.4rem;
     }
 }

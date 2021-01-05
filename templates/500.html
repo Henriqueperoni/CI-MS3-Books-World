@@ -24,7 +24,7 @@
         />
         {% block styles %} 
         {% endblock %}
-        <title>404 Error Page</title>
+        <title>500 Error Page</title>
         <link
             rel="shortcut icon"
             type="image/png"
@@ -33,9 +33,10 @@
     </head>
 
     <body id="error">
+
         <h2 class="deep-purple-text error-text">Whoops, something has gone wrong!</h2>
         <div class="container-error">
-            <img src="{{ url_for('static', filename='images/404.png')}}" alt="404 error">
+            <img src="{{ url_for('static', filename='images/500.png')}}" alt="500 error">
         </div>
         <div class="btn-back deep-purple">
             <a href="{{ url_for('home') }}"><p class="white-text">Bring me back to <span>books'<span class="black-text">world</span></span></p></a>
