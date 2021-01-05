@@ -146,6 +146,7 @@ Only a few images were used in the website and all of them have #673AB7 color, a
 - [TinyPNG](https://tinypng.com/) - Efficient compression of images for site.
 - [Balsamiq](https://balsamiq.com/wireframes/) - Wireframing design tool.
 - [Autoprefixer](https://autoprefixer.github.io/) - Parses CSS and adds vendor prefixes.
+- [Figma](https://www.figma.com/) - Web-based UI and UX design application
 - [Google Mobile-Friendly](https://search.google.com/test/mobile-friendly) - Test Mobile-friendly check on site.
 - Code Institute SLACK Community - General Resource
 
@@ -170,9 +171,17 @@ Testing documentation can be found [HERE](static/testing/TESTING.md)
 ## Deployment
 
 ## Credits
-
 ### Media
+**Illustrations**:
+- [Undraw](https://undraw.co/)
+- [ManyPixels](https://www.manypixels.co/)
 
 ### Code
+- Dynamically add input fields from Stack Overflow [here](https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery).
+- Add Active Navigation Class Based on URL from CSS Trick [here](https://css-tricks.com/snippets/jquery/add-active-navigation-class-based-on-url/).
 
 ## Acknowledgments
+- Thanks for my mentor, Excellence Ilesanm for guidence and excellent advices.
+- Thanks to all Code Institute staff.
+- Thanks to CI Slack Community for all the assistance and support.
+- Thanks for all the web development community on Internet.
