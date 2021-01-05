@@ -38,16 +38,16 @@ Also, the user will be able to create a list of books they want and share with o
 - As a user, I want to easily understand the main purpose of the site and learn more about the organisation.
 - As a user, I want to easily to sign up to the website.
 - As a user, I want to easily log in on my account.
-- As a user, I want to write personal summaries and main insights about the books I'm readying or alredy read.
+- As a user, I want to write personal summaries and main insights about the books I'm reading or already read.
 - As a user, I want to create a list of books and share it with other users.
-- As a user, I want to find list of books from other people, and get inspired to read other books.
+- As a user, I want to find list of books from other people and get inspired to read other books.
 - As a user, I want to easily find a way to buy the books in the lists.
-- As a user, I want to uptade or delete old book summaries and lists of books.
+- As a user, I want to update or delete old book summaries and lists of books.
 
 ### 1. Strategy
 
 - Provide a platform where the user can create personal summaries about books they read.
-- Provide a platform where user can create a list of books and share it with others user if they want.
+- Provide a platform where user can create a list of books and share it with other users if they want.
 - Create an enjoyable, and easy to use platform that makes the user uses it frequently.
 
 ### 2. Scope
@@ -55,16 +55,15 @@ Also, the user will be able to create a list of books they want and share with o
 - Fits in with my current skill-set of HTML, CSS, JavaScript, Python, Flask and MongoDB.
 - Easy way to sign up into the website with Sign Up Button for new users.
 - Easy way to log in into the website.
-- Allow the user create, read, uptade and delete their personal reviews.
-- Allow the user create, read, uptade, delete and share their wish lists.
-- Like and dislike functionality for userr to reviews others wish lists.
+- Allow the user to create, read, update and delete their personal reviews.
+- Allow the user to create, read, update, delete and share their wish lists.
 
 ### 3. Structure
 
-As the website has two main ideas, create persoal book summaries and lists of books, I kept the website as simple as possible and easy to use.
-Instead of create a lot a functionality and decide to create a few functionalities that the user can do a lot o things.
+As the website has two main ideas, create personal book summaries and lists of books, I kept the website as simple as possible and easy to use.
+Instead of creating a lot of functionality and decide to create a few functionalities that the user can do a lot of fo things.
 
-- A part of the home page, everypage has the same structure to keep consistency and to make the navigation easy to assimilate.
+- A part of the home page, every page has the same structure to keep consistency and to make the navigation easy to assimilate.
 
 - The modals in different pages are very similar to each other to keep consistency.
 
@@ -73,12 +72,12 @@ Instead of create a lot a functionality and decide to create a few functionaliti
 
 - [Wireframes]ADD
 - Navigation bar - Menu with links pointing to each page
-  - **Home** -  A short descrition letting the user knows what the website is about.
+  - **Home** -  A short description letting the user knows what the website is about.
   - **Sign Up / Log In** - Very similar design to keep consistency and be user friendly.
-  - **Profile** - After users sign up, they are direct to their profile with a flash message welcoming they and advise them to create they first book summary.
-  - **Best Books** - A very similar design of the profile page. Until users create their first list a message will be display encouring then to do it.
-  - **View Books / View Lists** - To similar pages where the user can see books and lists with more details. Also, they can edit and delete it.
-  - **Discover** - Alows the user see shared list from other users. The same design from Best Books page were use to keep familiaritie.
+  - **Profile** - After users sign up, they are redirected to their profile with a flash message welcoming them and advise to create their first book summary.
+  - **Best Books** - A very similar design of the profile page. Until users create their first list a message will be display encouraging then to do it.
+  - **View Books / View Lists** - Two similar pages where the user can see books and lists with more details. Also, they can edit and delete it.
+  - **Discover** - Allows the users to see the shared list from other users. The same design from Best Books page used to keep familiarity.
 - Database Diagram
 ![Project Mock-up](static/images/db_diagram.png)
 
@@ -86,11 +85,11 @@ Instead of create a lot a functionality and decide to create a few functionaliti
 The overall UX is clean and similar in all pages to keep consistency.
 
 ### Colors:
-The base color **deep-purple(#673AB7)** was chosed from [Materalize](https://materializecss.com/). Some different purple tones were also chosen to make the website more elegant.
+The base color **deep-purple(#673AB7)** was chosen from [Materalize](https://materializecss.com/). Some different purple tones were also chosen to make the website more elegant.
 ![Palette of colors](static/images/colors.png)
 ### Typography :
 
-"Poppins" font (with fall-back font of Sans-Serif) is used in all website. Unless, the logo that uses "Nunito" font (with fall-back font of Sans-Serif).
+"Poppins" font (with fall-back font of Sans-Serif) is used in all website. Unless the logo that uses "Nunito" font (with fall-back font of Sans-Serif).
 
 ### Images:
 Only a few images were used in the website and all of them have #673AB7 color, as base color and them different tones.
@@ -149,6 +148,7 @@ Only a few images were used in the website and all of them have #673AB7 color, a
 - [Balsamiq](https://balsamiq.com/wireframes/) - Wireframing design tool.
 - [Autoprefixer](https://autoprefixer.github.io/) - Parses CSS and adds vendor prefixes.
 - [Figma](https://www.figma.com/) - Web-based UI and UX design application
+- [Quick DBD](https://www.quickdatabasediagrams.com/) - Draw your database relationship diagrams and flow quickly using simple DSL language
 - [Google Mobile-Friendly](https://search.google.com/test/mobile-friendly) - Test Mobile-friendly check on site.
 - Code Institute SLACK Community - General Resource
 
