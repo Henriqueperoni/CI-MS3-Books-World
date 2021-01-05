@@ -3,6 +3,7 @@ $(document).ready(function(){
     $('.tooltipped').tooltip();
 });
 
+// Add book modal
 function startModalBooks() {
     const modal = document.querySelector(".container-modal")
     modal.classList.add("show-modal");
@@ -14,55 +15,69 @@ function startModalBooks() {
     })
 }
 
+// Event Listener that starts the add book modal
 document.addEventListener('DOMContentLoaded', function () {
-const addBook = document.getElementById("add-book")
-addBook.addEventListener("click", () => {
-    startModalBooks()
-})
+    const addBook = document.getElementById("add-book")
+    if (addBook) {
+        addBook.addEventListener("click", () => {
+            startModalBooks()
+        })
+    }
 })
 
-const editBook = document.getElementById("edit-book")
-if(editBook){
-     editBook.addEventListener("click", () => {
-         startModalBooks()
-     })
-}
+// Event Listener that starts the edit book modal
+document.addEventListener('DOMContentLoaded', function () {
+    const editBook = document.getElementById("edit-book")
+    if (editBook) {
+        editBook.addEventListener("click", () => {
+            startModalBooks()
+        })
+    }
+})
 
+// Delete Modal
 function deleteModal() {
     const modal = document.querySelector(".container-modal-delete")
     modal.classList.add("show-modal-delete");
 
     modal.addEventListener("click", (e) => {
-        if(e.target.id == "modal-delete" || e.target.className == "close-modal-delete" || e.target.id == "cancel-delete") {
+        if (e.target.id == "modal-delete" || e.target.className == "close-modal-delete" || e.target.id == "cancel-delete") {
             modal.classList.remove("show-modal-delete")
         }
     })
 }
 
-const deleteBook = document.getElementById("delete-book")
-if(deleteBook) {
-    deleteBook.addEventListener("click", () => {
-        deleteModal()
+// Event Listener that starts delete modal
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteBook = document.getElementById("delete-book")
+    if (deleteBook) {
+        deleteBook.addEventListener("click", () => {
+            deleteModal()
+        })
+    }
 })
-}
 
+// Add list modal
 function startModalEditList() {
     const modal = document.querySelector(".container-modal-list")
     modal.classList.add("show-modal");
 
     modal.addEventListener("click", (e) => {
-        if(e.target.id == "modal-edit-list" || e.target.className == "close-modal") {
+        if (e.target.id == "modal-edit-list" || e.target.className == "close-modal") {
             modal.classList.remove("show-modal")
         }
     })
 }
 
-const editList = document.getElementById("edit-list")
-if(editList) {
-    editList.addEventListener("click", () => {
-        startModalEditList()
-    })
-}
+// Event listener that starts add list modal
+document.addEventListener('DOMContentLoaded', function () {
+    const editList = document.getElementById("edit-list")
+    if (editList) {
+        editList.addEventListener("click", () => {
+            startModalEditList()
+        })
+    }
+})
 
 // Function to dynamically add input fields
 //https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery
