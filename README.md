@@ -5,7 +5,7 @@
 The aim of this project is to provide a place where the user can write down a personal summary of a book and the main insights they got from the book.
 Also, the user will be able to create a list of books they want and share with other users if desired.
 
-#ADD Live demo on Heroku pages
+## Live demo on Heroku pages [HERE](https://bookss-world.herokuapp.com/)
 
 ## Table of Contents:
 
