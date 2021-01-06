@@ -19,9 +19,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Render Home page
 @app.route("/")
 @app.route("/home")
 def home():
+    # Check if there is a user in session
     if "user" in session:
         user = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
@@ -31,6 +33,7 @@ def home():
         return render_template("home.html")
 
 
+# Sign up page
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     if request.method == 'POST':
@@ -42,11 +45,11 @@ def sign_up():
             flash("Username already exists")
             return redirect(url_for("sign_up"))
 
-        sign_in = {
+        sign_up = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
-        mongo.db.users.insert_one(sign_in)
+        mongo.db.users.insert_one(sign_up)
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
@@ -58,6 +61,7 @@ def sign_up():
     return render_template("sign_up.html")
 
 
+# Login
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -68,7 +72,7 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 return redirect(url_for(
                     "profile", username=session["user"]))
@@ -85,6 +89,7 @@ def login():
     return render_template("login.html")
 
 
+# Render Profile page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # get the session user's username from database
@@ -95,7 +100,6 @@ def profile(username):
 
     # get random quote from database
     quotes = mongo.db.quotes.aggregate([{"$sample": {"size": 1}}])
-    # random_quote = range(0, quotes.length).random CHECK IF IT WILL BE USED
 
     if session["user"]:
         return render_template(
@@ -104,6 +108,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# Add a new into database
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
     if request.method == "POST":
@@ -118,12 +123,14 @@ def add_book():
         return redirect("/profile/<username>")
 
 
+# Render View Book page
 @app.route("/view_book/<book_name>")
 def view_book(book_name):
     book = mongo.db.books.find_one({"_id": ObjectId(book_name)})
     return render_template("view_book.html", book=book)
 
 
+# Edit book
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
     if request.method == "POST":
@@ -140,12 +147,14 @@ def edit_book(book_id):
     return render_template("view_book.html", book=book)
 
 
+# Delete book
 @app.route("/delete_book/<book_id>")
 def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
     return redirect("/profile/<username>")
 
 
+# Render Best Books page
 @app.route("/best_books/<username>", methods=["GET", "POST"])
 def best_books(username):
     # get the session user's username from database
@@ -161,6 +170,7 @@ def best_books(username):
     return redirect(url_for("login"))
 
 
+# Add a new booklist into database
 @app.route("/add_list", methods=["GET", "POST"])
 def add_list():
     if request.method == "POST":
@@ -175,6 +185,7 @@ def add_list():
         return redirect("/best_books/<username>")
 
 
+# Render View List Page
 @app.route("/view_list/<list_name>")
 def view_list(list_name):
     # get book lists from datase
@@ -193,10 +204,10 @@ def view_list(list_name):
         book_list=book_objects_list, list=book_list, username=username)
 
 
+# Edit booklist
 @app.route("/edit_list/<list_id>", methods=["GET", "POST"])
 def edit_list(list_id):
     if request.method == "POST":
-        share_list = "on" if request.form.get("share_list") else "off"
 
         # Only uptade list_name and share_list fields in the book lists
         mongo.db.book_lists.update_one(
@@ -209,12 +220,14 @@ def edit_list(list_id):
     return redirect(url_for("view_list", list=list, list_name=list["_id"]))
 
 
+# Delete booklist
 @app.route("/delete_list/<list_id>")
 def delete_list(list_id):
     mongo.db.book_lists.remove({"_id": ObjectId(list_id)})
     return redirect("/best_books/<username>")
 
 
+# Add a new book into the database and into a list of books
 @app.route("/add_book_in_list/<list_name>", methods=["GET", "POST"])
 def add_book_in_list(list_name):
     if request.method == "POST":
@@ -236,6 +249,7 @@ def add_book_in_list(list_name):
     return redirect(url_for("view_list", list_name=book_list["_id"]))
 
 
+# Render Book Info page
 @app.route("/book_info/<list_name>/<book_name>")
 def book_info(list_name, book_name):
     # book_lists = list(mongo.db.book_lists.find()) CHECK IF WILL BE USED
@@ -244,6 +258,7 @@ def book_info(list_name, book_name):
     return render_template("book_info.html", book=book, list=book_list)
 
 
+# Edit book from a booklist
 @app.route("/edit_book_in_list/<list_name>/<book_id>", methods=["GET", "POST"])
 def edit_book_in_list(list_name, book_id):
     if request.method == "POST":
@@ -261,11 +276,14 @@ def edit_book_in_list(list_name, book_id):
     return render_template("book_info.html", book=book, list=book_list)
 
 
+# Delete book from a booklist
 @app.route("/delete_book_in_list/<list_name>/<book_id>")
 def delete_book_in_list(list_name, book_id):
     book_list = mongo.db.book_lists.find_one({"_id": ObjectId(list_name)})
-
-    # delete ObjectID from a book in the 'books' field from a specific list of books
+    """
+    Delete ObjectID from a book in the 'books' field
+    from a specific list of books
+    """
     mongo.db.books_in_list.remove({"_id": ObjectId(book_id)})
     mongo.db.book_lists.update(
             {'_id': ObjectId(
@@ -273,12 +291,14 @@ def delete_book_in_list(list_name, book_id):
     return redirect(url_for("view_list", list_name=book_list["_id"]))
 
 
+# Render Discover page
 @app.route("/discover")
 def discover():
     book_lists = list(mongo.db.book_lists.find())
     return render_template("discover.html", book_lists=book_lists)
 
 
+# Search function
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -286,17 +306,20 @@ def search():
     return render_template("discover.html", book_lists=book_lists)
 
 
+# Logout
 @app.route("/logout")
 def logout():
     session.pop("user")
     return redirect(url_for("home"))
 
 
+# 404 page not found error
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('404.html', error=error), 404
 
 
+# 500 internal server error
 @app.errorhandler(500)
 def internal_error(error):
     return render_template('500.html', error=error), 500
