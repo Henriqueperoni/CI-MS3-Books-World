@@ -70,7 +70,7 @@ Instead of creating a lot of functionality and decide to create a few functional
 
 ### 4. Skeleton
 
-- [Wireframes]ADD
+- [Wireframes](static/docs/wireframe.pdf)
 - Navigation bar - Menu with links pointing to each page
   - **Home** -  A short description letting the user knows what the website is about.
   - **Sign Up / Log In** - Very similar design to keep consistency and be user friendly.
