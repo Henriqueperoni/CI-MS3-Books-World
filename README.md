@@ -172,6 +172,27 @@ Testing documentation can be found [HERE](static/testing/TESTING.md)
 
 ## Deployment
 
+### Project Creation
+- To create this project the [CI Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template).
+- I was then directed to the create new repository from template page and entered in my desired repository name, then clicked create repository from template button.
+- Once created, I navigated to my new repository on GitHub and clicked the Gitpod button which built my workspace.
+
+### Deployment to Heroku
+This project is deployed and hosted on [Heroku](https://www.heroku.com/).
+- Navigate to [Heroku](https://www.heroku.com/) and login.
+- On the dashboard, click on the 'New' button and select 'Create new app'.
+- Enter the app name and select a region.
+- Under the 'Settings' tab, click on 'Config Vars' to add Configuration Variables from the env.py file. This includes the IP, Port, Secret key, MongoDB name and URI, as well as mail settings for Flask Mail.
+- In the menu select the 'Deploy' option.
+- Under 'Deployment method' select the GitHub option to connect to your GitHub repository. Ensure GitHub username is selected and use the search function to find the relevant repository.
+- Select Automatic deploys from the main branch and click 'Deploy Branch'.
+
+### Cloning
+- The code can be run locally through clone or download from the repository on GitHub.
+- You can do this by opening the repository, clicking on the green 'Code' button and selecting either 'clone or download'.
+- The Clone option provides a URL, which you can use on your CLI with **git clone <url>**.
+- The Download ZIP option provides a link to download a ZIP file which can be unzipped on your local machine. The files can then be uploaded to your IDE
+
 ## Credits
 ### Media
 **Illustrations**:
