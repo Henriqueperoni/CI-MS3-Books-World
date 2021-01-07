@@ -4,7 +4,11 @@
     <!-- Intro Text -->
     <div class="intro-text white-text">
 	    <h2>Everything a book lover needs</h2>
-        <p><span>books'<span class="black-text">world</span></span> was created for anyone who likes to do a book summary and write down the main insights after read a book and doesn't like to do it in a piece of paper. You can also create wish list and share with other users. </p>
+        <p>
+            <span>books'<span class="black-text">world</span></span> was created for anyone who likes to do a book summary and write
+            down the main insights after reading a book and want to keep it organized in only one place. You can also create
+            wish list and share with other users.
+        </p>
         {% if not user %}
             <a class="sign-up deep-purple-text" href="{{ url_for('sign_up') }}">Sign Up</a>
         {% endif %}

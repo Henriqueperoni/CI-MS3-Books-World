@@ -2,7 +2,8 @@
 
 ![Project Mock-up](static/images/intro-readme.png)
 
-This project aims is to provide a place where the user can write down a personal summary of a book and the main insights they got from reading a book.
+This project aims is to provide a place where the user can write down a personal summary of a book and the main insights they 
+got from reading a book.
 Also, the user will be able to create any list of books they want and share with other users if desired.
 
 ## Live demo on Heroku pages [HERE](https://bookss-world.herokuapp.com/)
@@ -60,7 +61,8 @@ Also, the user will be able to create any list of books they want and share with
 
 ### 3. Structure
 
-As the website has two main ideas, create personal book summaries and lists of books, I kept the website as simple as possible and easy to use.
+As the website has two main ideas, create personal book summaries and lists of books, I kept the website as simple as possible 
+and easy to use.
 Instead of creating a lot of functionality and decide to create a few functionalities that the user can do a lot of fo things.
 
 - A part of the home page, every page has the same structure to keep consistency and to make the navigation easy to assimilate.
@@ -74,9 +76,12 @@ Instead of creating a lot of functionality and decide to create a few functional
 - Navigation bar - Menu with links pointing to each page
   - **Home** -  A short description letting the user knows what the website is about.
   - **Sign Up / Log In** - Very similar design to keep consistency and be user friendly.
-  - **Profile** - After users sign up, they are redirected to their profile with a flash message welcoming them and advise to create their first book summary. Also, in the profile page, in large screens, random quotes about reading will be displayed.
-  - **Best Books** - A very similar design of the profile page. Until users create their first list a message will be display encouraging then to do it.
-  - **View Books / View Lists** - Two similar pages where the user can see books and lists with more details. Also, they can edit and delete it.
+  - **Profile** - After users sign up, they are redirected to their profile with a flash message welcoming them and advise to create 
+  their first book summary. Also, in the profile page, in large screens, random quotes about reading will be displayed.
+  - **Best Books** - A very similar design of the profile page. Until users create their first list a message will be display 
+  encouraging then to do it.
+  - **View Books / View Lists** - Two similar pages where the user can see books and lists with more details. Also, they can edit 
+  and delete it.
   - **Discover** - Allows the users to see the shared list from other users. The same design from Best Books page used to keep familiarity.
 - Database Diagram
 ![Project Mock-up](static/images/db_diagram.png)
@@ -85,11 +90,13 @@ Instead of creating a lot of functionality and decide to create a few functional
 The overall UX is clean and similar in all pages to keep consistency.
 
 ### Colors:
-The base color **deep-purple(#673AB7)** was chosen from [Materalize](https://materializecss.com/). Some different purple tones were also chosen to make the website more elegant.
+The base color **deep-purple(#673AB7)** was chosen from [Materalize](https://materializecss.com/). Some different purple tones were 
+also chosen to make the website more elegant.
 ![Palette of colors](static/images/colors.png)
 ### Typography :
 
-"Poppins" font (with fall-back font of Sans-Serif) is used in all website. Unless the logo that uses "Nunito" font (with fall-back font of Sans-Serif).
+"Poppins" font (with fall-back font of Sans-Serif) is used in all website. Unless the logo that uses "Nunito" font (with fall-back 
+font of Sans-Serif).
 
 ### Images:
 Only a few images were used in the website and all of them have #673AB7 colour, as a base colour and them different tones.
@@ -157,7 +164,8 @@ Only a few images were used in the website and all of them have #673AB7 colour, 
 ## Code Validation
 
 - [W3C](https://validator.w3.org/) - HTML Markup Validation.
-- [Closing Tag Checker for HTML5](https://www.aliciaramirez.com/closing-tags-checker/) - Validates all tags are opening and closing correctly.
+- [Closing Tag Checker for HTML5](https://www.aliciaramirez.com/closing-tags-checker/) - Validates all tags are opening and closing 
+correctly.
 - [W3C](https://jigsaw.w3.org/css-validator/) - CSS Validation.
 - [JSHINT](https://jshint.com/) - JavaScript code warning & error check.
 - [PEP8 online](http://pep8online.com/) - PEP8 validator.
@@ -167,15 +175,26 @@ Only a few images were used in the website and all of them have #673AB7 colour, 
 Testing documentation can be found [HERE](static/testing/TESTING.md)
 
 ## Project barriers and solutions
-- In the View List page when I tried to add a new input field in the edit modal, it was duplicating all the inputs the were already created, instead of only add one. I realised that was happening because of a for loop, so I wrapped the div with the input field inside another div and change the JS function to append new fields to this outer div.
-- The form inside the edit modal in the View List page was duplicating all input fields when clicking "Add Book", instead to only add one field at the time the button was clicked. It was happening because the JS function was appending to each element with a determined class. I created a div and put the input fields inside it, and change the JS function to append the new input to the div just created.
-- Following the advice of my mentor, I decided to change how the books from the lists are displayed. My initial idea was only to display the book cover of each book, but for a better user experience, I decided to add the name of the books and author. Also, an option that redirects the user to a vendor to purchase the book. Now when a user creates a new list, a new document is created in the database with an empty array called "books". After the users create a new list, they will be encouraged to add books into it, once a new book is created, the ObjectID of this book will be pushed to that "books" array.
+- In the View List page when I tried to add a new input field in the edit modal, it was duplicating all the inputs the were already 
+created, instead of only add one. I realised that was happening because of a for loop, so I wrapped the div with the input field 
+inside another div and change the JS function to append new fields to this outer div.
+- The form inside the edit modal in the View List page was duplicating all input fields when clicking "Add Book", instead to only 
+add one field at the time the button was clicked. It was happening because the JS function was appending to each element with a 
+determined class. I created a div and put the input fields inside it, and change the JS function to append the new input to the div 
+just created.(Some changes were made in the project, and the "Add Book" option no longer exist, but the same code was used to adding
+more vendors when adding a new book into a list)
+- Following the advice of my mentor, I decided to change how the books from the lists are displayed. My initial idea was only to 
+display the book cover of each book, but for a better user experience, I decided to add the name of the books and author. Also, 
+an option that redirects the user to a vendor to purchase the book. Now when a user creates a new list, a new document is created 
+in the database with an empty array called "books". After the users create a new list, they will be encouraged to add books into 
+it, once a new book is created, the ObjectID of this book will be pushed to that "books" array.
 
 ## Deployment
 
 ### Project Creation
 - To create this project the [CI Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template).
-- I was then directed to the create new repository from template page and entered in my desired repository name, then clicked create repository from template button.
+- I was then directed to the create new repository from template page and entered in my desired repository name, then clicked create 
+repository from template button.
 - Once created, I navigated to my new repository on GitHub and clicked the Gitpod button which built my workspace.
 
 ### Deployment to Heroku
@@ -183,16 +202,19 @@ This project is deployed and hosted on [Heroku](https://www.heroku.com/).
 - Navigate to [Heroku](https://www.heroku.com/) and login.
 - On the dashboard, click on the 'New' button and select 'Create new app'.
 - Enter the app name and select a region.
-- Under the 'Settings' tab, click on 'Config Vars' to add Configuration Variables from the env.py file. This includes the IP, Port, Secret key, MongoDB name and URI, as well as mail settings for Flask Mail.
+- Under the 'Settings' tab, click on 'Config Vars' to add Configuration Variables from the env.py file. This includes the IP, Port, 
+Secret key, MongoDB name and URI, as well as mail settings for Flask Mail.
 - In the menu select the 'Deploy' option.
-- Under 'Deployment method' select the GitHub option to connect to your GitHub repository. Ensure GitHub username is selected and use the search function to find the relevant repository.
+- Under 'Deployment method' select the GitHub option to connect to your GitHub repository. Ensure GitHub username is selected and 
+use the search function to find the relevant repository.
 - Select Automatic deploys from the main branch and click 'Deploy Branch'.
 
 ### Cloning
 - The code can be run locally through clone or download from the repository on GitHub.
 - You can do this by opening the repository, clicking on the green 'Code' button and selecting either 'clone or download'.
 - The Clone option provides a URL, which you can use on your CLI with **git clone <url>**.
-- The Download ZIP option provides a link to download a ZIP file which can be unzipped on your local machine. The files can then be uploaded to your IDE
+- The Download ZIP option provides a link to download a ZIP file which can be unzipped on your local machine. The files can then 
+be uploaded to your IDE
 
 ## Credits
 ### Media
