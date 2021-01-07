@@ -32,9 +32,6 @@
 
 - **TEST**: There are buttons where the user can update or delete any book summary or list of books they want. It's important to say that if the user decides to share a list of books, only the creator of the list will be able to update or delete the list. 
 
-
-
-
 ## Navigation links redirect to the desired pages
 - Checked if all links in the navigation bar and check if they redirect to the desired pages.
 - Checked if the social links on the footer redirect to the desired page.
@@ -60,6 +57,7 @@
 - **Discover Page**:
     - Checked if the See Books button redirects to the desired page:
     - Checked if by clicking in the list name the user is redirected to the same page if the user clicked in the See Books button.
+    
 ## Pages contain all content and functionalities work as desired
 ### Home
 - Verified if the Sign-Up button only appears if the user is not already logged in.

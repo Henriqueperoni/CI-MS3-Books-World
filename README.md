@@ -2,8 +2,8 @@
 
 ![Project Mock-up](static/images/intro-readme.png)
 
-The aim of this project is to provide a place where the user can write down a personal summary of a book and the main insights they got from the book.
-Also, the user will be able to create a list of books they want and share with other users if desired.
+This project aims is to provide a place where the user can write down a personal summary of a book and the main insights they got from reading a book.
+Also, the user will be able to create any list of books they want and share with other users if desired.
 
 ## Live demo on Heroku pages [HERE](https://bookss-world.herokuapp.com/)
 
@@ -36,7 +36,7 @@ Also, the user will be able to create a list of books they want and share with o
 ### User Stories
 
 - As a user, I want to easily understand the main purpose of the site and learn more about the organisation.
-- As a user, I want to easily to sign up to the website.
+- As a user, I want to easily sign up to the website.
 - As a user, I want to easily log in on my account.
 - As a user, I want to write personal summaries and main insights about the books I'm reading or already read.
 - As a user, I want to create a list of books and share it with other users.
@@ -102,7 +102,9 @@ Only a few images were used in the website and all of them have #673AB7 colour, 
 - Responsive navigation bar.
 - Button to create summaries that pops up a modal to fill in with the book's information.
 - Button to create a list of books.
+- Button to share a list of books.
 - Section where user can edit and delete summaries and lists.
+- Random quotes that inspire reading on the profile page (only on large screens.
 - Footer with social media links.
 
 ### Features to consider implementing in the future
@@ -142,14 +144,13 @@ Only a few images were used in the website and all of them have #673AB7 colour, 
 - [Stack Overflow](https://pt.stackoverflow.com/) - General resource.
 - [Youtube](https://www.youtube.com/) - General resource.
 - [CSS Matic](https://www.cssmatic.com) - Box Shadow Genetator.
-- [CSS Gradient](https://cssgradient.io/) - Gradient Generator
 - [CommonMark](https://commonmark.org/) - For Markdown language reference.
 - [Coolors](https://coolors.co/) - Find matching color palette for site.
 - [TinyPNG](https://tinypng.com/) - Efficient compression of images for site.
 - [Balsamiq](https://balsamiq.com/wireframes/) - Wireframing design tool.
 - [Autoprefixer](https://autoprefixer.github.io/) - Parses CSS and adds vendor prefixes.
-- [Figma](https://www.figma.com/) - Web-based UI and UX design application
-- [Quick DBD](https://www.quickdatabasediagrams.com/) - Draw your database relationship diagrams and flow quickly using simple DSL language
+- [Figma](https://www.figma.com/) - Web-based UI and UX design application.
+- [Quick DBD](https://www.quickdatabasediagrams.com/) - Draw your database relationship diagrams and flow quickly using simple DSL language.
 - [Google Mobile-Friendly](https://search.google.com/test/mobile-friendly) - Test Mobile-friendly check on site.
 - Code Institute SLACK Community - General Resource
 
