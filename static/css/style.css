@@ -958,6 +958,7 @@ footer {
     body {
         background: url("/static/images/bg-xl.png");
         background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .intro-img {
@@ -981,6 +982,8 @@ footer {
 @media screen and (max-width: 1100px) {
     body {
         background:  url("/static/images/bg-m.png");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .intro-text {
@@ -1121,4 +1124,15 @@ footer {
     .error-text {
         font-size: 2.4rem;
     }
+}
+
+@media screen and (max-height: 415px) {
+    .general-container {
+        height: 75%;
+    }
+
+    .modal-books {
+        max-height: 75%;
+    }
+
 }
