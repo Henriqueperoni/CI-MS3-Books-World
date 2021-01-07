@@ -66,9 +66,7 @@ and easy to use.
 Instead of creating a lot of functionality and decide to create a few functionalities that the user can do a lot of fo things.
 
 - A part of the home page, every page has the same structure to keep consistency and to make the navigation easy to assimilate.
-
 - The modals in different pages are very similar to each other to keep consistency.
-
 
 ### 4. Skeleton
 
@@ -225,6 +223,7 @@ be uploaded to your IDE
 ### Code
 - Dynamically add input fields from Stack Overflow [here](https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery).
 - Add Active Navigation Class Based on URL from CSS Trick [here](https://css-tricks.com/snippets/jquery/add-active-navigation-class-based-on-url/).
+- Logo inspiration from [Bookdrops](https://mariogusman.github.io/MS1-Bookdrops).
 
 ## Acknowledgments
 - Thanks for my mentor, Excellence Ilesanm for guidence and excellent advices.
