@@ -1,10 +1,18 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
 /*----------------- GENERAL -------------------*/
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -15,21 +23,16 @@ body {
 }
 
 /* Scroll Bar */
-::-webkit-scrollbar
-{
-    width: 0px;
-}
-::-webkit-scrollbar-thumb
-{
-    background: linear-gradient(transparent, #7952bf);
-    border-radius: 6px;
+::-webkit-scrollbar {
+	width: 0px;
 }
 
 /*----------------- BASE TEMPLATE -------------------*/
 /* Navbar */
 nav {
   background: transparent;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .logo-name {
@@ -47,18 +50,30 @@ nav ul a:hover {
 }
 
 .active {
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
     font-weight: 600;
     color: #fafafa;
 }
 
 #mobile-demo {
     background: rgb(185,175,202);
+    background: -o-radial-gradient(circle, rgba(185,175,202,1) 0%, rgba(121,82,191,1) 100%);
     background: radial-gradient(circle, rgba(185,175,202,1) 0%, rgba(121,82,191,1) 100%);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
 }
 
 /* Footer */
@@ -66,7 +81,9 @@ footer {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
 }
 
 .social-links li {
@@ -78,17 +95,25 @@ footer {
 .social-links i {
     font-size: 1.8rem;
     color: #7952bf;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    -o-transition: transform 0.5s;
     transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
     margin: 10px 5px;
 }
 
 .social-links .fa-facebook:hover {
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
     color: #036ae3;
 }
 
 .social-links .fa-instagram:hover {
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
     color: #f56a40;
 }
 
@@ -103,28 +128,34 @@ footer {
 .sign-up {
     display: inline;
     width: 100px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     border: 1px solid #000000;
     background: #ececec;
     border-radius: 5px;
     padding: 8px 10px;
     margin-right: 10px;
     font-weight: 600;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s;
 }
 
 .sign-up:hover {
-    box-shadow: 0px 0px 15px 0px rgba(256, 256, 256, .60);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(256, 256, 256, .60);
+            box-shadow: 0px 0px 15px 0px rgba(256, 256, 256, .60);
     background: #fff;
 }
 
 .intro-img {
     position: absolute;
-    right: 5%;
-    bottom: 10%;
+    right: 4%;
+    bottom: 8%;
     height: 400px;
     width: 400px;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
 }
 
 .intro-text {
@@ -146,6 +177,8 @@ footer {
 }
 
 .intro-text a {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 10px auto;
 }
@@ -154,19 +187,27 @@ footer {
 .general-container {
     height: 80%;
     width: 80%;
+    background: -o-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(209,209,209,1) 100%);
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(209,209,209,1) 100%);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     border-radius: 20px;
-    box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.55);
+    -webkit-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.55);
+            box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.55);
     overflow-y: scroll;
 }
 
 .container-logos {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: absolute;
     left: 20px;
     top: 20px;
@@ -179,12 +220,15 @@ footer {
     letter-spacing: -2px;
     margin: 0 0 0 5px;
 }
+
 /*--------------- SIGN UP / LOGIN -----------------*/
 .container-ilustration,
 .container-login {
     position: relative;
     top: 50%;
-    transform: translateY(-50%)
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%)
 }
 
 .container-ilustration img {
@@ -207,21 +251,30 @@ footer {
     border-radius: 20px;
     border: none;
     margin: 0 auto;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    -o-transition: transform 0.5s;
     transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
     cursor: pointer;
 }
 
 .btn-sign-up:hover,
 .btn-back:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.30);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.30);
+            box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.30);
 }
 
 .account {
     position: absolute;
     bottom: 10%;
     left: 50%;
-    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+            transform: translate(-50%);
     text-align: center;
     min-width: 130px;
 }
@@ -241,7 +294,9 @@ footer {
     position: absolute;
     top: 5px;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
@@ -271,15 +326,22 @@ footer {
 .book img {
     height: 180px;
     width: 130px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0 auto;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
     cursor: pointer;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
     transition: 0.2s;
 }
 
 .book img:active {
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 
 .title p {
@@ -307,9 +369,12 @@ footer {
 .book-heading img {
     height: 375px;
     width: 250px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0 auto;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
 }
 
 .book-heading h1 {
@@ -331,22 +396,35 @@ footer {
 
 .edit-buttons,
 .delete-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 10px;
 }
 
 .edit-buttons a,
 .delete-buttons a {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 10px;
     font-size: 1.1rem;
     font-weight: 500;
     border-radius: 2px;
     cursor: pointer;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 
@@ -362,7 +440,8 @@ footer {
 
 .edit-buttons a:hover,
 .delete-buttons a:hover {
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.30);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.30);
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.30);
 }
 
 .edit-buttons a:active,
@@ -371,17 +450,28 @@ footer {
 .btn-back:active,
 .list-title a:active,
 .buy-btn:active {
-    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+            transform: scale(0.9);
 }
+
 /*----------------- BEST BOOKS -------------------*/
 .list-title {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     min-height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .list-title > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -396,6 +486,8 @@ footer {
     font-weight: 600;
     min-width: 105px;
     margin-right: 20px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 
@@ -417,8 +509,12 @@ footer {
 }
 
 .switch {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .switch i {
@@ -459,9 +555,12 @@ footer {
 .books-list img {
     height: 305px;
     width: 220px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0 auto;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
 }
 
 .book-title p {
@@ -509,24 +608,37 @@ footer {
 }
 
 .container-search form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background: #fff;
     padding-right: 5px;
     padding-left: 5px;
     border-radius: 15px;
-    box-shadow: 2px 5px 20px -5px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 2px 5px 20px -5px rgba(0,0,0,0.25);
+            box-shadow: 2px 5px 20px -5px rgba(0,0,0,0.25);
 }
 
 .container-search i {
     height: 35px;
     width: 50px;
     border-radius: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     outline: none;
     cursor: pointer;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s
 }
 
@@ -541,7 +653,9 @@ footer {
 }
 
 .container-search i:hover {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
 }
 
 #search {
@@ -558,12 +672,17 @@ footer {
 
 .container-error {
     max-height: 75vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .container-error img{
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     max-width: 100vw;
     max-height: 70vh;
 }
@@ -574,7 +693,11 @@ footer {
     margin: 0 auto;
     margin-top: 30px;
     border-radius: 3px;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    -o-transition: transform 0.5s;
     transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .btn-back p {
@@ -604,12 +727,16 @@ footer {
     left: 0;
     z-index: 10;
     display: none;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .container-modal.show-modal,
 .container-modal-list.show-modal,
 .container-modal-delete.show-modal-delete {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -619,25 +746,46 @@ footer {
     height: auto;
     max-height: 600px;
     border: 10px solid #7952bf;
-    box-shadow: 0 0 0 10px #fff;
+    -webkit-box-shadow: 0 0 0 10px #fff;
+            box-shadow: 0 0 0 10px #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+@-webkit-keyframes modal {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(-100px);
+                transform: translateY(-100px)
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
 }
 
 @keyframes modal {
     from {
         opacity: 0;
-        transform: translateY(-100px)
+        -webkit-transform: translateY(-100px);
+                transform: translateY(-100px)
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
 }
 
 .show-modal .modal-books,
 .show-modal .modal-books-list {
-    animation: modal .5s;
+    -webkit-animation: modal .5s;
+            animation: modal .5s;
 }
 
 .close-modal {
@@ -677,17 +825,28 @@ footer {
 
 /* Delete Modal */
 .container-modal-delete {
-    align-items: start;
-    justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .modal-delete {
     position: relative;
     height: auto;
     width: 500px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin: 20px 5px;
 }
 
@@ -696,19 +855,35 @@ footer {
     height: 40px;
 }
 
-@keyframes modal-delete {
+@-webkit-keyframes modal-delete {
     from {
         opacity: 0;
-        transform: translateY(-100px)
+        -webkit-transform: translateY(-100px);
+                transform: translateY(-100px)
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+
+@keyframes modal-delete {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(-100px);
+                transform: translateY(-100px)
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
 }
 
 .show-modal-delete .modal-delete {
-    animation: modal-delete 0.8s;
+    -webkit-animation: modal-delete 0.8s;
+            animation: modal-delete 0.8s;
 }
 
 .close-modal-delete {
@@ -734,23 +909,42 @@ footer {
 .flashes {
     position: relative;
     text-align: center;
-    transform: translateY(80px);
+    -webkit-transform: translateY(80px);
+        -ms-transform: translateY(80px);
+            transform: translateY(80px);
     margin-bottom: 20px;
     padding: 0 10px;
     border-radius: 2px;
-    box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.35);
+            box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.35);
     z-index: 1;
-    animation: flashes .8s;
+    -webkit-animation: flashes .8s;
+            animation: flashes .8s;
+}
+
+@-webkit-keyframes flashes {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+                transform: translateY(0)
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(80px);
+                transform: translateY(80px);
+    }
 }
 
 @keyframes flashes {
     from {
         opacity: 0;
-        transform: translateY(0)
+        -webkit-transform: translateY(0);
+                transform: translateY(0)
     }
     to {
         opacity: 1;
-        transform: translateY(80px);
+        -webkit-transform: translateY(80px);
+                transform: translateY(80px);
     }
 }
 
@@ -778,6 +972,8 @@ footer {
 
 @media screen and (min-width: 1200px) {
     .quotes {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 }
@@ -801,7 +997,9 @@ footer {
     }
 
     .container-error {
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     .container-error img{
@@ -819,6 +1017,8 @@ footer {
 
 @media screen and (max-width: 576px) {
     body {
+        background: -webkit-gradient(linear, left top, left bottom, from(#683DE3), to(#DAD1F5));
+        background: -o-linear-gradient(top, #683DE3 0%, #DAD1F5 100%);
         background: linear-gradient(180deg, #683DE3 0%, #DAD1F5 100%);
         height: 100vh;
     }
@@ -888,9 +1088,14 @@ footer {
     }
 
     .buy-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 
     .buy-btn {
