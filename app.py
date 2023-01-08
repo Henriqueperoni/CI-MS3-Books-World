@@ -17,12 +17,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
 # Render Home page
 @app.route("/")
 @app.route("/home")
 def home():
     # Check if there is a user in session
+
     if "user" in session:
         user = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
